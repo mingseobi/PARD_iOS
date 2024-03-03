@@ -14,16 +14,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .pard.primaryGreen
+        view.backgroundColor = .pard.errorRed
         setUi()
-    }
-    
-    private lazy var normalButton = NormalButton(title: "normal Button", didTapHandler: normalButtonTapped).then{
-        view.addSubview($0)
-    }
-    
-    private lazy var changeNormalButton = NormalButton(title: "change normal button", didTapHandler: changeEnable).then{
-        view.addSubview($0)
     }
     
     private lazy var titleLabel = UILabel().then{
@@ -31,6 +23,22 @@ class ViewController: UIViewController {
         $0.text = "< Test >"
         $0.font = displayLarge
         $0.textColor = .pard.primaryPurple
+    }
+    
+    private lazy var normalButton = NormalButton(title: "normal Button", didTapHandler: normalButtonTapped).then{
+        view.addSubview($0)
+    }
+    
+    private lazy var changeNormalButton = NormalButton(title: "change normal button", didTapHandler: changeNormalEnable).then{
+        view.addSubview($0)
+    }
+    
+    private lazy var bottomButton = BottomButton(title: "bottom Button", didTapHandler: bottomButtonTapped).then{
+        view.addSubview($0)
+    }
+
+    private lazy var changeBottomButton = BottomButton(title: "change bottom button", didTapHandler: changeBottomEnable).then{
+        view.addSubview($0)
     }
     
     private func setUi() {
@@ -53,14 +61,39 @@ class ViewController: UIViewController {
             make.top.equalTo(normalButton.snp.bottom).offset(30)
             make.height.equalTo(48)
         }
+        
+        bottomButton.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview()
+            make.left.equalTo(30)
+            make.right.equalTo(-30)
+            make.top.equalTo(changeNormalButton.snp.bottom).offset(30)
+        }
+
+        changeBottomButton.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview()
+            make.left.equalTo(30)
+            make.right.equalTo(-30)
+            make.top.equalTo(bottomButton.snp.bottom).offset(30)
+            make.height.equalTo(48)
+        }
     }
     
     @objc func normalButtonTapped() {
         print("🌱 normal tapped !")
+        print("change normal !")
     }
     
-    @objc func changeEnable() {
+    @objc func changeNormalEnable() {
         normalButton.isEnabled.toggle()
+    }
+    
+    @objc func bottomButtonTapped() {
+        print("🌱 bottom tapped !")
+    }
+
+    @objc func changeBottomEnable() {
+        bottomButton.isEnabled.toggle()
+        print("change Bottom !")
     }
 }
 

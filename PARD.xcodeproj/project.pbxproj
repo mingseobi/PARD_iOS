@@ -66,6 +66,7 @@
 		2106ADAB2B92D6A000CDA462 /* PARD */ = {
 			isa = PBXGroup;
 			children = (
+				2106ADBA2B92D6A200CDA462 /* Info.plist */,
 				2176515C2B94827100121AB2 /* Resources */,
 				2176515D2B94829400121AB2 /* Sources */,
 				2106ADB02B92D6A000CDA462 /* ViewController.swift */,
@@ -80,7 +81,6 @@
 				2106ADB22B92D6A000CDA462 /* Main.storyboard */,
 				2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */,
 				2106ADB52B92D6A200CDA462 /* Assets.xcassets */,
-				2106ADBA2B92D6A200CDA462 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
