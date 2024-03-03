@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import PARD_DesignSystem
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .pard.errorRed
     }
 }
 

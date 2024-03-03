@@ -13,6 +13,7 @@
 		2106ADB42B92D6A000CDA462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB22B92D6A000CDA462 /* Main.storyboard */; };
 		2106ADB62B92D6A200CDA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB52B92D6A200CDA462 /* Assets.xcassets */; };
 		2106ADB92B92D6A200CDA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */; };
+		217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 217651502B94738800121AB2 /* PARD_DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = PARD;
+			packageProductDependencies = (
+				217651502B94738800121AB2 /* PARD_DesignSystem */,
+			);
 			productName = PARD;
 			productReference = 2106ADA92B92D6A000CDA462 /* PARD.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 2106ADA02B92D6A000CDA462;
+			packageReferences = (
+				2176514F2B94738800121AB2 /* XCRemoteSwiftPackageReference "PARD_DesignSystem" */,
+			);
 			productRefGroup = 2106ADAA2B92D6A000CDA462 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2176514F2B94738800121AB2 /* XCRemoteSwiftPackageReference "PARD_DesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Club-PARD/PARD_DesignSystem.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		217651502B94738800121AB2 /* PARD_DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2176514F2B94738800121AB2 /* XCRemoteSwiftPackageReference "PARD_DesignSystem" */;
+			productName = PARD_DesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2106ADA12B92D6A000CDA462 /* Project object */;
 }

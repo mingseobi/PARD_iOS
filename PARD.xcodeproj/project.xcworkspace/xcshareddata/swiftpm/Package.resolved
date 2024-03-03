@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "pard_designsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Club-PARD/PARD_DesignSystem.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9c42acb1d9d4578b9ebd0aba2b6009f3e9f33fde"
+      }
+    }
+  ],
+  "version" : 2
+}
