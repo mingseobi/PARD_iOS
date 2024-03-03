@@ -14,6 +14,10 @@
 		2106ADB62B92D6A200CDA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB52B92D6A200CDA462 /* Assets.xcassets */; };
 		2106ADB92B92D6A200CDA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */; };
 		217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 217651502B94738800121AB2 /* PARD_DesignSystem */; };
+		217651542B94778600121AB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 217651532B94778600121AB2 /* SnapKit */; };
+		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
+		217651592B94779600121AB2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 217651582B94779600121AB2 /* Then */; };
+		2176515B2B947ABE00121AB2 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,7 @@
 		2106ADB52B92D6A200CDA462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2106ADB82B92D6A200CDA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2176515A2B947ABE00121AB2 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */,
+				217651542B94778600121AB2 /* SnapKit in Frameworks */,
+				217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */,
+				217651592B94779600121AB2 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +73,7 @@
 				2106ADB52B92D6A200CDA462 /* Assets.xcassets */,
 				2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */,
 				2106ADBA2B92D6A200CDA462 /* Info.plist */,
+				2176515A2B947ABE00121AB2 /* Font.swift */,
 			);
 			path = PARD;
 			sourceTree = "<group>";
@@ -87,6 +96,9 @@
 			name = PARD;
 			packageProductDependencies = (
 				217651502B94738800121AB2 /* PARD_DesignSystem */,
+				217651532B94778600121AB2 /* SnapKit */,
+				217651552B94778600121AB2 /* SnapKit-Dynamic */,
+				217651582B94779600121AB2 /* Then */,
 			);
 			productName = PARD;
 			productReference = 2106ADA92B92D6A000CDA462 /* PARD.app */;
@@ -118,6 +130,8 @@
 			mainGroup = 2106ADA02B92D6A000CDA462;
 			packageReferences = (
 				2176514F2B94738800121AB2 /* XCRemoteSwiftPackageReference "PARD_DesignSystem" */,
+				217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				217651572B94779600121AB2 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 2106ADAA2B92D6A000CDA462 /* Products */;
 			projectDirPath = "";
@@ -146,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2176515B2B947ABE00121AB2 /* Font.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
 				2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */,
 				2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */,
@@ -381,6 +396,22 @@
 				kind = branch;
 			};
 		};
+		217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		217651572B94779600121AB2 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -388,6 +419,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2176514F2B94738800121AB2 /* XCRemoteSwiftPackageReference "PARD_DesignSystem" */;
 			productName = PARD_DesignSystem;
+		};
+		217651532B94778600121AB2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		217651552B94778600121AB2 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		217651582B94779600121AB2 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 217651572B94779600121AB2 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
