@@ -16,14 +16,18 @@ extension UIFont {
     }
 }
 
-let displayLarge = UIFont.systemFont(ofSize: 24, weight: .bold).withLineHeight(28)
-let displayMedium = UIFont.systemFont(ofSize: 20, weight: .bold).withLineHeight(24)
-let displaySmall = UIFont.systemFont(ofSize: 18, weight: .semibold).withLineHeight(24)
+// - MARK: Pretendard/Head
+let head1 = UIFont.systemFont(ofSize: 18, weight: .bold).withLineHeight(24)
+let head2 = UIFont.systemFont(ofSize: 16, weight: .bold).withLineHeight(20)
 
-let headlineLarge = UIFont.systemFont(ofSize: 16, weight: .bold).withLineHeight(20)
-let headlineMedium = UIFont.systemFont(ofSize: 16, weight: .semibold).withLineHeight(20)
-let headlineSmall = UIFont.systemFont(ofSize: 14, weight: .semibold).withLineHeight(18)
+// - MARK: Pretendard/Body
+let body1 = UIFont.systemFont(ofSize: 18, weight: .semibold).withLineHeight(14)
+let body2 = UIFont.systemFont(ofSize: 12, weight: .bold).withLineHeight(16)
+let body3 = UIFont.systemFont(ofSize: 12, weight: .medium).withLineHeight(18)
+let body4 = UIFont.systemFont(ofSize: 14, weight: .semibold).withLineHeight(18)
+let body5 = UIFont.systemFont(ofSize: 14, weight: .medium).withLineHeight(24)
+let body6 = UIFont.systemFont(ofSize: 16, weight: .semibold).withLineHeight(16)
 
-let titleLarge = UIFont.systemFont(ofSize: 14, weight: .medium).withLineHeight(18)
-let titleMedium = UIFont.systemFont(ofSize: 12, weight: .semibold).withLineHeight(16)
-let titleSmall = UIFont.systemFont(ofSize: 12, weight: .medium).withLineHeight(16)
+// - MARK: Pretendard/Caption
+let caption1 = UIFont.systemFont(ofSize: 14, weight: .medium).withLineHeight(20)
+let caption2 = UIFont.systemFont(ofSize: 12, weight: .semibold).withLineHeight(16)
