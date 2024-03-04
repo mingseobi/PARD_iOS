@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     private lazy var titleLabel = UILabel().then{
         view.addSubview($0)
         $0.text = "< Test >"
-        $0.font = displayLarge
+        $0.font = head2
         $0.textColor = .pard.primaryPurple
     }
     
