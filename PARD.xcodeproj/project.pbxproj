@@ -18,6 +18,15 @@
 		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
 		217651592B94779600121AB2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 217651582B94779600121AB2 /* Then */; };
 		2176515B2B947ABE00121AB2 /* +Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* +Font.swift */; };
+		90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C42B95D24C0056D724 /* MainLoginViewController.swift */; };
+		90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */; };
+		90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */; };
+		90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */; };
+		90C007CE2B95D2B40056D724 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CD2B95D2B40056D724 /* HomeViewController.swift */; };
+		90C007D02B95D2BF0056D724 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */; };
+		90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D12B95D2CF0056D724 /* CalendarViewController.swift */; };
+		90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */; };
+		90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D52B95D2EA0056D724 /* RankingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		2106ADB82B92D6A200CDA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2176515A2B947ABE00121AB2 /* +Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Font.swift"; sourceTree = "<group>"; };
+		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
+		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
+		90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
+		90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		90C007CD2B95D2B40056D724 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		90C007D12B95D2CF0056D724 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
+		90C007D52B95D2EA0056D724 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +106,14 @@
 		2176515D2B94829400121AB2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				90C007AE2B95D0C30056D724 /* User */,
+				90C007AF2B95D10B0056D724 /* Home */,
+				90C007B02B95D1180056D724 /* Calendar */,
+				90C007B12B95D1230056D724 /* MyScore */,
+				90C007B22B95D12B0056D724 /* PopUpModal */,
+				90C007B32B95D1320056D724 /* HamburgerBar */,
+				90C007B42B95D13A0056D724 /* Common */,
+				90C007B52B95D1460056D724 /* Model */,
 				2176515E2B94829A00121AB2 /* App */,
 			);
 			path = Sources;
@@ -100,6 +126,183 @@
 				2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		90C007AE2B95D0C30056D724 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				90C007B62B95D1A10056D724 /* Views */,
+				90C007B72B95D1A80056D724 /* ViewControllers */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		90C007AF2B95D10B0056D724 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				90C007B92B95D1C30056D724 /* Views */,
+				90C007B82B95D1B60056D724 /* ViewControllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		90C007B02B95D1180056D724 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				90C007BB2B95D1D80056D724 /* Views */,
+				90C007BA2B95D1D20056D724 /* ViewControllers */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		90C007B12B95D1230056D724 /* MyScore */ = {
+			isa = PBXGroup;
+			children = (
+				90C007BD2B95D1E60056D724 /* Views */,
+				90C007BC2B95D1E00056D724 /* ViewControllers */,
+			);
+			path = MyScore;
+			sourceTree = "<group>";
+		};
+		90C007B22B95D12B0056D724 /* PopUpModal */ = {
+			isa = PBXGroup;
+			children = (
+				90C007BF2B95D1F40056D724 /* Views */,
+				90C007BE2B95D1EE0056D724 /* ViewControllers */,
+			);
+			path = PopUpModal;
+			sourceTree = "<group>";
+		};
+		90C007B32B95D1320056D724 /* HamburgerBar */ = {
+			isa = PBXGroup;
+			children = (
+				90C007C12B95D1FE0056D724 /* Views */,
+				90C007C02B95D1F70056D724 /* ViewControllers */,
+			);
+			path = HamburgerBar;
+			sourceTree = "<group>";
+		};
+		90C007B42B95D13A0056D724 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90C007C32B95D20E0056D724 /* Managers */,
+				90C007C22B95D2050056D724 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		90C007B52B95D1460056D724 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90C007B62B95D1A10056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007B72B95D1A80056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90C007C42B95D24C0056D724 /* MainLoginViewController.swift */,
+				90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */,
+				90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007B82B95D1B60056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */,
+				90C007CD2B95D2B40056D724 /* HomeViewController.swift */,
+				90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007B92B95D1C30056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007BA2B95D1D20056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90C007D12B95D2CF0056D724 /* CalendarViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007BB2B95D1D80056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007BC2B95D1E00056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */,
+				90C007D52B95D2EA0056D724 /* RankingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007BD2B95D1E60056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007BE2B95D1EE0056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007BF2B95D1F40056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007C02B95D1F70056D724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90C007C12B95D1FE0056D724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90C007C22B95D2050056D724 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90C007C32B95D20E0056D724 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +387,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */,
+				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
+				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
 				2176515B2B947ABE00121AB2 /* +Font.swift in Sources */,
+				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
+				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
+				90C007D02B95D2BF0056D724 /* MyPageViewController.swift in Sources */,
+				90C007CE2B95D2B40056D724 /* HomeViewController.swift in Sources */,
 				2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */,
 				2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */,
+				90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */,
+				90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
