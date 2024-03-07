@@ -23,6 +23,7 @@
 		2106ADB42B92D6A000CDA462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB22B92D6A000CDA462 /* Main.storyboard */; };
 		2106ADB62B92D6A200CDA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB52B92D6A200CDA462 /* Assets.xcassets */; };
 		2106ADB92B92D6A200CDA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */; };
+		2128D7942B9991B6000F573C /* PardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128D7932B9991B6000F573C /* PardTextField.swift */; };
 		217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 217651502B94738800121AB2 /* PARD_DesignSystem */; };
 		217651542B94778600121AB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 217651532B94778600121AB2 /* SnapKit */; };
 		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
@@ -58,6 +59,7 @@
 		2106ADB52B92D6A200CDA462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2106ADB82B92D6A200CDA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2128D7932B9991B6000F573C /* PardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardTextField.swift; sourceTree = "<group>"; };
 		2176515A2B947ABE00121AB2 /* +Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Font.swift"; sourceTree = "<group>"; };
 		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				2176515A2B947ABE00121AB2 /* +Font.swift */,
+				2128D7932B9991B6000F573C /* PardTextField.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */,
 				90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */,
 				0DC5CDFB2B96DB11007A21E4 /* PardAppManager.swift in Sources */,
+				2128D7942B9991B6000F573C /* PardTextField.swift in Sources */,
 				90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
