@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDEE2B96D998007A21E4 /* UserViews.swift */; };
+		0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF02B96DA05007A21E4 /* HomeView.swift */; };
+		0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */; };
+		0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF42B96DA9B007A21E4 /* MyScoreView.swift */; };
+		0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */; };
+		0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF82B96DAF0007A21E4 /* HamburgerBarViewController.swift */; };
+		0DC5CDFB2B96DB11007A21E4 /* PardAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDFA2B96DB11007A21E4 /* PardAppManager.swift */; };
+		0DC5CDFD2B96DB28007A21E4 /* PardAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDFC2B96DB28007A21E4 /* PardAppModel.swift */; };
+		0DC5CE012B96DBA4007A21E4 /* PopUpModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE002B96DBA4007A21E4 /* PopUpModalViewController.swift */; };
+		0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */; };
 		2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */; };
 		2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */; };
 		2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADB02B92D6A000CDA462 /* ViewController.swift */; };
@@ -30,6 +40,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DC5CDEE2B96D998007A21E4 /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
+		0DC5CDF02B96DA05007A21E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../User/HomeView.swift; sourceTree = "<group>"; };
+		0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		0DC5CDF42B96DA9B007A21E4 /* MyScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreView.swift; sourceTree = "<group>"; };
+		0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerBarView.swift; sourceTree = "<group>"; };
+		0DC5CDF82B96DAF0007A21E4 /* HamburgerBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerBarViewController.swift; sourceTree = "<group>"; };
+		0DC5CDFA2B96DB11007A21E4 /* PardAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardAppManager.swift; sourceTree = "<group>"; };
+		0DC5CDFC2B96DB28007A21E4 /* PardAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardAppModel.swift; sourceTree = "<group>"; };
+		0DC5CE002B96DBA4007A21E4 /* PopUpModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModalViewController.swift; sourceTree = "<group>"; };
+		0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModalView.swift; sourceTree = "<group>"; };
 		2106ADA92B92D6A000CDA462 /* PARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +85,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */ = {
+			isa = PBXGroup;
+			children = (
+				0DC5CE022B96DBA9007A21E4 /* Views */,
+				0DC5CDFF2B96DB8B007A21E4 /* ViewController */,
+			);
+			path = PopUpModal;
+			sourceTree = "<group>";
+		};
+		0DC5CDFF2B96DB8B007A21E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0DC5CE002B96DBA4007A21E4 /* PopUpModalViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0DC5CE022B96DBA9007A21E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2106ADA02B92D6A000CDA462 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +133,6 @@
 				2176515C2B94827100121AB2 /* Resources */,
 				2176515D2B94829400121AB2 /* Sources */,
 				2106ADB02B92D6A000CDA462 /* ViewController.swift */,
-				2176515A2B947ABE00121AB2 /* +Font.swift */,
 			);
 			path = PARD;
 			sourceTree = "<group>";
@@ -106,11 +150,11 @@
 		2176515D2B94829400121AB2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */,
 				90C007AE2B95D0C30056D724 /* User */,
 				90C007AF2B95D10B0056D724 /* Home */,
 				90C007B02B95D1180056D724 /* Calendar */,
 				90C007B12B95D1230056D724 /* MyScore */,
-				90C007B22B95D12B0056D724 /* PopUpModal */,
 				90C007B32B95D1320056D724 /* HamburgerBar */,
 				90C007B42B95D13A0056D724 /* Common */,
 				90C007B52B95D1460056D724 /* Model */,
@@ -164,22 +208,13 @@
 			path = MyScore;
 			sourceTree = "<group>";
 		};
-		90C007B22B95D12B0056D724 /* PopUpModal */ = {
-			isa = PBXGroup;
-			children = (
-				90C007BF2B95D1F40056D724 /* Views */,
-				90C007BE2B95D1EE0056D724 /* ViewControllers */,
-			);
-			path = PopUpModal;
-			sourceTree = "<group>";
-		};
 		90C007B32B95D1320056D724 /* HamburgerBar */ = {
 			isa = PBXGroup;
 			children = (
 				90C007C12B95D1FE0056D724 /* Views */,
 				90C007C02B95D1F70056D724 /* ViewControllers */,
 			);
-			path = HamburgerBar;
+			name = HamburgerBar;
 			sourceTree = "<group>";
 		};
 		90C007B42B95D13A0056D724 /* Common */ = {
@@ -188,21 +223,23 @@
 				90C007C32B95D20E0056D724 /* Managers */,
 				90C007C22B95D2050056D724 /* Extensions */,
 			);
-			path = Common;
+			name = Common;
 			sourceTree = "<group>";
 		};
 		90C007B52B95D1460056D724 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDFC2B96DB28007A21E4 /* PardAppModel.swift */,
 			);
-			path = Model;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		90C007B62B95D1A10056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDEE2B96D998007A21E4 /* UserViews.swift */,
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		90C007B72B95D1A80056D724 /* ViewControllers */ = {
@@ -228,8 +265,9 @@
 		90C007B92B95D1C30056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDF02B96DA05007A21E4 /* HomeView.swift */,
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		90C007BA2B95D1D20056D724 /* ViewControllers */ = {
@@ -243,8 +281,9 @@
 		90C007BB2B95D1D80056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */,
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		90C007BC2B95D1E00056D724 /* ViewControllers */ = {
@@ -259,50 +298,41 @@
 		90C007BD2B95D1E60056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDF42B96DA9B007A21E4 /* MyScoreView.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		90C007BE2B95D1EE0056D724 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		90C007BF2B95D1F40056D724 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		90C007C02B95D1F70056D724 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDF82B96DAF0007A21E4 /* HamburgerBarViewController.swift */,
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		90C007C12B95D1FE0056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */,
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		90C007C22B95D2050056D724 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2176515A2B947ABE00121AB2 /* +Font.swift */,
 			);
-			path = Extensions;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		90C007C32B95D20E0056D724 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0DC5CDFA2B96DB11007A21E4 /* PardAppManager.swift */,
 			);
-			path = Managers;
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,10 +418,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */,
+				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
+				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
+				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
+				0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */,
 				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
 				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
 				2176515B2B947ABE00121AB2 /* +Font.swift in Sources */,
+				0DC5CE012B96DBA4007A21E4 /* PopUpModalViewController.swift in Sources */,
+				0DC5CDFD2B96DB28007A21E4 /* PardAppModel.swift in Sources */,
+				0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */,
+				0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */,
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
+				0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */,
 				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
 				90C007D02B95D2BF0056D724 /* MyPageViewController.swift in Sources */,
@@ -399,6 +438,7 @@
 				2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */,
 				2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */,
 				90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */,
+				0DC5CDFB2B96DB11007A21E4 /* PardAppManager.swift in Sources */,
 				90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
