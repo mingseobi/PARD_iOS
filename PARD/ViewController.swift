@@ -41,6 +41,10 @@ class ViewController: UIViewController {
         view.addSubview($0)
     }
     
+    private lazy var textfieldComponent = PardTextField(placeHolder: "test", didTapHandler: textFieldTapped).then{
+        view.addSubview($0)
+    }
+    
     private func setUi() {
         titleLabel.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
@@ -76,6 +80,14 @@ class ViewController: UIViewController {
             make.top.equalTo(bottomButton.snp.bottom).offset(30)
             make.height.equalTo(48)
         }
+        
+        textfieldComponent.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview()
+            make.left.equalTo(30)
+            make.right.equalTo(-30)
+            make.top.equalTo(changeBottomButton.snp.bottom).offset(30)
+            make.height.equalTo(48)
+        }
     }
     
     @objc func normalButtonTapped() {
@@ -94,6 +106,11 @@ class ViewController: UIViewController {
     @objc func changeBottomEnable() {
         bottomButton.isEnabled.toggle()
         print("change Bottom !")
+    }
+    
+    @objc func textFieldTapped() {
+        print("🌱 textField tapped !")
+        print("change normal !")
     }
 }
 
