@@ -106,7 +106,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             make.width.equalTo(173)
         }
         
-        let getPhoneCodeButton = NormalButton(title: "인증번호 받기", didTapHandler: getPhoneCodeButtonTapped).then{
+        let getPhoneCodeButton = NormalButton(title: "인증번호 받기", didTapHandler: getPhoneCodeButtonTapped, font: body4).then{
             view.addSubview($0)
         }
         getPhoneCodeButton.snp.makeConstraints{ make in
@@ -137,7 +137,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             make.width.equalTo(211)
         }
         
-        var checkPhoneCodeButton = NormalButton(title: "인증번호 확인", didTapHandler: getAuthCodeButtonTapped).then{
+        var checkPhoneCodeButton = NormalButton(title: "인증번호 확인", didTapHandler: getAuthCodeButtonTapped, font: body4).then{
             view.addSubview($0)
         }
         checkPhoneCodeButton.snp.makeConstraints{ make in
@@ -163,7 +163,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        let pardAuthButton = BottomButton(title: "PARD 회원 인증하기", didTapHandler: pardAuthButtonTapped)
+        let pardAuthButton = BottomButton(title: "PARD 회원 인증하기", didTapHandler: pardAuthButtonTapped, font: head1)
         view.addSubview(pardAuthButton)
         pardAuthButton.snp.makeConstraints{ make in
             make.bottom.equalTo(failAuthButton.snp.top).offset(-16)
