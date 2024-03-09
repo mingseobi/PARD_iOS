@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         view.addSubview($0)
     }
     
-    private lazy var textfieldComponent = PardTextField(placeHolder: "test", didTapHandler: textFieldTapped).then{
+    private lazy var textfieldComponent = PardTextField(placeHolder: "test").then{
         view.addSubview($0)
     }
     
@@ -106,11 +106,6 @@ class ViewController: UIViewController {
     @objc func changeBottomEnable() {
         bottomButton.isEnabled.toggle()
         print("change Bottom !")
-    }
-    
-    @objc func textFieldTapped() {
-        print("🌱 textField tapped !")
-        print("change normal !")
     }
 }
 

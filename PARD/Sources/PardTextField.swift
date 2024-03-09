@@ -8,7 +8,6 @@
 import UIKit
 
 public final class PardTextField: UITextField {
-    private var didTapHandler: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,12 +22,13 @@ public final class PardTextField: UITextField {
     }
     
     public convenience init(
-        placeHolder: String,
-        didTapHandler: @escaping () -> Void
+        placeHolder: String
     ) {
         self.init(frame: .zero)
         self.backgroundColor = .pard.blackCard
         self.layer.cornerRadius = 4
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.pard.gray10.cgColor
         self.placeholder = placeHolder
         self.textColor = .white
         self.setPlaceholderColor(.pard.gray30)
@@ -42,12 +42,6 @@ public final class PardTextField: UITextField {
         let rightPadding = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width + 10, height: self.frame.height))
         self.rightView = rightPadding
         self.rightViewMode = UITextField.ViewMode.always
-    }
-    
-    @objc
-    private func didTapButton() {
-        didTapHandler?()
-        
     }
 }
 
