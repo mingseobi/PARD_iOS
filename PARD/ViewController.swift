@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .pard.errorRed
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     private lazy var bottomButton = BottomButton(title: "bottom Button", didTapHandler: bottomButtonTapped, font: body4).then{
         view.addSubview($0)
     }
-
+    
     private lazy var changeBottomButton = BottomButton(title: "change bottom button", didTapHandler: changeBottomEnable, font: body4).then{
         view.addSubview($0)
     }
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
             make.right.equalTo(-30)
             make.top.equalTo(changeNormalButton.snp.bottom).offset(30)
         }
-
+        
         changeBottomButton.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.left.equalTo(30)
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     @objc func bottomButtonTapped() {
         print("🌱 bottom tapped !")
     }
-
+    
     @objc func changeBottomEnable() {
         bottomButton.isEnabled.toggle()
         print("change Bottom !")
