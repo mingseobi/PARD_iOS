@@ -29,6 +29,8 @@
 		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
 		217651592B94779600121AB2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 217651582B94779600121AB2 /* Then */; };
 		2176515B2B947ABE00121AB2 /* +Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* +Font.swift */; };
+		21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */; };
+		21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A6857B2B9C8967006F6D9E /* AppleLoginManager.swift */; };
 		90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C42B95D24C0056D724 /* MainLoginViewController.swift */; };
 		90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */; };
 		90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */; };
@@ -61,6 +63,9 @@
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2128D7932B9991B6000F573C /* PardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardTextField.swift; sourceTree = "<group>"; };
 		2176515A2B947ABE00121AB2 /* +Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Font.swift"; sourceTree = "<group>"; };
+		21A685772B9C84EB006F6D9E /* PARD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PARD.entitlements; sourceTree = "<group>"; };
+		21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewController.swift; sourceTree = "<group>"; };
+		21A6857B2B9C8967006F6D9E /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
 		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
 		90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 		2106ADAB2B92D6A000CDA462 /* PARD */ = {
 			isa = PBXGroup;
 			children = (
+				21A685772B9C84EB006F6D9E /* PARD.entitlements */,
 				2106ADBA2B92D6A200CDA462 /* Info.plist */,
 				2176515C2B94827100121AB2 /* Resources */,
 				2176515D2B94829400121AB2 /* Sources */,
@@ -174,9 +180,19 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		21A685782B9C8930006F6D9E /* AppleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */,
+				21A6857B2B9C8967006F6D9E /* AppleLoginManager.swift */,
+			);
+			path = AppleLogin;
+			sourceTree = "<group>";
+		};
 		90C007AE2B95D0C30056D724 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				21A685782B9C8930006F6D9E /* AppleLogin */,
 				90C007B62B95D1A10056D724 /* Views */,
 				90C007B72B95D1A80056D724 /* ViewControllers */,
 			);
@@ -427,9 +443,11 @@
 				0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */,
 				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
 				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
+				21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */,
 				2176515B2B947ABE00121AB2 /* +Font.swift in Sources */,
 				0DC5CE012B96DBA4007A21E4 /* PopUpModalViewController.swift in Sources */,
 				0DC5CDFD2B96DB28007A21E4 /* PardAppModel.swift in Sources */,
+				21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */,
 				0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */,
 				0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */,
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
@@ -593,9 +611,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PARD/PARD.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3XQ8HFGAQN;
+				DEVELOPMENT_TEAM = S65HTAH6VL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PARD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -608,7 +627,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.one.ram.PARD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.one.ram.PARD-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -621,9 +640,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PARD/PARD.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3XQ8HFGAQN;
+				DEVELOPMENT_TEAM = S65HTAH6VL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PARD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -636,7 +656,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.one.ram.PARD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.one.ram.PARD-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
