@@ -31,6 +31,7 @@
 		2176515B2B947ABE00121AB2 /* +Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* +Font.swift */; };
 		21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */; };
 		21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A6857B2B9C8967006F6D9E /* AppleLoginManager.swift */; };
+		21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A6857D2B9CBFC6006F6D9E /* UILabelExtension.swift */; };
 		90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C42B95D24C0056D724 /* MainLoginViewController.swift */; };
 		90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */; };
 		90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */; };
@@ -66,6 +67,7 @@
 		21A685772B9C84EB006F6D9E /* PARD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PARD.entitlements; sourceTree = "<group>"; };
 		21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewController.swift; sourceTree = "<group>"; };
 		21A6857B2B9C8967006F6D9E /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
+		21A6857D2B9CBFC6006F6D9E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
 		90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				2176515A2B947ABE00121AB2 /* +Font.swift */,
 				2128D7932B9991B6000F573C /* PardTextField.swift */,
+				21A6857D2B9CBFC6006F6D9E /* UILabelExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */,
 				90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */,
 				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
