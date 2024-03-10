@@ -86,6 +86,7 @@ class UserInfoPolicyViewController: UIViewController {
     private lazy var nextBottomButton = BottomButton(title: "다음", didTapHandler: changeBottomEnable).then {
         view.addSubview($0)
         $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor.pard.gray30
     }
     
     private lazy var secondCheckAgreeButton = UIButton().then {
@@ -157,7 +158,7 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     @objc private func firstTapCheckAgree() {
-    
+        
     }
     
     @objc private func secondTapCheckAgree() {
