@@ -226,7 +226,7 @@ extension UserInfoPolicyViewController {
             make.width.equalTo(327)
         }
         agreeButton.snp.makeConstraints { make in
-            make.top.equalTo(serviceInfoLabel.snp.bottom).offset(100)
+            make.top.equalTo(serviceInfoLabel.snp.bottom).offset(48)
             make.leading.equalTo(serviceInfoLabel.snp.leading)
         }
         agreeView.snp.makeConstraints { make in
@@ -235,7 +235,6 @@ extension UserInfoPolicyViewController {
             make.height.equalTo(104)
             make.width.equalTo(327)
         }
-        
         stackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(10)
