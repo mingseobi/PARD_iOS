@@ -81,7 +81,6 @@ class UserInfoPolicyViewController: UIViewController {
     private lazy var nextBottomButton = BottomButton(title: "다음", didTapHandler: changeBottomEnable).then {
         view.addSubview($0)
         $0.layer.masksToBounds = true
-        $0.backgroundColor = UIColor.pard.gray30
     }
     
     private lazy var secondCheckAgreeButton = UIButton().then {
@@ -140,7 +139,7 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     @objc private func tapBackButton() {
-        print("tap the back button")
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func tapAgreeButton() {
@@ -148,7 +147,7 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     @objc private func firstTapCheckAgree() {
-        
+    
     }
     
     @objc private func secondTapCheckAgree() {
@@ -157,12 +156,10 @@ class UserInfoPolicyViewController: UIViewController {
     
     @objc private func changeBottomEnable() {
         if isTapAgreeButton {
-            print("nextButton")
             nextBottomButton.backgroundColor = UIColor.pard.primaryPurple
             let viewController = ViewController()
             navigationController?.pushViewController(viewController, animated: true)
         } else {
-            print("동의해야함")
             showToast(message: "서비스 이용약관에 동의해주세요.", font: UIFont.pardFont.body4)
             nextBottomButton.backgroundColor = UIColor.pard.gray30
         }
@@ -239,7 +236,6 @@ extension UserInfoPolicyViewController {
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(10)
         }
-        
         nextBottomButton.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.width.equalTo(327)
@@ -250,15 +246,11 @@ extension UserInfoPolicyViewController {
     }
 }
 
-
-
-
-
 extension NSMutableAttributedString {
     func blueHighlight(_ value:String) 
     -> NSMutableAttributedString {
         let attributes:[NSAttributedString.Key : Any] = [
-            .font: UIFont.pardFont.head2,
+            .font: UIFont.pardFont.body4,
             .foregroundColor: UIColor.pard.primaryPurple,
             .backgroundColor: UIColor.pard.gray30
         ]
@@ -277,7 +269,7 @@ extension NSMutableAttributedString {
 
     func regular(string: String, fontSize: CGFloat , fontColor : UIColor)
     -> NSMutableAttributedString {
-        let font = UIFont.pardFont.head2
+        let font = UIFont.pardFont.body4
         let color = fontColor
         let attributes: [NSAttributedString.Key: Any] = 
         [
