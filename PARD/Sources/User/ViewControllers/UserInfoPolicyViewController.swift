@@ -245,14 +245,13 @@ extension UserInfoPolicyViewController {
         }
         stackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(20)
         }
         nextBottomButton.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.width.equalTo(327)
             make.height.equalTo(56)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-80)
-            
         }
     }
 }
