@@ -27,9 +27,9 @@ class UserInfoPolicyViewController: UIViewController {
     private let serviceInfoLabel = UILabel().then {
         $0.textAlignment = .center
         $0.numberOfLines = 2
-        $0.backgroundColor = UIColor.pard.gray30
+        $0.backgroundColor = UIColor.pard.blackCard
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.pard.gray10.cgColor
+        $0.layer.borderColor = UIColor.pard.gray30.cgColor
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
     }
@@ -49,7 +49,7 @@ class UserInfoPolicyViewController: UIViewController {
             .withTintColor(UIColor.pard.gray30),
             for: .normal
         )
-        $0.tintColor = UIColor.pard.gray10
+        $0.tintColor = UIColor.pard.gray30
         $0.semanticContentAttribute = .forceLeftToRight
         $0.contentEdgeInsets = .init(top: 0, left: 4.0 / 2, bottom: 0, right: 4.0)
         $0.imageEdgeInsets = .init(top: 0, left: -halfIntervalSpacing, bottom: 0, right: halfIntervalSpacing)
@@ -59,8 +59,8 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     private let agreeView = UIView().then {
-        $0.backgroundColor = UIColor.pard.gray30
-        $0.layer.borderColor = UIColor.pard.gray10.cgColor
+        $0.backgroundColor = UIColor.pard.blackCard
+        $0.layer.borderColor = UIColor.pard.gray30.cgColor
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 16
         $0.layer.masksToBounds = true
@@ -132,6 +132,8 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     private func configureButton(_ button: UIButton, title: String, image: UIImage?, target: Any?, action: Selector) {
+        let intervalSpacing = 8.0
+        let halfIntervalSpacing = intervalSpacing / 2
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.pardFont.caption1
         button.setUnderline()
@@ -141,6 +143,9 @@ class UserInfoPolicyViewController: UIViewController {
         button.semanticContentAttribute = .forceLeftToRight
         button.backgroundColor = .clear
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.contentEdgeInsets = .init(top: 0, left: 8.0 / 2, bottom: 0, right: 8.0)
+        button.imageEdgeInsets = .init(top: 0, left: -halfIntervalSpacing, bottom: 0, right: halfIntervalSpacing)
+        button.titleEdgeInsets = .init(top: 0, left: halfIntervalSpacing, bottom: 0, right: -halfIntervalSpacing)
     }
     
     @objc private func tapBackButton() {
@@ -256,8 +261,8 @@ extension NSMutableAttributedString {
     -> NSMutableAttributedString {
         let attributes:[NSAttributedString.Key : Any] = [
             .font: UIFont.pardFont.body4,
-            .foregroundColor: UIColor.pard.primaryBlue,
-            .backgroundColor: UIColor.pard.gray30
+            .foregroundColor: UIColor.pard.gra,
+            .backgroundColor: UIColor.pard.blackCard
         ]
         self.append(NSAttributedString(string: value, attributes:attributes))
         return self
