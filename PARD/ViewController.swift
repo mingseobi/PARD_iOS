@@ -25,19 +25,19 @@ class ViewController: UIViewController {
         $0.textColor = .pard.primaryPurple
     }
     
-    private lazy var normalButton = NormalButton(title: "normal Button", didTapHandler: normalButtonTapped, font: body4).then{
+    private lazy var normalButton = NormalButton(title: "normal Button", didTapHandler: normalButtonTapped).then{
         view.addSubview($0)
     }
     
-    private lazy var changeNormalButton = NormalButton(title: "change normal button", didTapHandler: changeNormalEnable, font: body4).then{
+    private lazy var changeNormalButton = NormalButton(title: "change normal button", didTapHandler: changeNormalEnable).then{
         view.addSubview($0)
     }
     
-    private lazy var bottomButton = BottomButton(title: "bottom Button", didTapHandler: bottomButtonTapped, font: body4).then{
+    private lazy var bottomButton = BottomButton(title: "bottom Button", didTapHandler: bottomButtonTapped).then{
         view.addSubview($0)
     }
     
-    private lazy var changeBottomButton = BottomButton(title: "change bottom button", didTapHandler: changeBottomEnable, font: body4).then{
+    private lazy var changeBottomButton = BottomButton(title: "change bottom button", didTapHandler: changeBottomEnable).then{
         view.addSubview($0)
     }
     

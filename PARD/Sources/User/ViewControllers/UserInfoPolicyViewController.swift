@@ -30,7 +30,7 @@ class UserInfoPolicyViewController: UIViewController {
         $0.backgroundColor = UIColor.pard.blackCard
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.pard.gray30.cgColor
-        $0.layer.cornerRadius = 20
+        $0.layer.cornerRadius = 8
         $0.layer.masksToBounds = true
     }
     
@@ -62,7 +62,7 @@ class UserInfoPolicyViewController: UIViewController {
         $0.backgroundColor = UIColor.pard.blackCard
         $0.layer.borderColor = UIColor.pard.gray30.cgColor
         $0.layer.borderWidth = 1
-        $0.layer.cornerRadius = 16
+        $0.layer.cornerRadius = 8
         $0.layer.masksToBounds = true
     }
     
@@ -185,7 +185,7 @@ class UserInfoPolicyViewController: UIViewController {
             $0.font = font
             $0.layer.borderColor = UIColor.pard.primaryPurple.cgColor
             $0.layer.borderWidth = 1.0
-            $0.layer.cornerRadius = 10
+            $0.layer.cornerRadius = 8
             $0.clipsToBounds  =  true
         }
         view.addSubview(toastLabel)
