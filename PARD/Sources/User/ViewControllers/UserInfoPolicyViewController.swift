@@ -167,42 +167,16 @@ class UserInfoPolicyViewController: UIViewController {
     
     @objc private func changeBottomEnable() {
         if isTapAgreeButton {
-            nextBottomButton.backgroundColor = UIColor.pard.primaryPurple
             let viewController = ViewController()
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             showToast(message: "서비스 이용약관에 동의해주세요.", font: UIFont.pardFont.body4)
-            nextBottomButton.backgroundColor = UIColor.pard.gray30
         }
     }
     
     func showToast(message : String, font: UIFont) {
-        let toastLabel = UILabel().then {
-            $0.backgroundColor = UIColor.pard.blackBackground
-            $0.textColor = UIColor.pard.primaryPurple
-            $0.textAlignment = .center
-            $0.alpha = 1.0
-            $0.text = message
-            $0.font = font
-            $0.layer.borderColor = UIColor.pard.primaryPurple.cgColor
-            $0.layer.borderWidth = 1.0
-            $0.layer.cornerRadius = 8
-            $0.clipsToBounds  =  true
-        }
-        view.addSubview(toastLabel)
-        
-        toastLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-150)
-            make.width.equalTo(343)
-            make.height.equalTo(40)
-        }
-        
-        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
+        let toastBar = ToastBar(message: message, font: font, superview: self.view)
+        toastBar.setUpToastBarUIInSuperView()
     }
 }
 
@@ -256,50 +230,63 @@ extension UserInfoPolicyViewController {
     }
 }
 
-extension NSMutableAttributedString {
-    func blueHighlight(_ value:String) 
-    -> NSMutableAttributedString {
-        let attributes:[NSAttributedString.Key : Any] = [
-            .font: UIFont.pardFont.body4,
-            .foregroundColor: UIColor.pard.gra,
-            .backgroundColor: UIColor.pard.blackCard
-        ]
-        self.append(NSAttributedString(string: value, attributes:attributes))
-        return self
+// - MARK: ToastBar UI Component class
+class ToastBar : UIView {
+    let toastLabel = UILabel().then {
+        $0.backgroundColor = UIColor.pard.blackBackground
+        $0.textColor = UIColor.pard.primaryPurple
+        $0.textAlignment = .center
+        $0.alpha = 1.0
+        $0.layer.borderColor = UIColor.pard.primaryPurple.cgColor
+        $0.layer.borderWidth = 1.0
+        $0.layer.cornerRadius = 8
+        $0.clipsToBounds  =  true
     }
-
-    func bold(string: String, fontSize: CGFloat , fontColor : UIColor)
-    -> NSMutableAttributedString {
-        let font = UIFont.pardFont.head2
-        let color = fontColor
-        let attributes: [NSAttributedString.Key: Any] = [.font: font , .foregroundColor : color ]
-       self.append(NSAttributedString(string: string, attributes: attributes))
-       return self
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpToastBarUIInSelfView()
     }
-
-    func regular(string: String, fontSize: CGFloat , fontColor : UIColor)
-    -> NSMutableAttributedString {
-        let font = UIFont.pardFont.body4
-        let color = fontColor
-        let attributes: [NSAttributedString.Key: Any] = 
-        [
-            .font: font,
-            .foregroundColor : color
-        ]
-       self.append(NSAttributedString(string: string, attributes: attributes))
-       return self
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
-}
-
-
-extension UIButton {
-    func setUnderline() {
-        guard let title = title(for: .normal) else { return }
-        let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttribute(.underlineStyle,
-                                      value: NSUnderlineStyle.single.rawValue,
-                                      range: NSRange(location: 0, length: title.count)
-        )
-        setAttributedTitle(attributedString, for: .normal)
+    
+    convenience init(message : String, font : UIFont, superview: UIView){
+        self.init(frame: .infinite)
+        self.toastLabel.text = message
+        self.toastLabel.font = font
+        superview.addSubview(self)
+    }
+    
+    private func setUpToastBarUIInSelfView() {
+        self.addSubview(toastLabel)
+        toastLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func setUpToastBarUIInSuperView() {
+        guard let superview = superview else {
+            return
+        }
+        
+        superview.addSubview(toastLabel)
+        toastLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).offset(-150)
+            make.width.equalTo(343)
+            make.height.equalTo(40)
+        }
+        
+        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
+            self.toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            self.removeFromSuperview()
+        })
+        
     }
 }
