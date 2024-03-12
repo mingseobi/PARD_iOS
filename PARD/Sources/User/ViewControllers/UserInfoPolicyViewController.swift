@@ -15,10 +15,10 @@ class UserInfoPolicyViewController: UIViewController {
     private var isTapAgreeButton : Bool = false {
         didSet {
             if isTapAgreeButton {
-                agreeButton.tintColor = UIColor.pard.primaryPurple
-                agreeButton.setTitleColor(UIColor.pard.primaryPurple, for: .normal)
+                agreeButton.tintColor = UIColor.pard.primaryBlue
+                agreeButton.setTitleColor(UIColor.pard.primaryBlue, for: .normal)
             } else {
-                agreeButton.tintColor = UIColor.pard.gray10
+                agreeButton.tintColor = UIColor.pard.gray30
                 agreeButton.setTitleColor(UIColor.pard.gray10, for: .normal)
             }
         }
@@ -40,6 +40,8 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     private lazy var agreeButton = UIButton().then {
+        let intervalSpacing = 4.0
+        let halfIntervalSpacing = intervalSpacing / 2
         $0.setTitle("서비스 이용약관 전체 동의", for: .normal)
         $0.setTitleColor(UIColor.pard.white100, for: .normal)
         $0.setImage(
@@ -49,6 +51,9 @@ class UserInfoPolicyViewController: UIViewController {
         )
         $0.tintColor = UIColor.pard.gray10
         $0.semanticContentAttribute = .forceLeftToRight
+        $0.contentEdgeInsets = .init(top: 0, left: 4.0 / 2, bottom: 0, right: 4.0)
+        $0.imageEdgeInsets = .init(top: 0, left: -halfIntervalSpacing, bottom: 0, right: halfIntervalSpacing)
+        $0.titleEdgeInsets = .init(top: 0, left: halfIntervalSpacing, bottom: 0, right: -halfIntervalSpacing)
         $0.backgroundColor = .clear
         $0.addTarget(self, action: #selector(tapAgreeButton), for: .touchUpInside)
     }
@@ -130,9 +135,9 @@ class UserInfoPolicyViewController: UIViewController {
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.pardFont.caption1
         button.setUnderline()
-        button.tintColor = UIColor.pard.white100
-        button.setTitleColor(UIColor.pard.white100, for: .normal)
+        button.setTitleColor(UIColor.pard.gray10, for: .normal)
         button.setImage(image, for: .normal)
+        button.tintColor = UIColor.pard.gray30
         button.semanticContentAttribute = .forceLeftToRight
         button.backgroundColor = .clear
         button.addTarget(target, action: action, for: .touchUpInside)
@@ -251,7 +256,7 @@ extension NSMutableAttributedString {
     -> NSMutableAttributedString {
         let attributes:[NSAttributedString.Key : Any] = [
             .font: UIFont.pardFont.body4,
-            .foregroundColor: UIColor.pard.primaryPurple,
+            .foregroundColor: UIColor.pard.primaryBlue,
             .backgroundColor: UIColor.pard.gray30
         ]
         self.append(NSAttributedString(string: value, attributes:attributes))
