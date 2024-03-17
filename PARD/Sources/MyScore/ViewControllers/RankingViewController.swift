@@ -17,14 +17,6 @@ class RankingViewController: UIViewController {
         view.backgroundColor = .pard.blackBackground
         setNavigation()
         
-//        let titleLabel = UILabel().then {
-//            $0.text = "전체 랭킹"
-//            $0.font = UIFont(name: "Pretendard-Bold", size: 16)
-//            $0.textColor = .white
-//            $0.textAlignment = .center
-//        }
-//        view.addSubview(titleLabel)
-        
         let textLabel = UILabel().then {
             $0.text = "🏆PARDNERSHIP🏆"
             $0.font = UIFont.pardFont.head2
@@ -45,14 +37,6 @@ class RankingViewController: UIViewController {
             $0.dataSource = self
             view.addSubview($0)
         }
-        
-//        titleLabel.snp.makeConstraints {
-//            $0.centerX.equalToSuperview()
-//            $0.top.equalTo(view.safeAreaLayoutGuide).offset(-20)
-//            $0.width.equalTo(180)
-//            $0.height.equalTo(36)
-//        }
-
         
         textLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct UserInfo {
+    var name: String
+    var part: String
+    var score: String
+}
