@@ -88,6 +88,20 @@ class ViewController: UIViewController {
             make.top.equalTo(changeBottomButton.snp.bottom).offset(30)
             make.height.equalTo(48)
         }
+        
+        let rankingButton = UIButton().then {
+            $0.setTitle("Go to Ranking", for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .pard.primaryPurple
+            $0.addTarget(self, action: #selector(rankingButtonTapped), for: .touchUpInside)
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(textfieldComponent.snp.bottom).offset(30)
+                make.width.equalTo(200)
+                make.height.equalTo(50)
+            }
+        }
     }
     
     @objc func normalButtonTapped() {
@@ -107,5 +121,11 @@ class ViewController: UIViewController {
         bottomButton.isEnabled.toggle()
         print("change Bottom !")
     }
+    
+    @objc func rankingButtonTapped() {
+        let rankingVC = RankingViewController()
+        let navController = UINavigationController(rootViewController: rankingVC)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true, completion: nil)
+    }
 }
-
