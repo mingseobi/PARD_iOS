@@ -14,19 +14,20 @@ class RankingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
+        view.backgroundColor = .pard.blackBackground
+        setNavigation()
         
-        let titleLabel = UILabel().then {
-            $0.text = "전체 랭킹"
-            $0.font = UIFont(name: "Pretendard-Bold", size: 16)
-            $0.textColor = .white
-            $0.textAlignment = .center
-        }
-        view.addSubview(titleLabel)
+//        let titleLabel = UILabel().then {
+//            $0.text = "전체 랭킹"
+//            $0.font = UIFont(name: "Pretendard-Bold", size: 16)
+//            $0.textColor = .white
+//            $0.textAlignment = .center
+//        }
+//        view.addSubview(titleLabel)
         
         let textLabel = UILabel().then {
             $0.text = "🏆PARDNERSHIP🏆"
-            $0.font = UIFont(name: "Pretendard-Bold", size: 16)
+            $0.font = UIFont.pardFont.head2
             $0.textColor = UIColor(patternImage: gradientImage())
             $0.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 0.1)
             $0.layer.borderWidth = 1
@@ -45,16 +46,16 @@ class RankingViewController: UIViewController {
             view.addSubview($0)
         }
         
-        titleLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(-20)
-            $0.width.equalTo(180)
-            $0.height.equalTo(36)
-        }
+//        titleLabel.snp.makeConstraints {
+//            $0.centerX.equalToSuperview()
+//            $0.top.equalTo(view.safeAreaLayoutGuide).offset(-20)
+//            $0.width.equalTo(180)
+//            $0.height.equalTo(36)
+//        }
 
         
         textLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(24)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(180)
             $0.height.equalTo(36)
@@ -68,6 +69,8 @@ class RankingViewController: UIViewController {
         }
         
         tableView.rowHeight = 68
+        tableView.layer.cornerRadius = 10
+        tableView.layer.masksToBounds = true
     }
     
     func gradientImage() -> UIImage {
@@ -83,6 +86,23 @@ class RankingViewController: UIViewController {
         UIGraphicsEndImageContext()
         return image!
     }
+    
+    private func setNavigation() {
+        self.navigationItem.title = "전체 랭킹"
+        if let navigationBar = self.navigationController?.navigationBar {
+            navigationBar.titleTextAttributes = [
+                .font:  UIFont.pardFont.head1,
+                .foregroundColor: UIColor.white
+            ]
+        }
+        let backButton = UIBarButtonItem(image: UIImage(named: "backArrow"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backButtonTapped(){
+        print("go to back !!!")
+    }
 }
 
 extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -94,7 +114,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell").then {
             $0.textLabel?.text = rankings[indexPath.row]
             $0.textLabel?.textColor = .white
-            $0.backgroundColor = indexPath.row < 7 ? UIColor(red: 30/255, green: 40/255, blue: 50/255, alpha: 1) : .clear
+            $0.backgroundColor = indexPath.row < 7 ? UIColor.pard.blackCard : .clear
             $0.selectionStyle = .none
             $0.contentView.layer.cornerRadius = 10
             $0.contentView.layer.masksToBounds = true
