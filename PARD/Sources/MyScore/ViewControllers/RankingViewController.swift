@@ -134,18 +134,39 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.contentView.addSubview(rankImageView)
         }
 
-        // Additional code to display name, part, and score
-        let userInfo = userInfos[0] // Get user info from data model
+        let userInfo = userInfos[0]
         let userInfoLabel = UILabel().then {
-            $0.text = "\(userInfo.name) \(userInfo.part) \(userInfo.score)"
-            $0.textColor = .white
-            $0.font = UIFont.systemFont(ofSize: 14) // Adjust font size as needed
+            $0.text = "\(userInfo.name)"
+            $0.textColor = .pard.gray10
+            $0.font = UIFont.systemFont(ofSize: 16)
         }
         cell.contentView.addSubview(userInfoLabel)
         userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
         userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
 
+        let userInfoPartLabel = UILabel().then {
+            $0.text = "\(userInfo.part)"
+            $0.textColor = .pard.gray30
+            $0.font = UIFont.systemFont(ofSize: 12)
+        }
+        cell.contentView.addSubview(userInfoPartLabel)
+        userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
+        userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+        userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4).isActive = true
+
+        
+        let userInfoScoreLabel = UILabel().then {
+            $0.text = "\(userInfo.score)"
+            $0.textColor = .pard.gray10
+            $0.font = UIFont.systemFont(ofSize: 12)
+        }
+        cell.contentView.addSubview(userInfoScoreLabel)
+        userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+        userInfoScoreLabel.leadingAnchor.constraint(equalTo: userInfoPartLabel.trailingAnchor, constant: 140).isActive = true
+
+        
         let rankLabel = UILabel().then {
             $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
             $0.textColor = determineLabelColor(for: indexPath.row + 1)
