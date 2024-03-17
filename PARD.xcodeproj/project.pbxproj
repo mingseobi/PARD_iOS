@@ -27,10 +27,11 @@
 		2106ADB42B92D6A000CDA462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB22B92D6A000CDA462 /* Main.storyboard */; };
 		2106ADB62B92D6A200CDA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB52B92D6A200CDA462 /* Assets.xcassets */; };
 		2106ADB92B92D6A200CDA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */; };
+		2123A97D2BA73634009C60BF /* QrReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123A97C2BA73634009C60BF /* QrReaderView.swift */; };
+		2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123A97E2BA73640009C60BF /* ReaderViewController.swift */; };
 		2128D7942B9991B6000F573C /* PardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128D7932B9991B6000F573C /* PardTextField.swift */; };
 		217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 217651502B94738800121AB2 /* PARD_DesignSystem */; };
 		217651542B94778600121AB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 217651532B94778600121AB2 /* SnapKit */; };
-		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
 		217651592B94779600121AB2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 217651582B94779600121AB2 /* Then */; };
 		2176515B2B947ABE00121AB2 /* +Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* +Font.swift */; };
 		21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */; };
@@ -70,6 +71,8 @@
 		2106ADB52B92D6A200CDA462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2106ADB82B92D6A200CDA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2123A97C2BA73634009C60BF /* QrReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderView.swift; sourceTree = "<group>"; };
+		2123A97E2BA73640009C60BF /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		2128D7932B9991B6000F573C /* PardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardTextField.swift; sourceTree = "<group>"; };
 		2176515A2B947ABE00121AB2 /* +Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Font.swift"; sourceTree = "<group>"; };
 		21A685772B9C84EB006F6D9E /* PARD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PARD.entitlements; sourceTree = "<group>"; };
@@ -94,7 +97,6 @@
 			files = (
 				217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */,
 				217651542B94778600121AB2 /* SnapKit in Frameworks */,
-				217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */,
 				217651592B94779600121AB2 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +157,15 @@
 			path = PARD;
 			sourceTree = "<group>";
 		};
+		2123A97B2BA73626009C60BF /* Qr */ = {
+			isa = PBXGroup;
+			children = (
+				2123A97C2BA73634009C60BF /* QrReaderView.swift */,
+				2123A97E2BA73640009C60BF /* ReaderViewController.swift */,
+			);
+			path = Qr;
+			sourceTree = "<group>";
+		};
 		2176515C2B94827100121AB2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +179,7 @@
 		2176515D2B94829400121AB2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2123A97B2BA73626009C60BF /* Qr */,
 				0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */,
 				90C007AE2B95D0C30056D724 /* User */,
 				90C007AF2B95D10B0056D724 /* Home */,
@@ -388,7 +400,6 @@
 			packageProductDependencies = (
 				217651502B94738800121AB2 /* PARD_DesignSystem */,
 				217651532B94778600121AB2 /* SnapKit */,
-				217651552B94778600121AB2 /* SnapKit-Dynamic */,
 				217651582B94779600121AB2 /* Then */,
 			);
 			productName = PARD;
@@ -453,10 +464,12 @@
 			files = (
 				21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */,
 				90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */,
+				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
 				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
 				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
 				0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */,
+				2123A97D2BA73634009C60BF /* QrReaderView.swift in Sources */,
 				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
 				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
 				21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */,
@@ -744,11 +757,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		217651552B94778600121AB2 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		217651582B94779600121AB2 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
