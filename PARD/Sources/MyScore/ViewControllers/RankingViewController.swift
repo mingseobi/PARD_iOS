@@ -8,7 +8,7 @@
 import UIKit
 
 class RankingViewController: UIViewController {
-    let rankings = ["1등", "2등", "3등", "4등", "5등", "6등", "7등"]
+    let rankings = ["", "", "", "", "", "", ""]
     let tableView = UITableView()
 
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ class RankingViewController: UIViewController {
             $0.layer.cornerRadius = 18
             $0.textAlignment = .center
         }
+        
         view.addSubview(textLabel)
         
         tableView.then {
@@ -88,16 +89,36 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell").then {
-            $0.textLabel?.text = rankings[indexPath.row]
-            $0.textLabel?.textColor = .white
+//            $0.textLabel?.text = rankings[indexPath.row]
+//            $0.textLabel?.textColor = .white
             $0.backgroundColor = indexPath.row < 7 ? UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1) : .clear
             $0.selectionStyle = .none
+            $0.contentView.layer.cornerRadius = 10
+            $0.contentView.layer.masksToBounds = true
         }
+        
+        let rankView = UIView().then {
+            $0.frame = CGRect(x: 0, y: 0, width: 40, height: 24)
+            $0.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 0.1)
+            $0.layer.cornerRadius = 8
+            $0.layer.borderWidth = 1
+            $0.layer.borderColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1).cgColor
+        }
+        cell.contentView.addSubview(rankView)
+        
+        let rankLabel = UILabel().then {
+            $0.frame = CGRect(x: 8, y: 1, width: 32, height: 22)
+            $0.textColor = .black
+            $0.textAlignment = .center
+            $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            $0.text = "\(indexPath.row + 1)등"
+        }
+        rankView.addSubview(rankLabel)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // 해당 indexPath가 1등부터 6등인 경우에만 구분선 추가
         if indexPath.row < 6 {
             let separatorView = UIView()
             separatorView.backgroundColor = UIColor(red: 1/255, green: 123/255, blue: 50/255, alpha: 1)
