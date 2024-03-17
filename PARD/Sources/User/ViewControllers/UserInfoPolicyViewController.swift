@@ -287,6 +287,5 @@ class ToastBar : UIView {
         }, completion: {(isCompleted) in
             self.removeFromSuperview()
         })
-        
     }
 }
