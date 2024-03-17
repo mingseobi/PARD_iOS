@@ -7,14 +7,29 @@
 
 import UIKit
 
+//hamburgerbar color , font
 class HamburgerBarView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .pard.blackCard
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    convenience init(superview : UIView) {
+        self.init()
+        superview.addSubview(self)
+        setUpHamburgerBarIntoSuperView()
+    }
+    
+    private func setUpHamburgerBarIntoSuperView() {
+        self.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(200)
+            make.trailing.equalToSuperview()
+        }
+    }
 }
