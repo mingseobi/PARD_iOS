@@ -89,32 +89,34 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell").then {
-//            $0.textLabel?.text = rankings[indexPath.row]
-//            $0.textLabel?.textColor = .white
-            $0.backgroundColor = indexPath.row < 7 ? UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1) : .clear
+            $0.textLabel?.text = rankings[indexPath.row]
+            $0.textLabel?.textColor = .white
+            $0.backgroundColor = indexPath.row < 7 ? UIColor(red: 30/255, green: 40/255, blue: 50/255, alpha: 1) : .clear
             $0.selectionStyle = .none
             $0.contentView.layer.cornerRadius = 10
             $0.contentView.layer.masksToBounds = true
         }
         
+        // 순위를 표시하는 뷰 추가
         let rankView = UIView().then {
-            $0.frame = CGRect(x: 0, y: 0, width: 40, height: 24)
+            $0.frame = CGRect(x: 22, y: 12, width: 35, height: 24)
             $0.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 0.1)
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1).cgColor
         }
         cell.contentView.addSubview(rankView)
-        
+
+        // 순위를 나타내는 라벨 추가
         let rankLabel = UILabel().then {
-            $0.frame = CGRect(x: 8, y: 1, width: 32, height: 22)
-            $0.textColor = .black
+            $0.frame = CGRect(x: 1, y: 1, width: 32, height: 22)
+            $0.textColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1) // #A3A3A3
             $0.textAlignment = .center
-            $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
             $0.text = "\(indexPath.row + 1)등"
         }
         rankView.addSubview(rankLabel)
-        
+
         return cell
     }
     
