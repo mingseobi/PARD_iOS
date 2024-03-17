@@ -10,6 +10,7 @@ import UIKit
 class RankingViewController: UIViewController {
     let rankings = ["", "", "", "", "", "", ""]
     let tableView = UITableView()
+    var userInfos: [UserInfo] = PardAppModel.userInfos
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +134,18 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.contentView.addSubview(rankImageView)
         }
 
+        // Additional code to display name, part, and score
+        let userInfo = userInfos[0] // Get user info from data model
+        let userInfoLabel = UILabel().then {
+            $0.text = "\(userInfo.name) \(userInfo.part) \(userInfo.score)"
+            $0.textColor = .white
+            $0.font = UIFont.systemFont(ofSize: 14) // Adjust font size as needed
+        }
+        cell.contentView.addSubview(userInfoLabel)
+        userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+        userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
+
         let rankLabel = UILabel().then {
             $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
             $0.textColor = determineLabelColor(for: indexPath.row + 1)
@@ -144,6 +157,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+
 
     private func determineBorderColor(for rank: Int) -> UIColor {
         switch rank {
