@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import SnapKit
-import Then
 
 class RankingViewController: UIViewController {
     let rankings = ["1등", "2등", "3등", "4등", "5등", "6등", "7등"]
@@ -96,5 +94,19 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             $0.selectionStyle = .none
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 해당 indexPath가 1등부터 6등인 경우에만 구분선 추가
+        if indexPath.row < 6 {
+            let separatorView = UIView()
+            separatorView.backgroundColor = UIColor(red: 1/255, green: 123/255, blue: 50/255, alpha: 1)
+            cell.contentView.addSubview(separatorView)
+            separatorView.translatesAutoresizingMaskIntoConstraints = false
+            separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+            separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        }
     }
 }
