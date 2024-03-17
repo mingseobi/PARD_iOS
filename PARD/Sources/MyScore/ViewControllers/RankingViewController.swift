@@ -108,6 +108,12 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             $0.layer.borderColor = determineBorderColor(for: indexPath.row + 1).cgColor
         }
         cell.contentView.addSubview(rankView)
+        
+        let rankImageView = UIImageView().then {
+            $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
+            $0.image = UIImage(named: "gold")
+        }
+        cell.contentView.addSubview(rankImageView)
 
         let rankLabel = UILabel().then {
             $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
@@ -120,6 +126,9 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+
+
+
 
     private func determineBorderColor(for rank: Int) -> UIColor {
         switch rank {
