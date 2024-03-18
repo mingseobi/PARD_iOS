@@ -99,7 +99,7 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
 // - MARK: HamburgerBarView 
 extension HamburgerBarView : MenuTableViewCellButtonTapedDelegate {
     func cellButtonTaped() {
-        
+        print("tapped")
     }
 }
 
