@@ -70,7 +70,7 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
         cell.selectionStyle = .none
         cell.layer.addBorder(edges: [.bottom], color: .pard.gray30, thickness: 1)
         let menu = MenuTable.menuTableModel[indexPath.section][indexPath.row]
-        
+        cell.delegate = self
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.configureCell(text: menu.subtitle, image: menu.imageNamed, isHiddenButton: false)
         } else {
@@ -96,6 +96,13 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
     }
     
 }
+// - MARK: HamburgerBarView 
+extension HamburgerBarView : MenuTableViewCellButtonTapedDelegate {
+    func cellButtonTaped() {
+        
+    }
+}
+
 
 // - MARK: HamburgerBar HeaderView
 class HeaderView : UIView {
@@ -149,3 +156,4 @@ extension MenuTable {
         ]
    ]
 }
+
