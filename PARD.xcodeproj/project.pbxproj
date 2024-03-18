@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DAFA0E02BA70F3C0092FEB0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0DF2BA70F3C0092FEB0 /* MenuTableViewCell.swift */; };
+		0DAFA0E22BA74EF30092FEB0 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */; };
 		0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDEE2B96D998007A21E4 /* UserViews.swift */; };
 		0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF02B96DA05007A21E4 /* HomeView.swift */; };
 		0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */; };
@@ -37,7 +39,7 @@
 		90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C42B95D24C0056D724 /* MainLoginViewController.swift */; };
 		90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */; };
 		90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */; };
-		90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */; };
+		90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */; };
 		90C007CE2B95D2B40056D724 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CD2B95D2B40056D724 /* HomeViewController.swift */; };
 		90C007D02B95D2BF0056D724 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */; };
 		90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D12B95D2CF0056D724 /* CalendarViewController.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DAFA0DF2BA70F3C0092FEB0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		0DC5CDEE2B96D998007A21E4 /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
 		0DC5CDF02B96DA05007A21E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../User/HomeView.swift; sourceTree = "<group>"; };
 		0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
 		90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
-		90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		90C007CD2B95D2B40056D724 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		90C007D12B95D2CF0056D724 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +283,7 @@
 		90C007B82B95D1B60056D724 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */,
+				90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */,
 				90C007CD2B95D2B40056D724 /* HomeViewController.swift */,
 				90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */,
 			);
@@ -339,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */,
+				0DAFA0DF2BA70F3C0092FEB0 /* MenuTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				21A6857D2B9CBFC6006F6D9E /* UILabelExtension.swift */,
 				0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */,
 				0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */,
+				0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -446,7 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */,
-				90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */,
+				90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */,
 				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
 				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
@@ -460,6 +466,7 @@
 				21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */,
 				0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */,
 				0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */,
+				0DAFA0E02BA70F3C0092FEB0 /* MenuTableViewCell.swift in Sources */,
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
 				0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */,
 				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
@@ -474,6 +481,7 @@
 				0DC5CE082BA0B97F007A21E4 /* UIButtonExtension.swift in Sources */,
 				2128D7942B9991B6000F573C /* PardTextField.swift in Sources */,
 				90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */,
+				0DAFA0E22BA74EF30092FEB0 /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
