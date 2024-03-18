@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol MenuTableViewCellButtonTapedDelegate : AnyObject {
+    func cellButtonTaped()
+}
+
 class MenuTableViewCell: UITableViewCell {
     private let imageViewInCell = UIImageView()
     private let subtitleLabel = UILabel().then { label in
         label.textAlignment = .center
         label.textColor = .pard.gray10
     }
+    
+    weak var delegate : MenuTableViewCellButtonTapedDelegate?
     
     private var isTapedButton = false {
         didSet {
@@ -51,6 +57,8 @@ class MenuTableViewCell: UITableViewCell {
     
     @objc private func didTapButton() {
         print("sejin")
+        
+        delegate?.cellButtonTaped()
         isTapedButton.toggle()
     }
 }

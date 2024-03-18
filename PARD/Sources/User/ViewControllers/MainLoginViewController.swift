@@ -23,11 +23,11 @@ class MainLoginViewController: UIViewController {
         $0.image = UIImage(named: "pardMainLogin")
     }
     
-    private lazy var googleLoginButton = BottomButton(title: "구글로 로그인 하기", didTapHandler: tapGoogleLogin).then {
+    private lazy var googleLoginButton = BottomButton(title: "구글로 로그인 하기", didTapHandler: tapGoogleLogin, font: .pardFont.head1).then {
         view.addSubview($0)
     }
     
-    private lazy var appleLoginButton = BottomButton(title: "애플로 로그인 하기", didTapHandler: tapAppleLogin).then {
+    private lazy var appleLoginButton = BottomButton(title: "애플로 로그인 하기", didTapHandler: tapAppleLogin, font: .pardFont.head1).then {
         view.addSubview($0)
     }
     

@@ -466,7 +466,7 @@
 
 				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
 				90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */,
-
+				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
 				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
 				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
