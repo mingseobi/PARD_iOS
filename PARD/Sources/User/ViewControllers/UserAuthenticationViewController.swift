@@ -28,7 +28,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.title = "PARD 회원인증"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
-                .font: head2,
+                .font:  UIFont.pardFont.head2,
                 .foregroundColor: UIColor.white
             ]
         }
@@ -55,7 +55,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
         let notiText1 = UILabel().then {
             notiView.addSubview($0)
             $0.text = "PARD 회원임을 인증하기 위해"
-            $0.font = body4
+            $0.font =  UIFont.pardFont.body4
             $0.textColor = .pard.gray30
             $0.snp.makeConstraints { make in
                 make.top.equalTo(notiView.snp.top).offset(16)
@@ -65,12 +65,12 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
         
         let notiColorText = UILabel().then {
             $0.text = "PARD 등록에 사용한 전화번호"
-            $0.font = body4
+            $0.font = .pardFont.body4
             $0.textColor = .pard.gra
         }
         let notiText2 = UILabel().then {
             $0.text = "를 입력해주세요."
-            $0.font = body4
+            $0.font = .pardFont.body4
             $0.textColor = .pard.gray30
         }
         notiTextStackView.then{
@@ -91,7 +91,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             view.addSubview($0)
             $0.text = "인증번호"
             $0.textColor = .white
-            $0.font = head2
+            $0.font =  UIFont.pardFont.head2
             $0.snp.makeConstraints{ make in
                 make.top.equalTo(notiView.snp.bottom).offset(48)
                 make.leading.equalTo(globalLeading)
@@ -106,7 +106,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             make.width.equalTo(173)
         }
         
-        let getPhoneCodeButton = NormalButton(title: "인증번호 받기", didTapHandler: getPhoneCodeButtonTapped, font: body4).then{
+        let getPhoneCodeButton = NormalButton(title: "인증번호 받기", didTapHandler: getPhoneCodeButtonTapped).then{
             view.addSubview($0)
         }
         getPhoneCodeButton.snp.makeConstraints{ make in
@@ -122,7 +122,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             view.addSubview($0)
             $0.text = "인증번호"
             $0.textColor = .white
-            $0.font = head2
+            $0.font =  UIFont.pardFont.head2
             $0.snp.makeConstraints{ make in
                 make.top.equalTo(phoneNumberTextField.snp.bottom).offset(48)
                 make.leading.equalTo(globalLeading)
@@ -137,7 +137,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             make.width.equalTo(211)
         }
         
-        var checkPhoneCodeButton = NormalButton(title: "인증번호 확인", didTapHandler: getAuthCodeButtonTapped, font: body4).then{
+        var checkPhoneCodeButton = NormalButton(title: "인증번호 확인", didTapHandler: getAuthCodeButtonTapped).then{
             view.addSubview($0)
         }
         checkPhoneCodeButton.snp.makeConstraints{ make in
@@ -154,7 +154,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
         failAuthButton.then{
             $0.setTitle("회원 인증에 실패하셨나요?", for: .normal)
             $0.setTitleColor(.pard.primaryBlue, for: .normal)
-            $0.titleLabel?.font = caption1
+            $0.titleLabel?.font =  UIFont.pardFont.caption1
             $0.addTarget(self, action: #selector(failAuthButtonTapped), for: .touchUpInside)
             $0.titleLabel?.setUnderline(range: NSRange(location: 0, length: $0.currentTitle?.count ?? 0))
             $0.snp.makeConstraints{ make in
@@ -163,7 +163,7 @@ class UserAuthenticationViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        let pardAuthButton = BottomButton(title: "PARD 회원 인증하기", didTapHandler: pardAuthButtonTapped, font: head1)
+        let pardAuthButton = BottomButton(title: "PARD 회원 인증하기", didTapHandler: pardAuthButtonTapped)
         view.addSubview(pardAuthButton)
         pardAuthButton.snp.makeConstraints{ make in
             make.bottom.equalTo(failAuthButton.snp.top).offset(-16)

@@ -32,7 +32,7 @@ public final class PardTextField: UITextField {
         self.placeholder = placeHolder
         self.textColor = .white
         self.setPlaceholderColor(.pard.gray30)
-        self.font = body5
+        self.font = .pardFont.body5
         self.layer.borderColor = UIColor.pard.gray10.cgColor
         self.textAlignment = .left
         let leftPadding = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.height))
