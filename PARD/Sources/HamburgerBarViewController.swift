@@ -41,7 +41,6 @@ class HamburgerBarViewController: UIViewController {
         }
         
     }
-    
     @objc private func didTapedDimmedView() {
         self.dismiss(animated: true) {
             self.didDismiss?()
