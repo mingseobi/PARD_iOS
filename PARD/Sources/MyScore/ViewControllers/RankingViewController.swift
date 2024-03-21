@@ -26,7 +26,6 @@ class RankingViewController: UIViewController {
         textLabel.text = "🏆PARDNERSHIP🏆"
         textLabel.font = UIFont.pardFont.head2
         textLabel.textColor = UIColor(patternImage: gradientImage())
-        textLabel.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 0.1)
         textLabel.layer.borderWidth = 1
         textLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
         textLabel.layer.cornerRadius = 18
@@ -119,68 +118,72 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.contentView.addSubview(rankView)
         
-        if indexPath.row == 0 {
-            let rankImageView = UIImageView().then {
-                $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                $0.image = UIImage(named: "gold")
+        if indexPath.row < userInfos.count {
+            let userInfo = userInfos[indexPath.row]
+            
+            if indexPath.row == 0 {
+                let rankImageView = UIImageView().then {
+                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
+                    $0.image = UIImage(named: "gold")
+                }
+                cell.contentView.addSubview(rankImageView)
+            } else if indexPath.row == 1 {
+                let rankImageView = UIImageView().then {
+                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
+                    $0.image = UIImage(named: "silver")
+                }
+                cell.contentView.addSubview(rankImageView)
+            } else if indexPath.row == 2 {
+                let rankImageView = UIImageView().then {
+                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
+                    $0.image = UIImage(named: "bronze")
+                }
+                cell.contentView.addSubview(rankImageView)
             }
-            cell.contentView.addSubview(rankImageView)
-        } else if indexPath.row == 1 {
-            let rankImageView = UIImageView().then {
-                $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                $0.image = UIImage(named: "silver")
+            
+            let userInfoLabel = UILabel().then {
+                $0.text = "\(userInfo.name)"
+                $0.textColor = .pard.gray10
+                $0.font = UIFont.systemFont(ofSize: 16)
             }
-            cell.contentView.addSubview(rankImageView)
-        } else if indexPath.row == 2 {
-            let rankImageView = UIImageView().then {
-                $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                $0.image = UIImage(named: "bronze")
+            cell.contentView.addSubview(userInfoLabel)
+            userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+            userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+            userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
+            
+            let userInfoPartLabel = UILabel().then {
+                $0.text = "\(userInfo.part)"
+                $0.textColor = .pard.gray30
+                $0.font = UIFont.systemFont(ofSize: 12)
             }
-            cell.contentView.addSubview(rankImageView)
+            cell.contentView.addSubview(userInfoPartLabel)
+            userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
+            userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+            userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4).isActive = true
+            
+            let userInfoScoreLabel = UILabel().then {
+                $0.text = "\(userInfo.score)"
+                $0.textColor = .pard.gray10
+                $0.font = UIFont.systemFont(ofSize: 12)
+            }
+            
+            cell.contentView.addSubview(userInfoScoreLabel)
+            userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+            userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+            userInfoScoreLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16).isActive = true
         }
         
-        let userInfo = userInfos[0]
-        let userInfoLabel = UILabel().then {
-            $0.text = "\(userInfo.name)"
-            $0.textColor = .pard.gray10
-            $0.font = UIFont.systemFont(ofSize: 16)
+        let rankLabel = UILabel().then {
+            $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
+            $0.textColor = determineLabelColor(for: indexPath.row + 1)
+            $0.textAlignment = .center
+            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+            $0.text = "\(indexPath.row + 1)등"
         }
-        cell.contentView.addSubview(userInfoLabel)
-        userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-        userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
+        rankView.addSubview(rankLabel)
         
-        let userInfoPartLabel = UILabel().then {
-            $0.text = "\(userInfo.part)"
-            $0.textColor = .pard.gray30
-            $0.font = UIFont.systemFont(ofSize: 12)
-        }
-        cell.contentView.addSubview(userInfoPartLabel)
-        userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
-        userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-        userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4).isActive = true
-        
-        
-        let userInfoScoreLabel = UILabel().then {
-            $0.text = "\(userInfo.score)"
-            $0.textColor = .pard.gray10
-            $0.font = UIFont.systemFont(ofSize: 12)
-        }
-    cell.contentView.addSubview(userInfoScoreLabel)
-    userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-    userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-    userInfoScoreLabel.leadingAnchor.constraint(equalTo: userInfoPartLabel.trailingAnchor, constant: 140).isActive = true
-    
-    let rankLabel = UILabel().then {
-        $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
-        $0.textColor = determineLabelColor(for: indexPath.row + 1)
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        $0.text = "\(indexPath.row + 1)등"
+        return cell
     }
-    rankView.addSubview(rankLabel)
-
-    return cell
 }
 
 
@@ -210,17 +213,16 @@ private func determineLabelColor(for rank: Int) -> UIColor {
     }
 }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row < 6 {
-            let separatorView = UIView()
-            separatorView.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
-            cell.contentView.addSubview(separatorView)
-            separatorView.translatesAutoresizingMaskIntoConstraints = false
-            separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-            separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
-            separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
-            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        }
+func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if indexPath.row < 6 {
+        let separatorView = UIView()
+        separatorView.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
+        cell.contentView.addSubview(separatorView)
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+        separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+        separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 }
 
