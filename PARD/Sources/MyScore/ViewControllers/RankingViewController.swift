@@ -11,33 +11,28 @@ class RankingViewController: UIViewController {
     let rankings = ["", "", "", "", "", "", ""]
     let tableView = UITableView()
     var userInfos: [UserInfo] = PardAppModel.userInfos
+    let textLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .pard.blackBackground
         setNavigation()
-        
-        let textLabel = UILabel().then {
-            $0.text = "🏆PARDNERSHIP🏆"
-            $0.font = UIFont.pardFont.head2
-            $0.textColor = UIColor(patternImage: gradientImage())
-            $0.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 0.1)
-            $0.layer.borderWidth = 1
-            $0.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
-            $0.layer.cornerRadius = 18
-            $0.textAlignment = .center
-        }
+        setupTextLabel()
+        setupTableView()
+    }
+
+    private func setupTextLabel() {
+        textLabel.text = "🏆PARDNERSHIP🏆"
+        textLabel.font = UIFont.pardFont.head2
+        textLabel.textColor = UIColor(patternImage: gradientImage())
+        textLabel.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 0.1)
+        textLabel.layer.borderWidth = 1
+        textLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
+        textLabel.layer.cornerRadius = 18
+        textLabel.textAlignment = .center
         
         view.addSubview(textLabel)
-        
-        tableView.then {
-            $0.backgroundColor = .clear
-            $0.separatorStyle = .none
-            $0.delegate = self
-            $0.dataSource = self
-            view.addSubview($0)
-        }
         
         textLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
@@ -45,6 +40,14 @@ class RankingViewController: UIViewController {
             $0.width.equalTo(180)
             $0.height.equalTo(36)
         }
+    }
+
+    private func setupTableView() {
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
             $0.top.equalTo(textLabel.snp.bottom).offset(16)
@@ -57,21 +60,8 @@ class RankingViewController: UIViewController {
         tableView.layer.cornerRadius = 10
         tableView.layer.masksToBounds = true
     }
-    
-    func gradientImage() -> UIImage {
-        let gradientLayer = CAGradientLayer().then {
-            $0.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-            $0.colors = [UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor, UIColor(red: 123/255, green: 63/255, blue: 239/255, alpha: 1).cgColor]
-            $0.startPoint = CGPoint(x: 0, y: 0)
-            $0.endPoint = CGPoint(x: 1, y: 1)
-        }
-        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!
-    }
-    
+
+    // Navigation 설정
     private func setNavigation() {
         self.navigationItem.title = "전체 랭킹"
         if let navigationBar = self.navigationController?.navigationBar {
@@ -87,6 +77,21 @@ class RankingViewController: UIViewController {
     
     @objc func backButtonTapped(){
         print("go to back !!!")
+    }
+    
+    // 그라데이션 이미지 생성
+    func gradientImage() -> UIImage {
+        let gradientLayer = CAGradientLayer().then {
+            $0.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+            $0.colors = [UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor, UIColor(red: 123/255, green: 63/255, blue: 239/255, alpha: 1).cgColor]
+            $0.startPoint = CGPoint(x: 0, y: 0)
+            $0.endPoint = CGPoint(x: 1, y: 1)
+        }
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }
 
@@ -133,7 +138,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.contentView.addSubview(rankImageView)
         }
-
+        
         let userInfo = userInfos[0]
         let userInfoLabel = UILabel().then {
             $0.text = "\(userInfo.name)"
@@ -144,7 +149,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
         userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
-
+        
         let userInfoPartLabel = UILabel().then {
             $0.text = "\(userInfo.part)"
             $0.textColor = .pard.gray30
@@ -154,60 +159,57 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
         userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
         userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4).isActive = true
-
+        
         
         let userInfoScoreLabel = UILabel().then {
             $0.text = "\(userInfo.score)"
             $0.textColor = .pard.gray10
             $0.font = UIFont.systemFont(ofSize: 12)
         }
-        cell.contentView.addSubview(userInfoScoreLabel)
-        userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-        userInfoScoreLabel.leadingAnchor.constraint(equalTo: userInfoPartLabel.trailingAnchor, constant: 140).isActive = true
-
-        
-        let rankLabel = UILabel().then {
-            $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
-            $0.textColor = determineLabelColor(for: indexPath.row + 1)
-            $0.textAlignment = .center
-            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-            $0.text = "\(indexPath.row + 1)등"
-        }
-        rankView.addSubview(rankLabel)
-
-        return cell
-    }
-
-
-    private func determineBorderColor(for rank: Int) -> UIColor {
-        switch rank {
-        case 1:
-            return UIColor(red: 252/255, green: 196/255, blue: 23/255, alpha: 1)
-        case 2:
-            return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        case 3:
-            return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
-        default:
-            return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
-        }
-    }
-
-    private func determineLabelColor(for rank: Int) -> UIColor {
-        switch rank {
-        case 1:
-            return UIColor(red: 252/255, green: 196/255, blue: 23/255, alpha: 1)
-        case 2:
-            return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        case 3:
-            return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
-        default:
-            return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
-        }
-    }
-
-
+    cell.contentView.addSubview(userInfoScoreLabel)
+    userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+    userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+    userInfoScoreLabel.leadingAnchor.constraint(equalTo: userInfoPartLabel.trailingAnchor, constant: 140).isActive = true
     
+    let rankLabel = UILabel().then {
+        $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
+        $0.textColor = determineLabelColor(for: indexPath.row + 1)
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        $0.text = "\(indexPath.row + 1)등"
+    }
+    rankView.addSubview(rankLabel)
+
+    return cell
+}
+
+
+private func determineBorderColor(for rank: Int) -> UIColor {
+    switch rank {
+    case 1:
+        return UIColor(red: 252/255, green: 196/255, blue: 23/255, alpha: 1)
+    case 2:
+        return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+    case 3:
+        return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
+    default:
+        return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
+    }
+}
+
+private func determineLabelColor(for rank: Int) -> UIColor {
+    switch rank {
+    case 1:
+        return UIColor(red: 252/255, green: 196/255, blue: 23/255, alpha: 1)
+    case 2:
+        return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+    case 3:
+        return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
+    default:
+        return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
+    }
+}
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row < 6 {
             let separatorView = UIView()
@@ -221,3 +223,4 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
