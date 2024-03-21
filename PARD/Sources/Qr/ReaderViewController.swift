@@ -22,7 +22,7 @@ class ReaderViewController: UIViewController {
         view.addSubview(readerView)
         
         readButton = UIButton(type: .system)
-        readButton.setTitle("Scan", for: .normal)
+        readButton.setTitle("테두리 안에 출석 QR코드를 인식해주세요.", for: .normal)
         readButton.addTarget(self, action: #selector(scanButtonAction(_:)), for: .touchUpInside)
         readButton.layer.masksToBounds = true
         readButton.layer.cornerRadius = 15
