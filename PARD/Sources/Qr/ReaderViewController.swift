@@ -11,57 +11,47 @@ import AVFoundation
 class ReaderViewController: UIViewController {
     
     var readerView: QrReaderView!
-    var readButton: UIButton!
+    var titleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .black.withAlphaComponent(0.4)
+        setAttribute()
+        setupLayouts()
+        readerView.start()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        readerView.start()
+    }
+    
+    @objc func scanButtonAction(_ sender: UIButton) {
+        readerView.start()
+        sender.isSelected = readerView.isRunning
+    }
+    
+    func setAttribute() {
         readerView = QrReaderView()
         readerView.delegate = self
         readerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(readerView)
-        
-        readButton = UIButton(type: .system)
-        readButton.setTitle("테두리 안에 출석 QR코드를 인식해주세요.", for: .normal)
-        readButton.addTarget(self, action: #selector(scanButtonAction(_:)), for: .touchUpInside)
-        readButton.layer.masksToBounds = true
-        readButton.layer.cornerRadius = 15
-        readButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(readButton)
-        setupLayouts()
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if !readerView.isRunning {
-            readerView.stop(isButtonTap: false)
-        }
-    }
-    
-    @objc func scanButtonAction(_ sender: UIButton) {
-        if readerView.isRunning {
-            readerView.stop(isButtonTap: true)
-        } else {
-            readerView.start()
-        }
-        
-        sender.isSelected = readerView.isRunning
+        titleLabel.text = "테두리 안에 출석 QR코드를 인식해주세요."
+        titleLabel.font = UIFont.pardFont.head2
+        titleLabel.textColor = .pard.blackBackground
+        view.addSubview(titleLabel)
     }
     
     func setupLayouts() {
-        NSLayoutConstraint.activate([
-            readerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            readerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            readerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            readerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
-            
-            readButton.topAnchor.constraint(equalTo: readerView.bottomAnchor, constant: 20),
-            readButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            readButton.widthAnchor.constraint(equalToConstant: 100),
-            readButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        readerView.snp.makeConstraints{ make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(280)
+        }
+        titleLabel.snp.makeConstraints{ make in
+            make.bottom.equalTo(readerView.snp.top).offset(-28)
+            make.centerX.equalToSuperview()
+        }
     }
 }
 
@@ -87,9 +77,9 @@ extension ReaderViewController: ReaderViewDelegate {
             if isButtonTap {
                 title = "알림"
                 message = "바코드 읽기를 멈추었습니다."
-                self.readButton.isSelected = readerView.isRunning
+//                self.titleLabel.isSelected = readerView.isRunning
             } else {
-                self.readButton.isSelected = readerView.isRunning
+//                self.titleLabel.isSelected = readerView.isRunning
                 return
             }
         }

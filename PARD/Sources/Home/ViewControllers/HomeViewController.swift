@@ -25,7 +25,11 @@ class HomeViewController: UIViewController {
     
     @objc private func homeLogoTapped() {
         print("home")
-        navigationController?.popToRootViewController(animated: true)
+        // FIXME: - ram test code
+        let QRVC = ReaderViewController()
+        navigationController?.pushViewController(QRVC, animated: true)
+        
+//        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc private func menuButtonTapped() {
