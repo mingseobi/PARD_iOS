@@ -69,7 +69,7 @@ class MyScoreViewController: UIViewController {
         view.addSubview(rankingButton)
         
         rankingButton.snp.makeConstraints {
-            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(20)
+            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(171)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(200)
             $0.height.equalTo(40)
@@ -173,23 +173,23 @@ class MyScoreViewController: UIViewController {
 
         goldRankLabel.snp.makeConstraints {
             $0.centerX.equalTo(goldRingImageView)
-            $0.centerY.equalTo(goldRingImageView).offset(-5) // 변경된 부분
+            $0.centerY.equalTo(goldRingImageView)
         }
 
         goldPartLabel.snp.makeConstraints {
-            $0.centerX.equalTo(goldRingImageView) // 변경된 부분
-            $0.top.equalTo(goldRingImageView.snp.bottom).offset(8) // 변경된 부분
+            $0.leading.equalTo(goldRingImageView.snp.trailing).offset(8)
+            $0.centerY.equalTo(goldRingImageView)
         }
 
         goldNameLabel.snp.makeConstraints {
-            $0.centerX.equalTo(goldRingImageView) // 변경된 부분
+            $0.leading.equalTo(goldRingImageView.snp.trailing).offset(8)
             $0.top.equalTo(goldPartLabel.snp.bottom).offset(4)
         }
         
         // Silver Medal Constraints
         silverRingImageView.snp.makeConstraints {
             $0.centerY.equalTo(goldRingImageView)
-            $0.leading.equalToSuperview().offset(138) // 변경된 부분
+            $0.leading.equalToSuperview().offset(138)
             $0.width.height.equalTo(40)
         }
         
@@ -199,12 +199,12 @@ class MyScoreViewController: UIViewController {
         }
         
         silverPartLabel.snp.makeConstraints {
-            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8) // 변경된 부분
+            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
             $0.centerY.equalTo(silverRingImageView)
         }
         
         silverNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8) // 변경된 부분
+            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
             $0.top.equalTo(silverPartLabel.snp.bottom).offset(4)
         }
         
