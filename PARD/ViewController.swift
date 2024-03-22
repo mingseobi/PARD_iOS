@@ -123,7 +123,7 @@ class ViewController: UIViewController {
     }
     
     @objc func rankingButtonTapped() {
-        let rankingVC = RankingViewController()
+        let rankingVC = MyScoreViewController()
         let navController = UINavigationController(rootViewController: rankingVC)
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true, completion: nil)
