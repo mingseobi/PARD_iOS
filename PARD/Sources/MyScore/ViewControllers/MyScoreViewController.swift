@@ -19,6 +19,7 @@ class MyScoreViewController: UIViewController {
         setupTextLabel()
         setupRankingMedals()
         setupRankingButton()
+        setupCrownImages() // 왕관 이미지 설정 추가
     }
     
     // Navigation 설정
@@ -166,8 +167,8 @@ class MyScoreViewController: UIViewController {
         
         // Gold Medal Constraints
         goldRingImageView.snp.makeConstraints {
-            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25) // 변경된 부분
-            $0.leading.equalToSuperview().offset(22) // 변경된 부분
+            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
+            $0.leading.equalToSuperview().offset(22)
             $0.width.height.equalTo(40)
         }
 
@@ -190,64 +191,94 @@ class MyScoreViewController: UIViewController {
         silverRingImageView.snp.makeConstraints {
             $0.centerY.equalTo(goldRingImageView)
             $0.leading.equalToSuperview().offset(138)
-            $0.width.height.equalTo(40)
+                $0.width.height.equalTo(40)
+            }
+            
+            silverRankLabel.snp.makeConstraints {
+                $0.centerX.equalTo(silverRingImageView)
+                $0.centerY.equalTo(silverRingImageView)
+            }
+            
+            silverPartLabel.snp.makeConstraints {
+                $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
+                $0.centerY.equalTo(silverRingImageView)
+            }
+            
+            silverNameLabel.snp.makeConstraints {
+                $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
+                $0.top.equalTo(silverPartLabel.snp.bottom).offset(4)
+            }
+            
+            // Bronze Medal Constraints
+            bronzeRingImageView.snp.makeConstraints {
+                $0.centerY.equalTo(goldRingImageView)
+                $0.leading.equalToSuperview().offset(254)
+                $0.width.height.equalTo(40)
+            }
+            
+            bronzeRankLabel.snp.makeConstraints {
+                $0.centerX.equalTo(bronzeRingImageView)
+                $0.centerY.equalTo(bronzeRingImageView)
+            }
+            
+            bronzePartLabel.snp.makeConstraints {
+                $0.leading.equalTo(bronzeRingImageView.snp.trailing).offset(8)
+                $0.centerY.equalTo(bronzeRingImageView)
+            }
+            
+            bronzeNameLabel.snp.makeConstraints {
+                $0.leading.equalTo(bronzeRingImageView.snp.trailing).offset(8)
+                $0.top.equalTo(bronzePartLabel.snp.bottom).offset(4)
+            }
         }
         
-        silverRankLabel.snp.makeConstraints {
-            $0.centerX.equalTo(silverRingImageView)
-            $0.centerY.equalTo(silverRingImageView)
+        // Crown Images 설정
+        private func setupCrownImages() {
+            // Gold Crown
+            let goldCrownImageView = UIImageView(image: UIImage(named: "gold"))
+            view.addSubview(goldCrownImageView)
+            
+            goldCrownImageView.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
+            }
+            
+            // Silver Crown
+            let silverCrownImageView = UIImageView(image: UIImage(named: "silver"))
+            view.addSubview(silverCrownImageView)
+            
+            silverCrownImageView.snp.makeConstraints {
+                $0.centerX.equalToSuperview().offset(-116)
+                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
+            }
+            
+            // Bronze Crown
+            let bronzeCrownImageView = UIImageView(image: UIImage(named: "bronze"))
+            view.addSubview(bronzeCrownImageView)
+            
+            bronzeCrownImageView.snp.makeConstraints {
+                $0.centerX.equalToSuperview().offset(116)
+                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
+            }
         }
         
-        silverPartLabel.snp.makeConstraints {
-            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
-            $0.centerY.equalTo(silverRingImageView)
+        @objc private func rankingButtonTapped() {
+            let rankingViewController = RankingViewController()
+            navigationController?.pushViewController(rankingViewController, animated: true)
         }
         
-        silverNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(silverRingImageView.snp.trailing).offset(8)
-            $0.top.equalTo(silverPartLabel.snp.bottom).offset(4)
-        }
-        
-        // Bronze Medal Constraints
-        bronzeRingImageView.snp.makeConstraints {
-            $0.centerY.equalTo(goldRingImageView)
-            $0.leading.equalToSuperview().offset(254) // 변경된 부분
-            $0.width.height.equalTo(40)
-        }
-        
-        bronzeRankLabel.snp.makeConstraints {
-            $0.centerX.equalTo(bronzeRingImageView)
-            $0.centerY.equalTo(bronzeRingImageView)
-        }
-        
-        bronzePartLabel.snp.makeConstraints {
-            $0.leading.equalTo(bronzeRingImageView.snp.trailing).offset(8) // 변경된 부분
-            $0.centerY.equalTo(bronzeRingImageView)
-        }
-        
-        bronzeNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(bronzeRingImageView.snp.trailing).offset(8) // 변경된 부분
-            $0.top.equalTo(bronzePartLabel.snp.bottom).offset(4)
+        // 그라데이션 이미지 생성
+        func gradientImage() -> UIImage {
+            let gradientLayer = CAGradientLayer().then {
+                $0.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+                $0.colors = [UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor, UIColor(red: 123/255, green: 63/255, blue: 239/255, alpha: 1).cgColor]
+                $0.startPoint = CGPoint(x: 0, y: 0)
+                $0.endPoint = CGPoint(x: 1, y: 1)
+            }
+            UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+            gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image!
         }
     }
-    
-    @objc private func rankingButtonTapped() {
-        let rankingViewController = RankingViewController()
-        navigationController?.pushViewController(rankingViewController, animated: true)
-    }
-    
-    // 그라데이션 이미지 생성
-    func gradientImage() -> UIImage {
-        let gradientLayer = CAGradientLayer().then {
-            $0.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-            $0.colors = [UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor, UIColor(red: 123/255, green: 63/255, blue: 239/255, alpha: 1).cgColor]
-            $0.startPoint = CGPoint(x: 0, y: 0)
-            $0.endPoint = CGPoint(x: 1, y: 1)
-        }
-        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!
-    }
-}
