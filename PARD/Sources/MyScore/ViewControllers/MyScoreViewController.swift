@@ -28,7 +28,7 @@ class MyScoreViewController: UIViewController {
         self.navigationItem.title = "내 점수"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
-                .font:  UIFont.pardFont.head1,
+                .font:  UIFont.pardFont.head2.withSize(16),
                 .foregroundColor: UIColor.white
             ]
         }
@@ -43,7 +43,7 @@ class MyScoreViewController: UIViewController {
     
     private func setupTextLabel() {
         pardnerShipLabel.text = " 🏆 PARDNERSHIP TOP 3 🏆 "
-        pardnerShipLabel.font = UIFont.pardFont.head2
+        pardnerShipLabel.font = UIFont.pardFont.head2.withSize(16)
         pardnerShipLabel.textColor = UIColor(patternImage: gradientImage())
         pardnerShipLabel.layer.borderWidth = 1
         pardnerShipLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
@@ -76,7 +76,6 @@ class MyScoreViewController: UIViewController {
             $0.height.equalTo(14)
         }
         
-        // Add underline using NSAttributedString
         let attributedString = NSMutableAttributedString(string: "전체랭킹 확인하기", attributes: [
             .font: UIFont.systemFont(ofSize: 12),
             .foregroundColor: UIColor.pard.gray30
@@ -93,15 +92,15 @@ class MyScoreViewController: UIViewController {
         
         let goldRankLabel = UILabel().then {
             $0.text = "1"
-            $0.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            $0.font = UIFont.pardFont.head2.withSize(16)
             $0.textAlignment = .center
-            $0.textColor = .pard.gray10
+            $0.textColor = .white
         }
         view.addSubview(goldRankLabel)
         
         let goldPartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.systemFont(ofSize: 12)
+            $0.font = UIFont.pardFont.body3.withSize(12)
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -109,7 +108,7 @@ class MyScoreViewController: UIViewController {
         
         let goldNameLabel = UILabel().then {
             $0.text = "김민섭"
-            $0.font = UIFont.systemFont(ofSize: 14)
+            $0.font = UIFont.pardFont.body4.withSize(14)
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -121,15 +120,15 @@ class MyScoreViewController: UIViewController {
         
         let silverRankLabel = UILabel().then {
             $0.text = "2"
-            $0.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            $0.font = UIFont.pardFont.head2.withSize(16)
             $0.textAlignment = .center
-            $0.textColor = .pard.gray10
+            $0.textColor = .white
         }
         view.addSubview(silverRankLabel)
         
         let silverPartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.systemFont(ofSize: 12)
+            $0.font = UIFont.pardFont.body3.withSize(12)
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -137,27 +136,26 @@ class MyScoreViewController: UIViewController {
         
         let silverNameLabel = UILabel().then {
             $0.text = "손동우"
-            $0.font = UIFont.systemFont(ofSize: 14)
+            $0.font = UIFont.pardFont.body4.withSize(14)
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
         view.addSubview(silverNameLabel)
         
-        // Bronze Medal
         let bronzeRingImageView = UIImageView(image: UIImage(named: "bronzeRing"))
         view.addSubview(bronzeRingImageView)
         
         let bronzeRankLabel = UILabel().then {
             $0.text = "3"
-            $0.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            $0.font = UIFont.pardFont.head2.withSize(16)
             $0.textAlignment = .center
-            $0.textColor = .pard.gray10
+            $0.textColor = .white
         }
         view.addSubview(bronzeRankLabel)
         
         let bronzePartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.systemFont(ofSize: 12)
+            $0.font = UIFont.pardFont.body3.withSize(12)
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -165,15 +163,12 @@ class MyScoreViewController: UIViewController {
         
         let bronzeNameLabel = UILabel().then {
             $0.text = "윤성익"
-            $0.font = UIFont.systemFont(ofSize: 14)
+            $0.font = UIFont.pardFont.body4.withSize(14)
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
         view.addSubview(bronzeNameLabel)
         
-        // Constraints 설정
-        
-        // Gold Medal Constraints
         goldRingImageView.snp.makeConstraints {
             $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
             $0.leading.equalToSuperview().offset(22)
@@ -196,7 +191,6 @@ class MyScoreViewController: UIViewController {
             $0.top.equalTo(goldPartLabel.snp.bottom).offset(2)
         }
         
-        // Silver Medal Constraints
         silverRingImageView.snp.makeConstraints {
             $0.centerY.equalTo(goldRingImageView)
             $0.leading.equalToSuperview().offset(138)
@@ -241,9 +235,7 @@ class MyScoreViewController: UIViewController {
         }
     }
     
-    // Crown Images 설정
     private func setupCrownImages() {
-        // Gold Crown
         let goldCrownImageView = UIImageView(image: UIImage(named: "gold"))
         view.addSubview(goldCrownImageView)
         
@@ -253,7 +245,6 @@ class MyScoreViewController: UIViewController {
             $0.width.height.equalTo(20)
         }
         
-        // Silver Crown
         let silverCrownImageView = UIImageView(image: UIImage(named: "silver"))
         view.addSubview(silverCrownImageView)
         
@@ -263,7 +254,6 @@ class MyScoreViewController: UIViewController {
             $0.width.height.equalTo(20)
         }
         
-        // Bronze Crown
         let bronzeCrownImageView = UIImageView(image: UIImage(named: "bronze"))
         view.addSubview(bronzeCrownImageView)
         
@@ -274,11 +264,9 @@ class MyScoreViewController: UIViewController {
         }
     }
     
-    
     private func setupScoreView() {
-        // Border View 추가
         let myScoreBorderView = UIView().then {
-            $0.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+            $0.backgroundColor = UIColor.pard.blackCard
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
@@ -293,7 +281,7 @@ class MyScoreViewController: UIViewController {
         }
         
         let totalScoreBorderView = UIView().then {
-            $0.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+            $0.backgroundColor = UIColor.pard.blackCard
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
@@ -307,10 +295,9 @@ class MyScoreViewController: UIViewController {
             $0.height.equalTo(68)
         }
         
-        // myScoreLabel 추가
         let myScoreLabel = UILabel().then {
             $0.text = "파트 내 랭킹"
-            $0.font = UIFont.pardFont.body1
+            $0.font = UIFont.pardFont.body1.withSize(12)
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -321,12 +308,11 @@ class MyScoreViewController: UIViewController {
             $0.centerX.equalTo(myScoreBorderView.snp.centerX)
         }
         
-        // 파트 내 등수 표시 Label 추가
         let myRankLabel = UILabel().then {
-            $0.text = "3위" // 등수를 실제로 표시할 값으로 수정해야 합니다.
-            $0.font = UIFont.pardFont.body2 // 등수에 맞는 폰트로 수정해야 합니다.
+            $0.text = "3위"
+            $0.font = UIFont.pardFont.head2.withSize(16)
             $0.textAlignment = .center
-            $0.textColor = .pard.gray10
+            $0.textColor = .white
         }
         view.addSubview(myRankLabel)
         
@@ -337,7 +323,7 @@ class MyScoreViewController: UIViewController {
         
         let totalScoreLabel = UILabel().then {
             $0.text = "전체 랭킹"
-            $0.font = UIFont.pardFont.body1
+            $0.font = UIFont.pardFont.body1.withSize(12)
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -348,12 +334,11 @@ class MyScoreViewController: UIViewController {
             $0.centerX.equalTo(totalScoreBorderView.snp.centerX)
         }
         
-        // 전체 등수 표시 Label 추가
         let totalRankLabel = UILabel().then {
-            $0.text = "13위" // 등수를 실제로 표시할 값으로 수정해야 합니다.
-            $0.font = UIFont.pardFont.body2 // 등수에 맞는 폰트로 수정해야 합니다.
+            $0.text = "13위"
+            $0.font = UIFont.pardFont.head2.withSize(16)
             $0.textAlignment = .center
-            $0.textColor = .pard.gray10
+            $0.textColor = .white
         }
         view.addSubview(totalRankLabel)
         
@@ -371,7 +356,6 @@ class MyScoreViewController: UIViewController {
         navigationController?.pushViewController(rankingViewController, animated: true)
     }
     
-    // 그라데이션 이미지 생성
     func gradientImage() -> UIImage {
         let gradientLayer = CAGradientLayer().then {
             $0.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
