@@ -232,35 +232,39 @@ class MyScoreViewController: UIViewController {
             }
         }
         
-        // Crown Images 설정
-        private func setupCrownImages() {
-            // Gold Crown
-            let goldCrownImageView = UIImageView(image: UIImage(named: "gold"))
-            view.addSubview(goldCrownImageView)
-            
-            goldCrownImageView.snp.makeConstraints {
-                $0.centerX.equalToSuperview()
-                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
-            }
-            
-            // Silver Crown
-            let silverCrownImageView = UIImageView(image: UIImage(named: "silver"))
-            view.addSubview(silverCrownImageView)
-            
-            silverCrownImageView.snp.makeConstraints {
-                $0.centerX.equalToSuperview().offset(-116)
-                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
-            }
-            
-            // Bronze Crown
-            let bronzeCrownImageView = UIImageView(image: UIImage(named: "bronze"))
-            view.addSubview(bronzeCrownImageView)
-            
-            bronzeCrownImageView.snp.makeConstraints {
-                $0.centerX.equalToSuperview().offset(116)
-                $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(25)
-            }
+    // Crown Images 설정
+    private func setupCrownImages() {
+        // Gold Crown
+        let goldCrownImageView = UIImageView(image: UIImage(named: "gold"))
+        view.addSubview(goldCrownImageView)
+        
+        goldCrownImageView.snp.makeConstraints {
+            $0.centerX.equalToSuperview().offset(-155)
+            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(16)
+            $0.width.height.equalTo(20)
         }
+        
+        // Silver Crown
+        let silverCrownImageView = UIImageView(image: UIImage(named: "silver"))
+        view.addSubview(silverCrownImageView)
+        
+        silverCrownImageView.snp.makeConstraints {
+            $0.centerX.equalToSuperview().offset(-39)
+            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(16)
+            $0.width.height.equalTo(20)
+        }
+        
+        // Bronze Crown
+        let bronzeCrownImageView = UIImageView(image: UIImage(named: "bronze"))
+        view.addSubview(bronzeCrownImageView)
+        
+        bronzeCrownImageView.snp.makeConstraints {
+            $0.centerX.equalToSuperview().offset(77)
+            $0.top.equalTo(pardnerShipLabel.snp.bottom).offset(16)
+            $0.width.height.equalTo(20)
+        }
+    }
+
         
         @objc private func rankingButtonTapped() {
             let rankingViewController = RankingViewController()
