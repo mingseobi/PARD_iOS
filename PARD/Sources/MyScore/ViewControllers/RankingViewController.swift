@@ -57,6 +57,7 @@ class RankingViewController: UIViewController {
         
         tableView.rowHeight = 68
         tableView.layer.cornerRadius = 10
+        tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         tableView.layer.masksToBounds = true
     }
 
@@ -100,12 +101,13 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell").then {
             $0.textLabel?.text = rankings[indexPath.row]
             $0.textLabel?.textColor = .white
             $0.backgroundColor = indexPath.row < 7 ? UIColor.pard.blackCard : .clear
             $0.selectionStyle = .none
-            $0.contentView.layer.cornerRadius = 10
+            $0.contentView.layer.cornerRadius = 5
             $0.contentView.layer.masksToBounds = true
         }
         
@@ -182,10 +184,27 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         rankView.addSubview(rankLabel)
         
+        // 마지막 셀인 경우에만 셀의 하단 좌우를 round 처리
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            cell.contentView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        }
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row < 6 {
+            let separatorView = UIView()
+            separatorView.backgroundColor = UIColor.pard.gray30
+            cell.contentView.addSubview(separatorView)
+            separatorView.translatesAutoresizingMaskIntoConstraints = false
+            separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+            separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        }
+    }
 }
-
 
 private func determineBorderColor(for rank: Int) -> UIColor {
     switch rank {
@@ -210,19 +229,6 @@ private func determineLabelColor(for rank: Int) -> UIColor {
         return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
     default:
         return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
-    }
-}
-
-func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    if indexPath.row < 6 {
-        let separatorView = UIView()
-        separatorView.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
-        cell.contentView.addSubview(separatorView)
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-        separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
-        separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
-        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 }
 
