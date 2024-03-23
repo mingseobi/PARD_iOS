@@ -54,7 +54,10 @@ extension HomeViewController {
         setUpUI()
         setNavigation()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
     private func setUpUI() {
         view.addSubview(topView)
         topView.snp.makeConstraints { make in

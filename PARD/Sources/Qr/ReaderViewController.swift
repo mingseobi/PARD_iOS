@@ -20,7 +20,11 @@ class ReaderViewController: UIViewController {
         setupLayouts()
         readerView.start()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            // 다른 뷰 컨트롤러가 나타날 때 네비게이션 바를 숨김
+            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         readerView.start()

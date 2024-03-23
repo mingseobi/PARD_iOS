@@ -11,11 +11,16 @@ class HomeTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .pard.blackBackground
+        self.navigationController?.navigationBar.isHidden = false
         setUpTabbarView()
         setUpTabBarColor()
         setUpTabBarLayout()
         setUpTabBarItems()
     }
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
     private func setUpTabbarView() {
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home"), tag: 0)
