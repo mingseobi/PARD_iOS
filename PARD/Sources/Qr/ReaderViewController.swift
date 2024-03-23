@@ -17,7 +17,7 @@ class ReaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 133/255.0, green: 133/255.0, blue: 133/255.0, alpha: 0.4)
+        view.backgroundColor = UIColor(red: 133/255.0, green: 133/255.0, blue: 133/255.0, alpha: 0.6)
         setAttribute()
         setupLayouts()
         readerView.start()
