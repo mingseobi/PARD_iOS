@@ -348,9 +348,6 @@ class MyScoreViewController: UIViewController {
         }
     }
 
-
-
-    
     @objc private func rankingButtonTapped() {
         let rankingViewController = RankingViewController()
         navigationController?.pushViewController(rankingViewController, animated: true)
