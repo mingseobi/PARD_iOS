@@ -11,8 +11,13 @@ class HamburgerBarView: UIView {
     private let identifierInTableView = "menuTableView"
     private lazy var menuTableView = UITableView().then { tableView in
         tableView.backgroundColor = .pard.blackCard
-        tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: identifierInTableView)
+        tableView.register(HamBurgerTableViewCell.self, forCellReuseIdentifier: identifierInTableView)
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
+    private var selectedNotionView : Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .pard.blackCard
@@ -64,19 +69,21 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifierInTableView, for: indexPath) as? MenuTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifierInTableView, for: indexPath) as? HamBurgerTableViewCell  else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.layer.addBorder(edges: [.bottom], color: .pard.gray30, thickness: 1)
-        let menu = MenuTable.menuTableModel[indexPath.section][indexPath.row]
         cell.delegate = self
-        if indexPath.row == 0 && indexPath.section == 0 {
-            cell.configureCell(text: menu.subtitle, image: menu.imageNamed, isHiddenButton: false)
-        } else {
-            cell.configureCell(text: menu.subtitle, image: menu.imageNamed, isHiddenButton: true)
-        }
+        cell.layer.addBorder(edges: [.bottom], color: .pard.gray30, thickness: 1)
         
+        let menu = MenuTable.menuTableModel[indexPath.section][indexPath.row]
+        if indexPath.row == 0 && indexPath.section == 0 {
+            cell.configureCell(text: menu.subtitle, image: menu.imageNamed, isHiddenButton: false ,at: indexPath)
+            cell.index = indexPath.row
+            cell.delegate = self
+        } else {
+            cell.configureCell(text: menu.subtitle, image: menu.imageNamed, isHiddenButton: true, at: indexPath)
+        }
         return cell
     }
 
@@ -91,15 +98,35 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
         return 60
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 0 && selectedNotionView {
+            let pardNotionView = PardNotionLinkView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
+            print("Footer view created for section 0")
+            return pardNotionView
+          } else {
+            return nil
+          }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 && selectedNotionView{
+            return 288
+        } else {
+            return 0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
-    
 }
 // - MARK: HamburgerBarView 
 extension HamburgerBarView : MenuTableViewCellButtonTapedDelegate {
-    func cellButtonTaped() {
-        print("tapped")
+    func cellButtonTaped(index: Int, isHiddenView : Bool) {
+        menuTableView.beginUpdates()
+        selectedNotionView = isHiddenView
+        print(selectedNotionView)
+        menuTableView.endUpdates()
     }
 }
 
@@ -109,7 +136,6 @@ class HeaderView : UIView {
     private let label = UILabel().then { label in
         label.textColor = .pard.gra
         label.textAlignment = .center
-        label.textColor = .pard.gra
     }
     
     override init(frame: CGRect) {
@@ -131,6 +157,7 @@ class HeaderView : UIView {
         label.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(32)
             make.leading.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-8)
         }
     }
 }
@@ -143,7 +170,7 @@ struct MenuTable {
 }
 
 extension MenuTable {
-   static let menuTableModel =  [
+    static var menuTableModel =  [
         [
             MenuTable(title: "공지 및 자료", subtitle: "PARD 노션", imageNamed: "notion")
         ],

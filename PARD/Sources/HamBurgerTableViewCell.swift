@@ -8,16 +8,17 @@
 import UIKit
 
 protocol MenuTableViewCellButtonTapedDelegate : AnyObject {
-    func cellButtonTaped()
+    func cellButtonTaped(index : Int, isHiddenView : Bool)
 }
 
-class MenuTableViewCell: UITableViewCell {
+class HamBurgerTableViewCell: UITableViewCell {
     private let imageViewInCell = UIImageView()
     private let subtitleLabel = UILabel().then { label in
         label.textAlignment = .center
         label.textColor = .pard.gray10
     }
-    
+    private let pardNotionView = UIView()
+    var index: Int = 0
     weak var delegate : MenuTableViewCellButtonTapedDelegate?
     
     private var isTapedButton = false {
@@ -56,31 +57,28 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     @objc private func didTapButton() {
-        print("sejin")
-        
-        delegate?.cellButtonTaped()
         isTapedButton.toggle()
+        
+        self.delegate?.cellButtonTaped(index: index, isHiddenView: isTapedButton)
+        contentView.addSubview(pardNotionView)
+        pardNotionView.snp.makeConstraints { make in
+        }
     }
 }
 
 // - MARK: setUp UI
-extension MenuTableViewCell {
-    
-    
-    func configureCell(text : String, image : String, isHiddenButton : Bool) {
+extension HamBurgerTableViewCell {
+    func configureCell(text : String, image : String, isHiddenButton : Bool, at cellIndexPath : IndexPath) {
         imageViewInCell.image = UIImage(named: image)?.withRenderingMode(.alwaysOriginal)
         subtitleLabel.text = text
-        configureButton(isHiddenButton: isHiddenButton)
-    }
-    
-    func configureButton(isHiddenButton : Bool) {
+        index = cellIndexPath.row
         button.isHidden = isHiddenButton
     }
     
     private func setUpComponent() {
-        addSubview(imageViewInCell)
-        addSubview(subtitleLabel)
-        addSubview(button)
+        contentView.addSubview(imageViewInCell)
+        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(button)
         
         imageViewInCell.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

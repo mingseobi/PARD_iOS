@@ -8,12 +8,11 @@
 import UIKit
 
 // - MARK: HamburgerBar
-// 필요한 정보는 -> 화면 width 200정도 나오기 height은 full
-// hamburgerview의 색은
 class HamburgerBarViewController: UIViewController {
     private let dimmedView = UIView().then { dimmedView in
         dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
     }
+    
     var didDismiss: (() -> Void)?
     
     override func viewDidLoad() {
