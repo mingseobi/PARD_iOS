@@ -128,7 +128,7 @@ class UserInfoPolicyViewController: UIViewController {
     private func setUpserviceInfoLabelText() {
         serviceInfoLabel.attributedText = NSMutableAttributedString()
             .regular(string: "서비스 이용 및 이용을 위해 \n", fontSize: 13, fontColor: UIColor.pard.gray10)
-            .blueHighlight("서비스 이용약관")
+            .blueHighlight("서비스 이용약관", font: .pardFont.body4)
             .regular(string: "에 동의하세요.", fontSize: 13, fontColor: UIColor.pard.gray10)
     }
     
@@ -175,8 +175,9 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     func showToast(message : String, font: UIFont) {
-        let toastBar = ToastBar(message: message, font: font, superview: self.view)
-        toastBar.setUpToastBarUIInSuperView()
+        let toastBar = ToastBarBuilder()
+            .setMessage("서비스 이용약관에 동의해주세요.")
+            .build()
     }
 }
 
@@ -227,65 +228,5 @@ extension UserInfoPolicyViewController {
             make.height.equalTo(56)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-80)
         }
-    }
-}
-
-// - MARK: ToastBar UI Component class
-class ToastBar : UIView {
-    let toastLabel = UILabel().then {
-        $0.backgroundColor = UIColor.pard.blackBackground
-        $0.textColor = UIColor.pard.primaryPurple
-        $0.textAlignment = .center
-        $0.alpha = 1.0
-        $0.layer.borderColor = UIColor.pard.primaryPurple.cgColor
-        $0.layer.borderWidth = 1.0
-        $0.layer.cornerRadius = 8
-        $0.clipsToBounds  =  true
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUpToastBarUIInSelfView()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    convenience init(message : String, font : UIFont, superview: UIView){
-        self.init(frame: .infinite)
-        self.toastLabel.text = message
-        self.toastLabel.font = font
-        superview.addSubview(self)
-    }
-    
-    private func setUpToastBarUIInSelfView() {
-        self.addSubview(toastLabel)
-        toastLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-    }
-    
-    func setUpToastBarUIInSuperView() {
-        guard let superview = superview else {
-            return
-        }
-        
-        superview.addSubview(toastLabel)
-        toastLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).offset(-150)
-            make.width.equalTo(343)
-            make.height.equalTo(40)
-        }
-        
-        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
-            self.toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            self.removeFromSuperview()
-        })
     }
 }
