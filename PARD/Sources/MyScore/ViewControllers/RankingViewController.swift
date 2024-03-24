@@ -24,7 +24,7 @@ class RankingViewController: UIViewController {
 
     private func setupTextLabel() {
         textLabel.text = "🏆PARDNERSHIP🏆"
-        textLabel.font = UIFont.pardFont.head2
+        textLabel.font = UIFont.pardFont.head2.withSize(16)
         textLabel.textColor = UIColor(patternImage: gradientImage())
         textLabel.layer.borderWidth = 1
         textLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
@@ -66,7 +66,7 @@ class RankingViewController: UIViewController {
         self.navigationItem.title = "전체 랭킹"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
-                .font:  UIFont.pardFont.head1,
+                .font:  UIFont.pardFont.head2.withSize(16),
                 .foregroundColor: UIColor.white
             ]
         }
@@ -113,7 +113,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         
         let rankView = UIView().then {
             $0.frame = CGRect(x: 22, y: 23, width: 40, height: 24)
-            $0.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 0.1)
+            $0.backgroundColor = UIColor.pard.blackCard
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1
             $0.layer.borderColor = determineBorderColor(for: indexPath.row + 1).cgColor
@@ -215,7 +215,7 @@ private func determineBorderColor(for rank: Int) -> UIColor {
     case 3:
         return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
     default:
-        return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
+        return UIColor.pard.gray30
     }
 }
 
@@ -228,7 +228,7 @@ private func determineLabelColor(for rank: Int) -> UIColor {
     case 3:
         return UIColor(red: 247/255, green: 148/255, blue: 41/255, alpha: 1)
     default:
-        return UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 1)
+        return UIColor.pard.gray30
     }
 }
 
