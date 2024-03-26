@@ -25,7 +25,11 @@ class HomeViewController: UIViewController {
     
     @objc private func homeLogoTapped() {
         print("home")
-        navigationController?.popToRootViewController(animated: true)
+        // FIXME: - ram test code
+        let QRVC = ReaderViewController()
+        navigationController?.pushViewController(QRVC, animated: true)
+        
+//        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc private func menuButtonTapped() {
@@ -50,7 +54,10 @@ extension HomeViewController {
         setUpUI()
         setNavigation()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
     private func setUpUI() {
         view.addSubview(topView)
         topView.snp.makeConstraints { make in
