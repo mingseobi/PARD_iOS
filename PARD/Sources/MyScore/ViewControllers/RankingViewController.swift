@@ -110,7 +110,7 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let rankView = UIView().then {
-            $0.frame = CGRect(x: 22, y: 23, width: 40, height: 24)
+            $0.frame = CGRect(x: 22, y: 23, width: 40, height: 24) //오토레이아웃으로 설정
             $0.backgroundColor = UIColor(red: 163/255, green: 163/255, blue: 163/255, alpha: 0.1)
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1

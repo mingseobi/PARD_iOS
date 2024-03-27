@@ -42,23 +42,36 @@ class MyScoreViewController: UIViewController {
     }
     
     private func setupTextLabel() {
-        pardnerShipLabel.text = " 🏆 PARDNERSHIP TOP 3 🏆 "
-        pardnerShipLabel.font = UIFont.pardFont.head2.withSize(16)
-        pardnerShipLabel.textColor = UIColor(patternImage: gradientImage())
-        pardnerShipLabel.layer.borderWidth = 1
-        pardnerShipLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
-        pardnerShipLabel.layer.cornerRadius = 18
-        pardnerShipLabel.textAlignment = .center
+        let padding: CGFloat = 8
         
-        view.addSubview(pardnerShipLabel)
+        let labelContainerView = UIView()
+        labelContainerView.backgroundColor = .clear
+        view.addSubview(labelContainerView)
+        
+        pardnerShipLabel.text = "🏆 PARDNERSHIP TOP 3 🏆"
+        pardnerShipLabel.font = UIFont.pardFont.head2
+        pardnerShipLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        pardnerShipLabel.textColor = UIColor(patternImage: gradientImage())
+        pardnerShipLabel.textAlignment = .center
+        labelContainerView.addSubview(pardnerShipLabel)
         
         pardnerShipLabel.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding))
+        }
+        
+        labelContainerView.layer.borderWidth = 1
+        labelContainerView.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
+        labelContainerView.layer.cornerRadius = 18
+        
+        labelContainerView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(230)
+            $0.width.equalTo(230 + padding * 2)
             $0.height.equalTo(36)
         }
     }
+
+
     
     private func setupRankingButton() {
         let rankingButton = UIButton(type: .system).then {
