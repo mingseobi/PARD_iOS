@@ -28,7 +28,7 @@ class MyScoreViewController: UIViewController {
         self.navigationItem.title = "내 점수"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
-                .font:  UIFont.pardFont.head2.withSize(16),
+                .font:  UIFont.pardFont.head2,
                 .foregroundColor: UIColor.white
             ]
         }
@@ -105,7 +105,7 @@ class MyScoreViewController: UIViewController {
         
         let goldRankLabel = UILabel().then {
             $0.text = "1"
-            $0.font = UIFont.pardFont.head2.withSize(16)
+            $0.font = UIFont.pardFont.head2
             $0.textAlignment = .center
             $0.textColor = .white
         }
@@ -113,7 +113,7 @@ class MyScoreViewController: UIViewController {
         
         let goldPartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.pardFont.body3.withSize(12)
+            $0.font = UIFont.pardFont.body3
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -121,7 +121,7 @@ class MyScoreViewController: UIViewController {
         
         let goldNameLabel = UILabel().then {
             $0.text = "김민섭"
-            $0.font = UIFont.pardFont.body4.withSize(14)
+            $0.font = UIFont.pardFont.body4
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -133,7 +133,7 @@ class MyScoreViewController: UIViewController {
         
         let silverRankLabel = UILabel().then {
             $0.text = "2"
-            $0.font = UIFont.pardFont.head2.withSize(16)
+            $0.font = UIFont.pardFont.head2
             $0.textAlignment = .center
             $0.textColor = .white
         }
@@ -141,7 +141,7 @@ class MyScoreViewController: UIViewController {
         
         let silverPartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.pardFont.body3.withSize(12)
+            $0.font = UIFont.pardFont.body3
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -149,7 +149,7 @@ class MyScoreViewController: UIViewController {
         
         let silverNameLabel = UILabel().then {
             $0.text = "손동우"
-            $0.font = UIFont.pardFont.body4.withSize(14)
+            $0.font = UIFont.pardFont.body4
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -160,7 +160,7 @@ class MyScoreViewController: UIViewController {
         
         let bronzeRankLabel = UILabel().then {
             $0.text = "3"
-            $0.font = UIFont.pardFont.head2.withSize(16)
+            $0.font = UIFont.pardFont.head2
             $0.textAlignment = .center
             $0.textColor = .white
         }
@@ -168,7 +168,7 @@ class MyScoreViewController: UIViewController {
         
         let bronzePartLabel = UILabel().then {
             $0.text = "디자인파트"
-            $0.font = UIFont.pardFont.body3.withSize(12)
+            $0.font = UIFont.pardFont.body3
             $0.textAlignment = .center
             $0.textColor = .pard.gray30
         }
@@ -176,7 +176,7 @@ class MyScoreViewController: UIViewController {
         
         let bronzeNameLabel = UILabel().then {
             $0.text = "윤성익"
-            $0.font = UIFont.pardFont.body4.withSize(14)
+            $0.font = UIFont.pardFont.body4
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -310,7 +310,7 @@ class MyScoreViewController: UIViewController {
         
         let myScoreLabel = UILabel().then {
             $0.text = "파트 내 랭킹"
-            $0.font = UIFont.pardFont.body1.withSize(12)
+            $0.font = UIFont.pardFont.body1
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -323,7 +323,7 @@ class MyScoreViewController: UIViewController {
         
         let myRankLabel = UILabel().then {
             $0.text = "3위"
-            $0.font = UIFont.pardFont.head2.withSize(16)
+            $0.font = UIFont.pardFont.head2
             $0.textAlignment = .center
             $0.textColor = .white
         }
@@ -336,7 +336,7 @@ class MyScoreViewController: UIViewController {
         
         let totalScoreLabel = UILabel().then {
             $0.text = "전체 랭킹"
-            $0.font = UIFont.pardFont.body1.withSize(12)
+            $0.font = UIFont.pardFont.body1
             $0.textAlignment = .center
             $0.textColor = .pard.gray10
         }
@@ -349,7 +349,7 @@ class MyScoreViewController: UIViewController {
         
         let totalRankLabel = UILabel().then {
             $0.text = "13위"
-            $0.font = UIFont.pardFont.head2.withSize(16)
+            $0.font = UIFont.pardFont.head2
             $0.textAlignment = .center
             $0.textColor = .white
         }
