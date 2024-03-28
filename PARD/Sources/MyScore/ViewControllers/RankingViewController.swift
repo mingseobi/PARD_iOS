@@ -118,7 +118,9 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             $0.layer.borderColor = determineBorderColor(for: indexPath.row + 1).cgColor
         }
         cell.contentView.addSubview(rankView)
+        
         rankView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             rankView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 22),
             rankView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 23),
@@ -132,8 +134,11 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
             $0.text = "\(indexPath.row + 1)등"
         }
+        
         rankView.addSubview(rankLabel)
+        
         rankLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             rankLabel.centerXAnchor.constraint(equalTo: rankView.centerXAnchor),
             rankLabel.centerYAnchor.constraint(equalTo: rankView.centerYAnchor),
