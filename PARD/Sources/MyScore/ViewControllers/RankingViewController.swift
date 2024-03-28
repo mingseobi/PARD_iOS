@@ -112,35 +112,55 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let rankView = UIView().then {
-            $0.frame = CGRect(x: 22, y: 23, width: 40, height: 24)
             $0.backgroundColor = UIColor.pard.blackCard
             $0.layer.cornerRadius = 8
             $0.layer.borderWidth = 1
             $0.layer.borderColor = determineBorderColor(for: indexPath.row + 1).cgColor
         }
         cell.contentView.addSubview(rankView)
+        rankView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            rankView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 22),
+            rankView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 23),
+            rankView.widthAnchor.constraint(equalToConstant: 40),
+            rankView.heightAnchor.constraint(equalToConstant: 24)
+        ])
+        
+        let rankLabel = UILabel().then {
+            $0.textColor = determineLabelColor(for: indexPath.row + 1)
+            $0.textAlignment = .center
+            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+            $0.text = "\(indexPath.row + 1)등"
+        }
+        rankView.addSubview(rankLabel)
+        rankLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            rankLabel.centerXAnchor.constraint(equalTo: rankView.centerXAnchor),
+            rankLabel.centerYAnchor.constraint(equalTo: rankView.centerYAnchor),
+        ])
         
         if indexPath.row < userInfos.count {
             let userInfo = userInfos[indexPath.row]
             
+            let rankImageView = UIImageView()
             if indexPath.row == 0 {
-                let rankImageView = UIImageView().then {
-                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                    $0.image = UIImage(named: "gold")
-                }
-                cell.contentView.addSubview(rankImageView)
+                rankImageView.image = UIImage(named: "gold")
             } else if indexPath.row == 1 {
-                let rankImageView = UIImageView().then {
-                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                    $0.image = UIImage(named: "silver")
-                }
-                cell.contentView.addSubview(rankImageView)
+                rankImageView.image = UIImage(named: "silver")
             } else if indexPath.row == 2 {
-                let rankImageView = UIImageView().then {
-                    $0.frame = CGRect(x: 32, y: 8, width: 20, height: 20)
-                    $0.image = UIImage(named: "bronze")
-                }
+                rankImageView.image = UIImage(named: "bronze")
+            }
+            
+            if indexPath.row < 3 {
                 cell.contentView.addSubview(rankImageView)
+                rankImageView.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    rankImageView.topAnchor.constraint(equalTo: rankView.topAnchor, constant: -14),
+                    rankImageView.trailingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: -9),
+                    rankImageView.widthAnchor.constraint(equalToConstant: 20),
+                    rankImageView.heightAnchor.constraint(equalToConstant: 20)
+                ])
+                cell.contentView.bringSubviewToFront(rankImageView)
             }
             
             let userInfoLabel = UILabel().then {
@@ -150,8 +170,10 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.contentView.addSubview(userInfoLabel)
             userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-            userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-            userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8).isActive = true
+            NSLayoutConstraint.activate([
+                userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8)
+            ])
             
             let userInfoPartLabel = UILabel().then {
                 $0.text = "\(userInfo.part)"
@@ -160,29 +182,24 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.contentView.addSubview(userInfoPartLabel)
             userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
-            userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-            userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4).isActive = true
+            NSLayoutConstraint.activate([
+                userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4)
+            ])
             
             let userInfoScoreLabel = UILabel().then {
                 $0.text = "\(userInfo.score)"
                 $0.textColor = .pard.gray10
                 $0.font = UIFont.systemFont(ofSize: 12)
             }
-            
             cell.contentView.addSubview(userInfoScoreLabel)
             userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-            userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
-            userInfoScoreLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16).isActive = true
+            NSLayoutConstraint.activate([
+                userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                userInfoScoreLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16)
+            ])
         }
-        
-        let rankLabel = UILabel().then {
-            $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
-            $0.textColor = determineLabelColor(for: indexPath.row + 1)
-            $0.textAlignment = .center
-            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-            $0.text = "\(indexPath.row + 1)등"
-        }
-        rankView.addSubview(rankLabel)
+
         
         // 마지막 셀인 경우에만 셀의 하단 좌우를 round 처리
         if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -193,18 +210,28 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 각 셀마다 구분선을 추가하는 부분
         if indexPath.row < 6 {
             let separatorView = UIView()
             separatorView.backgroundColor = UIColor.pard.gray30
             cell.contentView.addSubview(separatorView)
             separatorView.translatesAutoresizingMaskIntoConstraints = false
-            separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-            separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
-            separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
-            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            NSLayoutConstraint.activate([
+                separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+                separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
+                separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
+                separatorView.heightAnchor.constraint(equalToConstant: 1)
+            ])
+        }
+
+        // 마지막 셀에 대한 처리
+        if indexPath.row == rankings.count - 1 {
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         }
     }
 }
+
 
 private func determineBorderColor(for rank: Int) -> UIColor {
     switch rank {
