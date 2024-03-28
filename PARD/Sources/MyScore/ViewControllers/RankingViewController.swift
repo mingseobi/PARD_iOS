@@ -23,21 +23,31 @@ class RankingViewController: UIViewController {
     }
 
     private func setupTextLabel() {
-        textLabel.text = "🏆PARDNERSHIP🏆"
-        textLabel.font = UIFont.pardFont.head2.withSize(16)
+        let horizontalPadding: CGFloat = 16
+
+        let labelContainerView = UIView()
+        labelContainerView.backgroundColor = .clear
+        labelContainerView.layer.borderWidth = 1
+        labelContainerView.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
+        labelContainerView.layer.cornerRadius = 18
+        view.addSubview(labelContainerView)
+
+        textLabel.text = "🏆 PARDNERSHIP 🏆"
+        textLabel.font = UIFont.pardFont.head2
         textLabel.textColor = UIColor(patternImage: gradientImage())
-        textLabel.layer.borderWidth = 1
-        textLabel.layer.borderColor = UIColor(patternImage: gradientImage()).cgColor
-        textLabel.layer.cornerRadius = 18
         textLabel.textAlignment = .center
-        
-        view.addSubview(textLabel)
-        
-        textLabel.snp.makeConstraints {
+        labelContainerView.addSubview(textLabel)
+
+        labelContainerView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(180)
+            $0.width.equalTo(180 + horizontalPadding * 2)
             $0.height.equalTo(36)
+        }
+
+        textLabel.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.left.right.equalToSuperview().inset(horizontalPadding)
         }
     }
 
@@ -61,12 +71,11 @@ class RankingViewController: UIViewController {
         tableView.layer.masksToBounds = true
     }
 
-    // Navigation 설정
     private func setNavigation() {
         self.navigationItem.title = "전체 랭킹"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
-                .font:  UIFont.pardFont.head2.withSize(16),
+                .font:  UIFont.pardFont.head2,
                 .foregroundColor: UIColor.white
             ]
         }
@@ -205,8 +214,6 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             ])
         }
 
-        
-        // 마지막 셀인 경우에만 셀의 하단 좌우를 round 처리
         if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             cell.contentView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         }
@@ -236,7 +243,6 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
 
 private func determineBorderColor(for rank: Int) -> UIColor {
     switch rank {
