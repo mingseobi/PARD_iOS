@@ -23,7 +23,7 @@ class RankingViewController: UIViewController {
     }
 
     private func setupTextLabel() {
-        textLabel.text = "🏆PARDNERSHIP🏆"
+        textLabel.text = "🏆 PARDNERSHIP 🏆"
         textLabel.font = UIFont.pardFont.head2
         textLabel.textColor = UIColor(patternImage: gradientImage())
         textLabel.layer.borderWidth = 1
@@ -174,13 +174,30 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let rankLabel = UILabel().then {
-            $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
+            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.textColor = determineLabelColor(for: indexPath.row + 1)
             $0.textAlignment = .center
             $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
             $0.text = "\(indexPath.row + 1)등"
         }
         rankView.addSubview(rankLabel)
+
+        NSLayoutConstraint.activate([
+            rankLabel.widthAnchor.constraint(equalToConstant: 40),
+            rankLabel.heightAnchor.constraint(equalToConstant: 40),
+            rankLabel.centerXAnchor.constraint(equalTo: rankView.centerXAnchor),
+            rankLabel.centerYAnchor.constraint(equalTo: rankView.centerYAnchor, constant: 0)
+        ])
+
+        
+//        let rankLabel = UILabel().then {
+//            $0.frame = CGRect(x: 0, y: -8, width: 40, height: 40)
+//            $0.textColor = determineLabelColor(for: indexPath.row + 1)
+//            $0.textAlignment = .center
+//            $0.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+//            $0.text = "\(indexPath.row + 1)등"
+//        }
+//        rankView.addSubview(rankLabel)
         
         return cell
     }
