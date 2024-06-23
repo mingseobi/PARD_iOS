@@ -175,7 +175,7 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     func showToast(message : String, font: UIFont) {
-        let toastBar = ToastBarBuilder()
+        let toastBar = TooltipBuilder()
             .setMessage("서비스 이용약관에 동의해주세요.")
             .build()
     }

@@ -23,7 +23,7 @@
 		0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */; };
 		0DC5CE082BA0B97F007A21E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */; };
 		0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */; };
-		0DD2B1112BB063DC0050A0E1 /* TostbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2B1102BB063DC0050A0E1 /* TostbarView.swift */; };
+		0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */; };
 		2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */; };
 		2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */; };
 		2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADB02B92D6A000CDA462 /* ViewController.swift */; };
@@ -68,7 +68,7 @@
 		0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModalView.swift; sourceTree = "<group>"; };
 		0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
-		0DD2B1102BB063DC0050A0E1 /* TostbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TostbarView.swift; sourceTree = "<group>"; };
+		0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		2106ADA92B92D6A000CDA462 /* PARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 				0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */,
 				0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */,
 				0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */,
-				0DD2B1102BB063DC0050A0E1 /* TostbarView.swift */,
+				0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -494,7 +494,7 @@
 				0DAFA0E02BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift in Sources */,
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
 				0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */,
-				0DD2B1112BB063DC0050A0E1 /* TostbarView.swift in Sources */,
+				0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */,
 				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
 				0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */,

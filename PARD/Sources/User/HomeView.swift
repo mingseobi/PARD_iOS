@@ -98,7 +98,7 @@ class HomeTopView : UIView {
     
     @objc private func tappedQuestionButton() {
         isSelected.toggle()
-        let toastBar = ToastBarBuilder()
+        let toastBar = TooltipBuilder()
             .setMessage("저는 파드 포인트와 출석 점수를 먹고 자라는 ")
             .setMessage3("팡울이 ")
             .setMessage2("에요. 오늘도 PARD에서 저와 함께 성장해요! ☺️")

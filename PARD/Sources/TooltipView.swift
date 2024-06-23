@@ -1,5 +1,5 @@
 //
-//  TostbarView.swift
+//  TooltipView.swift
 //  PARD
 //
 //  Created by 진세진 on 3/24/24.
@@ -7,7 +7,7 @@
 import UIKit
 import SnapKit
 
-class ToastBarBuilder {
+class TooltipBuilder {
     private var message: String = ""
     private var message2: String = ""
     private var message3 : String = ""
@@ -17,51 +17,51 @@ class ToastBarBuilder {
     private var width: CGFloat = 343
     private var height: CGFloat = 40
     
-    func setMessage(_ message: String) -> ToastBarBuilder {
+    func setMessage(_ message: String) -> TooltipBuilder {
         self.message = message
         return self
     }
     
-    func setMessage2(_ message: String) -> ToastBarBuilder {
+    func setMessage2(_ message: String) -> TooltipBuilder {
         self.message2 = message
         return self
     }
     
-    func setMessage3(_ message: String) -> ToastBarBuilder {
+    func setMessage3(_ message: String) -> TooltipBuilder {
         self.message3 = message
         return self
     }
     
-    func setFont(_ font: UIFont) -> ToastBarBuilder {
+    func setFont(_ font: UIFont) -> TooltipBuilder {
         self.font = font
         return self
     }
     
-    func setSuperview(_ superview: UIView) -> ToastBarBuilder {
+    func setSuperview(_ superview: UIView) -> TooltipBuilder {
         self.superview = superview
         return self
     }
     
-    func setisToolTip(_ isSpeechBubbleForm: Bool) -> ToastBarBuilder {
+    func setisToolTip(_ isSpeechBubbleForm: Bool) -> TooltipBuilder {
         self.isSelectedToolTip = isSpeechBubbleForm
         return self
     }
     
-    func setWidth(_ width: CGFloat) -> ToastBarBuilder {
+    func setWidth(_ width: CGFloat) -> TooltipBuilder {
         self.width = width
         return self
     }
     
-    func setHeight(_ height: CGFloat) -> ToastBarBuilder {
+    func setHeight(_ height: CGFloat) -> TooltipBuilder {
         self.height = height
         return self
     }
     
-    func build() -> ToastBar {
+    func build() -> ToolTipBar {
         guard let superview = superview else {
             fatalError("Superview must be set.")
         }
-        let toastBar = ToastBar(
+        let toastBar = ToolTipBar(
             message: message,
             message2: message2,
             message3: message3,
@@ -75,7 +75,7 @@ class ToastBarBuilder {
     }
 }
 
-class ToastBar : UIView {
+class ToolTipBar : UIView {
     private var isSelectedToolTip : Bool = false
     private var width : CGFloat?
     private var height : CGFloat?
