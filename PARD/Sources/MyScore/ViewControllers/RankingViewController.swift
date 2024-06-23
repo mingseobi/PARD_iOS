@@ -130,12 +130,12 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         
         rankView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            rankView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 22),
-            rankView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 23),
-            rankView.widthAnchor.constraint(equalToConstant: 40),
-            rankView.heightAnchor.constraint(equalToConstant: 24)
-        ])
+        rankView.snp.makeConstraints { make in
+            make.leading.equalTo(cell.contentView.snp.leading).offset(22)
+            make.top.equalTo(cell.contentView.snp.top).offset(23)
+            make.width.equalTo(40)
+            make.height.equalTo(24)
+        }
         
         let rankLabel = UILabel().then {
             $0.textColor = determineLabelColor(for: indexPath.row + 1)
@@ -146,12 +146,10 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         
         rankView.addSubview(rankLabel)
         
-        rankLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            rankLabel.centerXAnchor.constraint(equalTo: rankView.centerXAnchor),
-            rankLabel.centerYAnchor.constraint(equalTo: rankView.centerYAnchor),
-        ])
+        rankLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(rankView.snp.centerX)
+            make.centerY.equalTo(rankView.snp.centerY)
+        }
         
         if indexPath.row < userInfos.count {
             let userInfo = userInfos[indexPath.row]
@@ -167,13 +165,13 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             
             if indexPath.row < 3 {
                 cell.contentView.addSubview(rankImageView)
-                rankImageView.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    rankImageView.topAnchor.constraint(equalTo: rankView.topAnchor, constant: -14),
-                    rankImageView.trailingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: -9),
-                    rankImageView.widthAnchor.constraint(equalToConstant: 20),
-                    rankImageView.heightAnchor.constraint(equalToConstant: 20)
-                ])
+                rankImageView.snp.makeConstraints { make in
+                    make.top.equalTo(rankView.snp.top).offset(-14)
+                    make.trailing.equalTo(rankView.snp.trailing).offset(-9)
+                    make.width.equalTo(20)
+                    make.height.equalTo(20)
+                }
+
                 cell.contentView.bringSubviewToFront(rankImageView)
             }
             
@@ -183,11 +181,11 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
                 $0.font = UIFont.systemFont(ofSize: 16)
             }
             cell.contentView.addSubview(userInfoLabel)
-            userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                userInfoLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
-                userInfoLabel.leadingAnchor.constraint(equalTo: rankView.trailingAnchor, constant: 8)
-            ])
+            userInfoLabel.snp.makeConstraints { make in
+                make.centerY.equalTo(cell.contentView.snp.centerY)
+                make.leading.equalTo(rankView.snp.trailing).offset(8)
+            }
+
             
             let userInfoPartLabel = UILabel().then {
                 $0.text = "\(userInfo.part)"
@@ -195,11 +193,11 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
                 $0.font = UIFont.systemFont(ofSize: 12)
             }
             cell.contentView.addSubview(userInfoPartLabel)
-            userInfoPartLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                userInfoPartLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
-                userInfoPartLabel.leadingAnchor.constraint(equalTo: userInfoLabel.trailingAnchor, constant: 4)
-            ])
+            userInfoPartLabel.snp.makeConstraints { make in
+                make.centerY.equalTo(cell.contentView.snp.centerY)
+                make.leading.equalTo(userInfoLabel.snp.trailing).offset(4)
+            }
+
             
             let userInfoScoreLabel = UILabel().then {
                 $0.text = "\(userInfo.score)"
@@ -207,11 +205,11 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
                 $0.font = UIFont.systemFont(ofSize: 12)
             }
             cell.contentView.addSubview(userInfoScoreLabel)
-            userInfoScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                userInfoScoreLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
-                userInfoScoreLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16)
-            ])
+            userInfoScoreLabel.snp.makeConstraints { make in
+                make.centerY.equalTo(cell.contentView.snp.centerY)
+                make.trailing.equalTo(cell.contentView.snp.trailing).offset(-16)
+            }
+
         }
 
         if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -227,13 +225,12 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
             let separatorView = UIView()
             separatorView.backgroundColor = UIColor.pard.gray30
             cell.contentView.addSubview(separatorView)
-            separatorView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
-                separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
-                separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
-                separatorView.heightAnchor.constraint(equalToConstant: 1)
-            ])
+            separatorView.snp.makeConstraints { make in
+                make.leading.equalTo(cell.contentView.snp.leading)
+                make.trailing.equalTo(cell.contentView.snp.trailing)
+                make.bottom.equalTo(cell.contentView.snp.bottom)
+                make.height.equalTo(1)
+            }
         }
 
         // 마지막 셀에 대한 처리
