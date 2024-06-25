@@ -49,6 +49,7 @@
 		90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D12B95D2CF0056D724 /* CalendarViewController.swift */; };
 		90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */; };
 		90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D52B95D2EA0056D724 /* RankingViewController.swift */; };
+		F6B5318C47DC40D2A62BA056 /* Pods_PARD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,9 @@
 		90C007D12B95D2CF0056D724 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		90C007D52B95D2EA0056D724 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARD.debug.xcconfig"; path = "Target Support Files/Pods-PARD/Pods-PARD.debug.xcconfig"; sourceTree = "<group>"; };
+		E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARD.release.xcconfig"; path = "Target Support Files/Pods-PARD/Pods-PARD.release.xcconfig"; sourceTree = "<group>"; };
+		EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +108,21 @@
 				217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */,
 				217651542B94778600121AB2 /* SnapKit in Frameworks */,
 				217651592B94779600121AB2 /* Then in Frameworks */,
+				F6B5318C47DC40D2A62BA056 /* Pods_PARD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846A5159368BB9827BC8859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,8 @@
 			children = (
 				2106ADAB2B92D6A000CDA462 /* PARD */,
 				2106ADAA2B92D6A000CDA462 /* Products */,
+				9B1EC759A05B0363277762B0 /* Pods */,
+				0846A5159368BB9827BC8859 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +405,15 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		9B1EC759A05B0363277762B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */,
+				E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,9 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2106ADBD2B92D6A200CDA462 /* Build configuration list for PBXNativeTarget "PARD" */;
 			buildPhases = (
+				E058E59E6EE5387CB4E925F5 /* [CP] Check Pods Manifest.lock */,
 				2106ADA52B92D6A000CDA462 /* Sources */,
 				2106ADA62B92D6A000CDA462 /* Frameworks */,
 				2106ADA72B92D6A000CDA462 /* Resources */,
+				139D21393009CD7FB4F1A4F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,6 +491,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		139D21393009CD7FB4F1A4F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E058E59E6EE5387CB4E925F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PARD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2106ADA52B92D6A000CDA462 /* Sources */ = {
@@ -570,7 +638,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -633,7 +701,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -654,6 +722,7 @@
 		};
 		2106ADBE2B92D6A200CDA462 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -683,6 +752,7 @@
 		};
 		2106ADBF2B92D6A200CDA462 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
