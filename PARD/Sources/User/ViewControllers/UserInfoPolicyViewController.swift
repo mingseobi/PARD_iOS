@@ -167,7 +167,7 @@ class UserInfoPolicyViewController: UIViewController {
     
     @objc private func changeBottomEnable() {
         if isTapAgreeButton {
-            let viewController = ViewController()
+            let viewController = HomeTabBarViewController()
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             showToast(message: "서비스 이용약관에 동의해주세요.", font: UIFont.pardFont.body4)

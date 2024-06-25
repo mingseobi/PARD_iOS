@@ -8,12 +8,13 @@
 import UIKit
 import AuthenticationServices
 
-extension AppleLoginViewController: ASAuthorizationControllerDelegate {
+extension MainLoginViewController: ASAuthorizationControllerDelegate {
+    // apple login 성공 여부
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.user
-//            let userFirstName = appleIDCredential.fullName?.givenName
-//            let userLastName = appleIDCredential.fullName?.familyName
+            //            let userFirstName = appleIDCredential.fullName?.givenName
+            //            let userLastName = appleIDCredential.fullName?.familyName
             let userEmail = appleIDCredential.email
             
             let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -45,16 +46,19 @@ extension AppleLoginViewController: ASAuthorizationControllerDelegate {
                     break
                 }
             }
+            let userInfoPolicyViewController = UserInfoPolicyViewController()
+            self.navigationController?.pushViewController(userInfoPolicyViewController, animated: true)
         }
     }
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print(error)
     }
+    
 }
 
-
-extension AppleLoginViewController: ASAuthorizationControllerPresentationContextProviding {
+extension MainLoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
 }
+
