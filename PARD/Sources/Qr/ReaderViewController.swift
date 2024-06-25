@@ -73,6 +73,7 @@ class ReaderViewController: UIViewController {
     
     @objc func cancelButtonTapped() {
         print("button Tapped")
+        
 //        if let tabBarController = self.tabBarController {
 //            tabBarController.selectedIndex = 0
 //        }
