@@ -18,9 +18,15 @@ class HomeTabBarViewController: UITabBarController {
         setUpTabBarItems()
     }
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        }
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func setUpTabbarView() {
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home"), tag: 0)
@@ -60,9 +66,9 @@ class HomeTabBarViewController: UITabBarController {
     }
     
     private func setUpTabBarItems() {
-           self.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-           self.title = nil
-       }
+        self.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        self.title = nil
+    }
 }
 
 extension UITabBar {
