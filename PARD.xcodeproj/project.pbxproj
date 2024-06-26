@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0ADFD92BAAD8EC00094D08 /* PardNotionLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0ADFD82BAAD8EC00094D08 /* PardNotionLinkView.swift */; };
+		0D0ADFDB2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0ADFDA2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift */; };
+		0DAFA0E02BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0DF2BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift */; };
+		0DAFA0E22BA74EF30092FEB0 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */; };
 		0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDEE2B96D998007A21E4 /* UserViews.swift */; };
 		0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF02B96DA05007A21E4 /* HomeView.swift */; };
 		0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */; };
@@ -19,16 +23,18 @@
 		0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */; };
 		0DC5CE082BA0B97F007A21E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */; };
 		0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */; };
+		0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */; };
 		2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */; };
 		2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */; };
 		2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADB02B92D6A000CDA462 /* ViewController.swift */; };
 		2106ADB42B92D6A000CDA462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB22B92D6A000CDA462 /* Main.storyboard */; };
 		2106ADB62B92D6A200CDA462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB52B92D6A200CDA462 /* Assets.xcassets */; };
 		2106ADB92B92D6A200CDA462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2106ADB72B92D6A200CDA462 /* LaunchScreen.storyboard */; };
+		2123A97D2BA73634009C60BF /* QrReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123A97C2BA73634009C60BF /* QrReaderView.swift */; };
+		2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123A97E2BA73640009C60BF /* ReaderViewController.swift */; };
 		2128D7942B9991B6000F573C /* PardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128D7932B9991B6000F573C /* PardTextField.swift */; };
 		217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 217651502B94738800121AB2 /* PARD_DesignSystem */; };
 		217651542B94778600121AB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 217651532B94778600121AB2 /* SnapKit */; };
-		217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 217651552B94778600121AB2 /* SnapKit-Dynamic */; };
 		217651592B94779600121AB2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 217651582B94779600121AB2 /* Then */; };
 		2176515B2B947ABE00121AB2 /* +Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176515A2B947ABE00121AB2 /* +Font.swift */; };
 		21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A685792B9C893E006F6D9E /* AppleLoginViewController.swift */; };
@@ -37,15 +43,20 @@
 		90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C42B95D24C0056D724 /* MainLoginViewController.swift */; };
 		90C007C72B95D2670056D724 /* UserInfoPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */; };
 		90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */; };
-		90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */; };
+		90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */; };
 		90C007CE2B95D2B40056D724 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CD2B95D2B40056D724 /* HomeViewController.swift */; };
 		90C007D02B95D2BF0056D724 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */; };
 		90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D12B95D2CF0056D724 /* CalendarViewController.swift */; };
 		90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */; };
 		90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C007D52B95D2EA0056D724 /* RankingViewController.swift */; };
+		F6B5318C47DC40D2A62BA056 /* Pods_PARD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0ADFD82BAAD8EC00094D08 /* PardNotionLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardNotionLinkView.swift; sourceTree = "<group>"; };
+		0D0ADFDA2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardNotionLinkCollectionViewCell.swift; sourceTree = "<group>"; };
+		0DAFA0DF2BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamBurgerTableViewCell.swift; sourceTree = "<group>"; };
+		0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		0DC5CDEE2B96D998007A21E4 /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
 		0DC5CDF02B96DA05007A21E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../User/HomeView.swift; sourceTree = "<group>"; };
 		0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -58,6 +69,7 @@
 		0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModalView.swift; sourceTree = "<group>"; };
 		0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
+		0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		2106ADA92B92D6A000CDA462 /* PARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +78,8 @@
 		2106ADB52B92D6A200CDA462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2106ADB82B92D6A200CDA462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2106ADBA2B92D6A200CDA462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2123A97C2BA73634009C60BF /* QrReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderView.swift; sourceTree = "<group>"; };
+		2123A97E2BA73640009C60BF /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		2128D7932B9991B6000F573C /* PardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardTextField.swift; sourceTree = "<group>"; };
 		2176515A2B947ABE00121AB2 /* +Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Font.swift"; sourceTree = "<group>"; };
 		21A685772B9C84EB006F6D9E /* PARD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PARD.entitlements; sourceTree = "<group>"; };
@@ -75,12 +89,15 @@
 		90C007C42B95D24C0056D724 /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		90C007C62B95D2670056D724 /* UserInfoPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPolicyViewController.swift; sourceTree = "<group>"; };
 		90C007C92B95D2890056D724 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
-		90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		90C007CD2B95D2B40056D724 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		90C007D12B95D2CF0056D724 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		90C007D32B95D2DE0056D724 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		90C007D52B95D2EA0056D724 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARD.debug.xcconfig"; path = "Target Support Files/Pods-PARD/Pods-PARD.debug.xcconfig"; sourceTree = "<group>"; };
+		E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PARD.release.xcconfig"; path = "Target Support Files/Pods-PARD/Pods-PARD.release.xcconfig"; sourceTree = "<group>"; };
+		EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PARD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +107,22 @@
 			files = (
 				217651512B94738800121AB2 /* PARD_DesignSystem in Frameworks */,
 				217651542B94778600121AB2 /* SnapKit in Frameworks */,
-				217651562B94778600121AB2 /* SnapKit-Dynamic in Frameworks */,
 				217651592B94779600121AB2 /* Then in Frameworks */,
+				F6B5318C47DC40D2A62BA056 /* Pods_PARD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846A5159368BB9827BC8859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFD516BD1F47B4A52A8AA8C9 /* Pods_PARD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +153,8 @@
 			children = (
 				2106ADAB2B92D6A000CDA462 /* PARD */,
 				2106ADAA2B92D6A000CDA462 /* Products */,
+				9B1EC759A05B0363277762B0 /* Pods */,
+				0846A5159368BB9827BC8859 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +178,15 @@
 			path = PARD;
 			sourceTree = "<group>";
 		};
+		2123A97B2BA73626009C60BF /* Qr */ = {
+			isa = PBXGroup;
+			children = (
+				2123A97C2BA73634009C60BF /* QrReaderView.swift */,
+				2123A97E2BA73640009C60BF /* ReaderViewController.swift */,
+			);
+			path = Qr;
+			sourceTree = "<group>";
+		};
 		2176515C2B94827100121AB2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +200,7 @@
 		2176515D2B94829400121AB2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2123A97B2BA73626009C60BF /* Qr */,
 				0DC5CDFE2B96DB7F007A21E4 /* PopUpModal */,
 				90C007AE2B95D0C30056D724 /* User */,
 				90C007AF2B95D10B0056D724 /* Home */,
@@ -279,7 +316,7 @@
 		90C007B82B95D1B60056D724 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				90C007CB2B95D2A40056D724 /* HomeTableViewController.swift */,
+				90C007CB2B95D2A40056D724 /* HomeTabBarViewController.swift */,
 				90C007CD2B95D2B40056D724 /* HomeViewController.swift */,
 				90C007CF2B95D2BF0056D724 /* MyPageViewController.swift */,
 			);
@@ -338,6 +375,9 @@
 		90C007C12B95D1FE0056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DAFA0DF2BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift */,
+				0D0ADFDA2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift */,
+				0D0ADFD82BAAD8EC00094D08 /* PardNotionLinkView.swift */,
 				0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */,
 			);
 			name = Views;
@@ -351,6 +391,8 @@
 				21A6857D2B9CBFC6006F6D9E /* UILabelExtension.swift */,
 				0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */,
 				0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */,
+				0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */,
+				0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +405,15 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		9B1EC759A05B0363277762B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */,
+				E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,9 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2106ADBD2B92D6A200CDA462 /* Build configuration list for PBXNativeTarget "PARD" */;
 			buildPhases = (
+				E058E59E6EE5387CB4E925F5 /* [CP] Check Pods Manifest.lock */,
 				2106ADA52B92D6A000CDA462 /* Sources */,
 				2106ADA62B92D6A000CDA462 /* Frameworks */,
 				2106ADA72B92D6A000CDA462 /* Resources */,
+				139D21393009CD7FB4F1A4F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,7 +435,6 @@
 			packageProductDependencies = (
 				217651502B94738800121AB2 /* PARD_DesignSystem */,
 				217651532B94778600121AB2 /* SnapKit */,
-				217651552B94778600121AB2 /* SnapKit-Dynamic */,
 				217651582B94779600121AB2 /* Then */,
 			);
 			productName = PARD;
@@ -440,28 +492,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		139D21393009CD7FB4F1A4F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PARD/Pods-PARD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E058E59E6EE5387CB4E925F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PARD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2106ADA52B92D6A000CDA462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */,
-				90C007CC2B95D2A40056D724 /* HomeTableViewController.swift in Sources */,
+				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
+				90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */,
+				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
 				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
+				0D0ADFD92BAAD8EC00094D08 /* PardNotionLinkView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
 				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
 				0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */,
+				2123A97D2BA73634009C60BF /* QrReaderView.swift in Sources */,
 				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
 				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
 				21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */,
+				0D0ADFDB2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift in Sources */,
 				2176515B2B947ABE00121AB2 /* +Font.swift in Sources */,
 				0DC5CE012B96DBA4007A21E4 /* PopUpModalViewController.swift in Sources */,
 				0DC5CDFD2B96DB28007A21E4 /* PardAppModel.swift in Sources */,
 				21A6857A2B9C893E006F6D9E /* AppleLoginViewController.swift in Sources */,
 				0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */,
 				0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */,
+				0DAFA0E02BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift in Sources */,
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
 				0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */,
+				0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */,
 				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
 				0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */,
@@ -474,6 +575,7 @@
 				0DC5CE082BA0B97F007A21E4 /* UIButtonExtension.swift in Sources */,
 				2128D7942B9991B6000F573C /* PardTextField.swift in Sources */,
 				90C007D42B95D2DE0056D724 /* MyScoreViewController.swift in Sources */,
+				0DAFA0E22BA74EF30092FEB0 /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +638,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -599,7 +701,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -620,6 +722,7 @@
 		};
 		2106ADBE2B92D6A200CDA462 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEB19E39185BA05CA05F86F /* Pods-PARD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -649,6 +752,7 @@
 		};
 		2106ADBF2B92D6A200CDA462 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E7D151599A9EB33645FC5F /* Pods-PARD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -736,11 +840,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		217651552B94778600121AB2 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 217651522B94778600121AB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		217651582B94779600121AB2 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

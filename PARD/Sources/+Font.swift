@@ -22,7 +22,7 @@ extension UIFont {
         // - MARK: Pretendard/Head
         let head1 = UIFont.systemFont(ofSize: 18, weight: .bold).withLineHeight(24)
         let head2 = UIFont.systemFont(ofSize: 16, weight: .bold).withLineHeight(20)
-
+        
         // - MARK: Pretendard/Body
         let body1 = UIFont.systemFont(ofSize: 18, weight: .semibold).withLineHeight(14)
         let body2 = UIFont.systemFont(ofSize: 12, weight: .bold).withLineHeight(16)
@@ -30,7 +30,7 @@ extension UIFont {
         let body4 = UIFont.systemFont(ofSize: 14, weight: .semibold).withLineHeight(18)
         let body5 = UIFont.systemFont(ofSize: 14, weight: .medium).withLineHeight(24)
         let body6 = UIFont.systemFont(ofSize: 16, weight: .semibold).withLineHeight(16)
-
+        
         // - MARK: Pretendard/Caption
         let caption1 = UIFont.systemFont(ofSize: 14, weight: .medium).withLineHeight(20)
         let caption2 = UIFont.systemFont(ofSize: 12, weight: .semibold).withLineHeight(16)
