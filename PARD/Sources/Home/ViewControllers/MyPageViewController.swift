@@ -27,14 +27,24 @@ class MyPageViewController: UIViewController {
         view.addSubview(nameLabel)
         view.addSubview(settingsLabel)
         view.addSubview(notificationSettingView)
+        
         notificationSettingView.addSubview(notificationSettingLabel)
         notificationSettingView.addSubview(notificationSwitch)
+        
         view.addSubview(usageGuideLabel)
         view.addSubview(usageGuideView)
+        
         usageGuideView.addSubview(privacyPolicyLabel)
         usageGuideView.addSubview(termsOfServiceLabel)
         usageGuideView.addSubview(arrowImageView1)
         usageGuideView.addSubview(arrowImageView2)
+        
+        view.addSubview(accountLabel)
+        view.addSubview(accountView)
+        accountView.addSubview(logoutLabel)
+        accountView.addSubview(deleteAccountLabel)
+        accountView.addSubview(arrowImageView3)
+        accountView.addSubview(arrowImageView4)
     }
     
     private func setupConstraints() {
@@ -131,6 +141,38 @@ class MyPageViewController: UIViewController {
         arrowImageView2.snp.makeConstraints { make in
             make.centerY.equalTo(termsOfServiceLabel)
             make.trailing.equalTo(usageGuideView.snp.trailing).offset(-16)
+        }
+        
+        accountLabel.snp.makeConstraints { make in
+            make.top.equalTo(usageGuideView.snp.bottom).offset(20)
+            make.leading.equalTo(view.snp.leading).offset(24)
+        }
+        
+        accountView.snp.makeConstraints { make in
+            make.width.equalTo(327)
+            make.height.equalTo(100)
+            make.top.equalTo(accountLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        logoutLabel.snp.makeConstraints { make in
+            make.top.equalTo(accountView.snp.top).offset(16)
+            make.leading.equalTo(accountView.snp.leading).offset(16)
+        }
+        
+        deleteAccountLabel.snp.makeConstraints { make in
+            make.top.equalTo(logoutLabel.snp.bottom).offset(16)
+            make.leading.equalTo(accountView.snp.leading).offset(16)
+        }
+        
+        arrowImageView3.snp.makeConstraints { make in
+            make.centerY.equalTo(logoutLabel)
+            make.trailing.equalTo(accountView.snp.trailing).offset(-16)
+        }
+        
+        arrowImageView4.snp.makeConstraints { make in
+            make.centerY.equalTo(deleteAccountLabel)
+            make.trailing.equalTo(accountView.snp.trailing).offset(-16)
         }
     }
     
@@ -293,5 +335,59 @@ class MyPageViewController: UIViewController {
         imageView.tintColor = .white
         return imageView
     }()
+    
+    // 계정 라벨 정의
+    private let accountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "계정"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+
+    // 계정 뷰 정의
+    private let accountView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+
+    // 로그아웃 라벨 정의
+    private let logoutLabel: UILabel = {
+        let label = UILabel()
+        label.text = "로그아웃"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        return label
+    }()
+
+    // 탈퇴하기 라벨 정의
+    private let deleteAccountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "탈퇴하기"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        return label
+    }()
+
+    // 화살표 이미지 정의
+    private let arrowImageView3: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        return imageView
+    }()
+
+    private let arrowImageView4: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        return imageView
+    }()
+
 
 }
