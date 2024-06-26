@@ -57,12 +57,12 @@ class MyPageViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
         }
-
+        
         feedbackView.snp.makeConstraints { make in
-            make.width.equalTo(327)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
             make.height.equalTo(76)
             make.top.equalTo(myPageLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
         }
 
         feedbackLabel.snp.makeConstraints { make in
@@ -214,7 +214,6 @@ class MyPageViewController: UIViewController {
     private let feedbackView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
-        view.layer.cornerRadius = 8
         return view
     }()
 
@@ -224,16 +223,21 @@ class MyPageViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 2
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        if let pretendardFont = UIFont(name: "Pretendard-SemiBold", size: 14) {
+            label.font = pretendardFont
+        } else {
+            label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        }
         return label
     }()
+
 
     private let feedbackActionLabel: UILabel = {
         let label = UILabel()
         label.text = "피드백 남기기 >>"
-        label.textColor = .white
+        label.textColor = .pard.gray10
         label.textAlignment = .right
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         return label
     }()
 
