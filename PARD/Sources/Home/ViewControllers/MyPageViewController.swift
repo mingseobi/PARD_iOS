@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import PARD_DesignSystem
 
 class MyPageViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         setupConstraints()
     }
@@ -25,8 +26,12 @@ class MyPageViewController: UIViewController {
         view.addSubview(statusLabel2)
         view.addSubview(statusLabel3)
         view.addSubview(nameLabel)
+        view.addSubview(settingsLabel)
+        view.addSubview(notificationSettingView)
+        notificationSettingView.addSubview(notificationSettingLabel)
+        notificationSettingView.addSubview(notificationSwitch)
     }
-
+    
     private func setupConstraints() {
         myPageLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
@@ -50,23 +55,45 @@ class MyPageViewController: UIViewController {
             make.leading.equalTo(infoView.snp.leading).offset(16)
             make.height.equalTo(24)
         }
-                
+        
         statusLabel2.snp.makeConstraints { make in
             make.top.equalTo(infoView.snp.top).offset(8)
             make.leading.equalTo(statusLabel1.snp.trailing).offset(8)
             make.height.equalTo(24)
         }
-                
+        
         statusLabel3.snp.makeConstraints { make in
             make.top.equalTo(infoView.snp.top).offset(8)
             make.leading.equalTo(statusLabel2.snp.trailing).offset(8)
             make.height.equalTo(24)
         }
-                
+        
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(statusLabel1.snp.bottom).offset(8)
             make.leading.equalTo(infoView.snp.leading).offset(16)
             make.bottom.equalTo(infoView.snp.bottom).offset(-8)
+        }
+        
+        settingsLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoView.snp.bottom).offset(20)
+            make.leading.equalTo(view.snp.leading).offset(24)
+        }
+        
+        notificationSettingView.snp.makeConstraints { make in
+            make.width.equalTo(327)
+            make.height.equalTo(60)
+            make.top.equalTo(settingsLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        notificationSettingLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(notificationSettingView)
+            make.leading.equalTo(notificationSettingView.snp.leading).offset(16)
+        }
+        
+        notificationSwitch.snp.makeConstraints { make in
+            make.centerY.equalTo(notificationSettingLabel.snp.centerY)
+            make.trailing.equalTo(notificationSettingView.snp.trailing).offset(-16)
         }
     }
     
@@ -112,7 +139,7 @@ class MyPageViewController: UIViewController {
         label.layer.masksToBounds = true
         return label
     }()
-        
+    
     private let statusLabel2: UILabel = {
         let label = UILabel()
         label.text = "디자인 파트"
@@ -124,7 +151,7 @@ class MyPageViewController: UIViewController {
         label.layer.masksToBounds = true
         return label
     }()
-        
+    
     private let statusLabel3: UILabel = {
         let label = UILabel()
         label.text = "거친파도"
@@ -146,4 +173,36 @@ class MyPageViewController: UIViewController {
         return label
     }()
     
+    private let settingsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "설정"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+        
+    private let notificationSettingView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+        
+    private let notificationSettingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "알림 설정"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        return label
+    }()
+        
+    private let notificationSwitch: UISwitch = {
+        let toggleSwitch = UISwitch()
+        toggleSwitch.onTintColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        return toggleSwitch
+    }()
+
+
 }
