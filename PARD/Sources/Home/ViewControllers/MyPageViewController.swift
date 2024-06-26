@@ -21,7 +21,10 @@ class MyPageViewController: UIViewController {
         view.addSubview(infoView)
         
         view.addSubview(infoLabel)
-
+        view.addSubview(statusLabel1)
+        view.addSubview(statusLabel2)
+        view.addSubview(statusLabel3)
+        view.addSubview(nameLabel)
     }
 
     private func setupConstraints() {
@@ -42,7 +45,29 @@ class MyPageViewController: UIViewController {
             make.leading.equalTo(infoView.snp.leading)
         }
         
-        
+        statusLabel1.snp.makeConstraints { make in
+            make.top.equalTo(infoView.snp.top).offset(8)
+            make.leading.equalTo(infoView.snp.leading).offset(16)
+            make.height.equalTo(24)
+        }
+                
+        statusLabel2.snp.makeConstraints { make in
+            make.top.equalTo(infoView.snp.top).offset(8)
+            make.leading.equalTo(statusLabel1.snp.trailing).offset(8)
+            make.height.equalTo(24)
+        }
+                
+        statusLabel3.snp.makeConstraints { make in
+            make.top.equalTo(infoView.snp.top).offset(8)
+            make.leading.equalTo(statusLabel2.snp.trailing).offset(8)
+            make.height.equalTo(24)
+        }
+                
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(statusLabel1.snp.bottom).offset(8)
+            make.leading.equalTo(infoView.snp.leading).offset(16)
+            make.bottom.equalTo(infoView.snp.bottom).offset(-8)
+        }
     }
     
     private let myPageLabel: UILabel = {
@@ -76,6 +101,49 @@ class MyPageViewController: UIViewController {
         return infolabel
     }()
     
+    private let statusLabel1: UILabel = {
+        let label = UILabel()
+        label.text = "2기"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.layer.cornerRadius = 12
+        label.layer.masksToBounds = true
+        return label
+    }()
+        
+    private let statusLabel2: UILabel = {
+        let label = UILabel()
+        label.text = "디자인 파트"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.layer.cornerRadius = 12
+        label.layer.masksToBounds = true
+        return label
+    }()
+        
+    private let statusLabel3: UILabel = {
+        let label = UILabel()
+        label.text = "거친파도"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.layer.cornerRadius = 12
+        label.layer.masksToBounds = true
+        return label
+    }()
     
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "김파드 님"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
     
 }
