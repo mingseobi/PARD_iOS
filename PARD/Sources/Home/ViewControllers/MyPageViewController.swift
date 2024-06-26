@@ -20,7 +20,6 @@ class MyPageViewController: UIViewController {
     private func setupUI() {
         view.addSubview(myPageLabel)
         view.addSubview(infoView)
-        
         view.addSubview(infoLabel)
         view.addSubview(statusLabel1)
         view.addSubview(statusLabel2)
@@ -30,6 +29,12 @@ class MyPageViewController: UIViewController {
         view.addSubview(notificationSettingView)
         notificationSettingView.addSubview(notificationSettingLabel)
         notificationSettingView.addSubview(notificationSwitch)
+        view.addSubview(usageGuideLabel)
+        view.addSubview(usageGuideView)
+        usageGuideView.addSubview(privacyPolicyLabel)
+        usageGuideView.addSubview(termsOfServiceLabel)
+        usageGuideView.addSubview(arrowImageView1)
+        usageGuideView.addSubview(arrowImageView2)
     }
     
     private func setupConstraints() {
@@ -94,6 +99,38 @@ class MyPageViewController: UIViewController {
         notificationSwitch.snp.makeConstraints { make in
             make.centerY.equalTo(notificationSettingLabel.snp.centerY)
             make.trailing.equalTo(notificationSettingView.snp.trailing).offset(-16)
+        }
+        
+        usageGuideLabel.snp.makeConstraints { make in
+            make.top.equalTo(notificationSettingView.snp.bottom).offset(20)
+            make.leading.equalTo(view.snp.leading).offset(24)
+        }
+        
+        usageGuideView.snp.makeConstraints { make in
+            make.width.equalTo(327)
+            make.height.equalTo(100)
+            make.top.equalTo(usageGuideLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        privacyPolicyLabel.snp.makeConstraints { make in
+            make.top.equalTo(usageGuideView.snp.top).offset(16)
+            make.leading.equalTo(usageGuideView.snp.leading).offset(16)
+        }
+        
+        termsOfServiceLabel.snp.makeConstraints { make in
+            make.top.equalTo(privacyPolicyLabel.snp.bottom).offset(16)
+            make.leading.equalTo(usageGuideView.snp.leading).offset(16)
+        }
+        
+        arrowImageView1.snp.makeConstraints { make in
+            make.centerY.equalTo(privacyPolicyLabel)
+            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-16)
+        }
+        
+        arrowImageView2.snp.makeConstraints { make in
+            make.centerY.equalTo(termsOfServiceLabel)
+            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-16)
         }
     }
     
@@ -203,6 +240,58 @@ class MyPageViewController: UIViewController {
         toggleSwitch.onTintColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
         return toggleSwitch
     }()
+    
+    // 이용 안내 라벨 정의
+    private let usageGuideLabel: UILabel = {
+        let label = UILabel()
+        label.text = "이용 안내"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
 
+    // 이용 안내 뷰 정의
+    private let usageGuideView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+
+    // 개인정보 처리방침 라벨 정의
+    private let privacyPolicyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "개인정보 처리방침"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        return label
+    }()
+
+    // 서비스 이용약관 라벨 정의
+    private let termsOfServiceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "서비스 이용약관"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        return label
+    }()
+
+    // 화살표 이미지 정의
+    private let arrowImageView1: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        return imageView
+    }()
+
+    private let arrowImageView2: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        return imageView
+    }()
 
 }
