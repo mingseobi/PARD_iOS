@@ -191,7 +191,7 @@ class MyPageViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = .clear
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor
+        view.layer.borderColor = UIColor.pard.primaryBlue.cgColor
         view.layer.cornerRadius = 8
         return view
     }()
@@ -202,7 +202,6 @@ class MyPageViewController: UIViewController {
         infolabel.textColor = .white
         infolabel.textAlignment = .left
         infolabel.font = UIFont.pardFont.head1
-        infolabel.font = UIFont.boldSystemFont(ofSize: 18)
         
         return infolabel
     }()
@@ -212,10 +211,11 @@ class MyPageViewController: UIViewController {
         label.text = "2기"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.font = UIFont.pardFont.body2
+        label.backgroundColor = UIColor.pard.primaryBlue
         label.layer.cornerRadius = 12
         label.layer.masksToBounds = true
+        
         return label
     }()
     
@@ -224,10 +224,11 @@ class MyPageViewController: UIViewController {
         label.text = "디자인 파트"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.font = UIFont.pardFont.body2
+        label.backgroundColor = .pard.gra
         label.layer.cornerRadius = 12
         label.layer.masksToBounds = true
+        
         return label
     }()
     
@@ -236,10 +237,11 @@ class MyPageViewController: UIViewController {
         label.text = "거친파도"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.backgroundColor = UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1)
+        label.font = UIFont.pardFont.body2
+        label.backgroundColor = UIColor.pard.primaryPurple
         label.layer.cornerRadius = 12
         label.layer.masksToBounds = true
+        
         return label
     }()
     
@@ -257,13 +259,14 @@ class MyPageViewController: UIViewController {
         label.text = "설정"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.pardFont.head1
+        
         return label
     }()
         
     private let notificationSettingView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.backgroundColor = .pard.blackCard
         view.layer.cornerRadius = 8
         return view
     }()
@@ -273,7 +276,8 @@ class MyPageViewController: UIViewController {
         label.text = "알림 설정"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.font = UIFont.pardFont.body4
+            
         return label
     }()
         
@@ -283,45 +287,44 @@ class MyPageViewController: UIViewController {
         return toggleSwitch
     }()
     
-    // 이용 안내 라벨 정의
     private let usageGuideLabel: UILabel = {
         let label = UILabel()
         label.text = "이용 안내"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.pardFont.head1
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        
         return label
     }()
 
-    // 이용 안내 뷰 정의
     private let usageGuideView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.backgroundColor = .pard.blackCard
         view.layer.cornerRadius = 8
         return view
     }()
 
-    // 개인정보 처리방침 라벨 정의
     private let privacyPolicyLabel: UILabel = {
         let label = UILabel()
         label.text = "개인정보 처리방침"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.pardFont.body4
+        
         return label
     }()
 
-    // 서비스 이용약관 라벨 정의
     private let termsOfServiceLabel: UILabel = {
         let label = UILabel()
         label.text = "서비스 이용약관"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.pardFont.body4
+
         return label
     }()
 
-    // 화살표 이미지 정의
     private let arrowImageView1: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.right")
@@ -336,45 +339,44 @@ class MyPageViewController: UIViewController {
         return imageView
     }()
     
-    // 계정 라벨 정의
     private let accountLabel: UILabel = {
         let label = UILabel()
         label.text = "계정"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.pardFont.head1
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        
         return label
     }()
 
-    // 계정 뷰 정의
     private let accountView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1)
+        view.backgroundColor = .pard.blackCard
         view.layer.cornerRadius = 8
         return view
     }()
 
-    // 로그아웃 라벨 정의
     private let logoutLabel: UILabel = {
         let label = UILabel()
         label.text = "로그아웃"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.pardFont.body4
+
         return label
     }()
 
-    // 탈퇴하기 라벨 정의
     private let deleteAccountLabel: UILabel = {
         let label = UILabel()
         label.text = "탈퇴하기"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.pardFont.body4
+
         return label
     }()
 
-    // 화살표 이미지 정의
     private let arrowImageView3: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.right")
