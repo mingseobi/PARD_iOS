@@ -54,32 +54,36 @@ class MyPageViewController: UIViewController {
     
     private func setupConstraints() {
         myPageLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(view.snp.top).offset(58)
+            make.left.equalTo(view.snp.left).offset(151)
+            make.right.equalTo(view.snp.right).offset(-151)
         }
         
         feedbackView.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)
             make.height.equalTo(76)
-            make.top.equalTo(myPageLabel.snp.bottom).offset(20)
+            make.top.equalTo(myPageLabel.snp.bottom).offset(26)
         }
-
+        
         feedbackLabel.snp.makeConstraints { make in
             make.top.equalTo(feedbackView.snp.top).offset(16)
-            make.leading.equalTo(feedbackView.snp.leading).offset(16)
-            make.trailing.equalTo(feedbackActionLabel.snp.leading).offset(-10)
+            make.leading.equalTo(feedbackView.snp.leading).offset(24)
+            make.bottom.equalTo(feedbackView.snp.bottom).offset(-16)
         }
-
+        
         feedbackActionLabel.snp.makeConstraints { make in
-            make.top.equalTo(feedbackView.snp.top).offset(16)
-            make.trailing.equalTo(feedbackView.snp.trailing).offset(-16)
+            make.width.equalTo(83)
+            make.height.equalTo(14)
+            make.top.equalTo(view.snp.top).offset(135)
+            make.left.equalTo(view.snp.left).offset(276)
+            make.right.equalTo(view.snp.right).offset(16)
         }
 
         infoView.snp.makeConstraints { make in
             make.width.equalTo(327)
             make.height.equalTo(96)
-            make.top.equalTo(feedbackView.snp.bottom).offset(20)
+            make.top.equalTo(feedbackView.snp.bottom).offset(56)
             make.centerX.equalToSuperview()
         }
 
@@ -113,89 +117,97 @@ class MyPageViewController: UIViewController {
         }
         
         settingsLabel.snp.makeConstraints { make in
-            make.top.equalTo(infoView.snp.bottom).offset(20)
-            make.leading.equalTo(view.snp.leading).offset(24)
+            make.top.equalTo(infoView.snp.bottom).offset(24)
+            make.leading.equalTo(infoView.snp.leading)
         }
         
         notificationSettingView.snp.makeConstraints { make in
             make.width.equalTo(327)
-            make.height.equalTo(60)
-            make.top.equalTo(settingsLabel.snp.bottom).offset(10)
+            make.height.equalTo(50)
+            make.top.equalTo(view.snp.top).offset(388)
             make.centerX.equalToSuperview()
         }
         
         notificationSettingLabel.snp.makeConstraints { make in
             make.centerY.equalTo(notificationSettingView)
-            make.leading.equalTo(notificationSettingView.snp.leading).offset(16)
+            make.leading.equalTo(notificationSettingView.snp.leading).offset(24)
+            make.top.equalTo(notificationSettingView.snp.top).offset(16)
+            make.bottom.equalTo(notificationSettingView.snp.bottom).offset(-16)
+
         }
         
         notificationSwitch.snp.makeConstraints { make in
             make.centerY.equalTo(notificationSettingLabel.snp.centerY)
-            make.trailing.equalTo(notificationSettingView.snp.trailing).offset(-16)
+            make.trailing.equalTo(notificationSettingView.snp.trailing).offset(-24)
         }
 
         usageGuideLabel.snp.makeConstraints { make in
-            make.top.equalTo(notificationSettingView.snp.bottom).offset(20)
-            make.leading.equalTo(view.snp.leading).offset(24)
+            make.top.equalTo(notificationSettingView.snp.bottom).offset(24)
+            make.leading.equalTo(infoView.snp.leading)
         }
         
         usageGuideView.snp.makeConstraints { make in
             make.width.equalTo(327)
-            make.height.equalTo(100)
-            make.top.equalTo(usageGuideLabel.snp.bottom).offset(10)
+            make.height.equalTo(96)
+            make.top.equalTo(view.snp.top).offset(494)
             make.centerX.equalToSuperview()
         }
         
         privacyPolicyLabel.snp.makeConstraints { make in
-            make.top.equalTo(usageGuideView.snp.top).offset(16)
-            make.leading.equalTo(usageGuideView.snp.leading).offset(16)
+            make.top.equalTo(usageGuideView.snp.top).offset(17)
+            make.leading.equalTo(usageGuideView.snp.leading).offset(24)
+            make.bottom.equalTo(usageGuideView.snp.bottom).offset(-61)
         }
         
         termsOfServiceLabel.snp.makeConstraints { make in
-            make.top.equalTo(privacyPolicyLabel.snp.bottom).offset(16)
-            make.leading.equalTo(usageGuideView.snp.leading).offset(16)
+            make.top.equalTo(usageGuideView.snp.top).offset(61)
+            make.leading.equalTo(usageGuideView.snp.leading).offset(24)
+            make.bottom.equalTo(usageGuideView.snp.bottom).offset(-17)
+
         }
         
         arrowImageView1.snp.makeConstraints { make in
             make.centerY.equalTo(privacyPolicyLabel)
-            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-16)
+            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-24)
         }
         
         arrowImageView2.snp.makeConstraints { make in
             make.centerY.equalTo(termsOfServiceLabel)
-            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-16)
+            make.trailing.equalTo(usageGuideView.snp.trailing).offset(-24)
         }
         
         accountLabel.snp.makeConstraints { make in
-            make.top.equalTo(usageGuideView.snp.bottom).offset(20)
-            make.leading.equalTo(view.snp.leading).offset(24)
+            make.top.equalTo(usageGuideView.snp.bottom).offset(24)
+            make.leading.equalTo(infoView.snp.leading)
         }
         
         accountView.snp.makeConstraints { make in
             make.width.equalTo(327)
             make.height.equalTo(100)
-            make.top.equalTo(accountLabel.snp.bottom).offset(10)
+            make.top.equalTo(view.snp.top).offset(646)
             make.centerX.equalToSuperview()
         }
         
         logoutLabel.snp.makeConstraints { make in
-            make.top.equalTo(accountView.snp.top).offset(16)
-            make.leading.equalTo(accountView.snp.leading).offset(16)
+            make.top.equalTo(accountView.snp.top).offset(17)
+            make.leading.equalTo(accountView.snp.leading).offset(24)
+            make.bottom.equalTo(accountView.snp.bottom).offset(-61)
         }
         
         deleteAccountLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoutLabel.snp.bottom).offset(16)
-            make.leading.equalTo(accountView.snp.leading).offset(16)
+            make.top.equalTo(accountView.snp.top).offset(61)
+            make.leading.equalTo(accountView.snp.leading).offset(24)
+            make.bottom.equalTo(accountView.snp.bottom).offset(-17)
         }
         
         arrowImageView3.snp.makeConstraints { make in
             make.centerY.equalTo(logoutLabel)
-            make.trailing.equalTo(accountView.snp.trailing).offset(-16)
+            make.trailing.equalTo(accountView.snp.trailing).offset(-24)
         }
         
         arrowImageView4.snp.makeConstraints { make in
             make.centerY.equalTo(deleteAccountLabel)
-            make.trailing.equalTo(accountView.snp.trailing).offset(-16)
+            make.trailing.equalTo(accountView.snp.trailing).offset(-24)
         }
     }
 
