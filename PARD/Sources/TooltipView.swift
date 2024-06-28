@@ -17,6 +17,11 @@ class TooltipBuilder {
     private var width: CGFloat = 343
     private var height: CGFloat = 40
     
+    func setSuperView(_ superview : UIView) -> TooltipBuilder {
+        self.superview = superview
+        return self
+    }
+    
     func setMessage(_ message: String) -> TooltipBuilder {
         self.message = message
         return self
