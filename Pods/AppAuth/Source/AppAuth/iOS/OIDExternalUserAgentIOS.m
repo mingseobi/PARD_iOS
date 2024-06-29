@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wpartial-availability"
   __weak SFSafariViewController *_safariVC;
-    ASWebAuthenticationSession *_authenticationVC;
+  SFAuthenticationSession *_authenticationVC;
   ASWebAuthenticationSession *_webAuthenticationVC;
 #pragma clang diagnostic pop
 }
@@ -128,7 +128,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!openedUserAgent && !UIAccessibilityIsGuidedAccessEnabled()) {
       __weak OIDExternalUserAgentIOS *weakSelf = self;
       NSString *redirectScheme = request.redirectScheme;
-        ASWebAuthenticationSession *authenticationVC =
+      SFAuthenticationSession *authenticationVC =
           [[SFAuthenticationSession alloc] initWithURL:requestURL
                                      callbackURLScheme:redirectScheme
                                      completionHandler:^(NSURL * _Nullable callbackURL,
