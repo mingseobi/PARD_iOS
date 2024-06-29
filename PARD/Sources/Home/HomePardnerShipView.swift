@@ -11,8 +11,9 @@ import Then
 
 class HomePardnerShipView : UIView {
     private let pardnerShipLabel = UILabel().then {
-        $0.text = "🏄‍♂️PARDNERSHIP🏄‍♂️"
+        $0.text = "🏄‍♂️ PARDNERSHIP 🏄‍♂️"
         $0.font = .pardFont.head2
+        $0.textColor = .white
     }
     
     private lazy var moreButton = UIButton().then {

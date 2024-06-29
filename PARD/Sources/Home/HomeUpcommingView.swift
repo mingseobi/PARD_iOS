@@ -12,7 +12,7 @@ import SnapKit
 class HomeUpcommingView : UIView {
     private let upcommingLabel = UILabel().then {
         $0.font = .pardFont.head2
-        $0.text = "🗓️UPCOMMING EVENT🗓️"
+        $0.text = "🗓️ UPCOMMING EVENT 🗓️"
         $0.textColor = .pard.white100
     }
     
@@ -47,7 +47,7 @@ class HomeUpcommingView : UIView {
     private let dDayLabel = UILabel().then {
         $0.font = .pardFont.body2
         $0.textColor = .pard.white100
-        $0.text = "D_DAY"
+        $0.text = "D-DAY"
     }
     
     private let eventLocationLabel = UILabel().then {
