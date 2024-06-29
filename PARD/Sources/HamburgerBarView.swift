@@ -101,7 +101,6 @@ extension HamburgerBarView : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 0 && selectedNotionView {
             let pardNotionView = PardNotionLinkView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
-            print("Footer view created for section 0")
             return pardNotionView
           } else {
             return nil
@@ -125,7 +124,6 @@ extension HamburgerBarView : MenuTableViewCellButtonTapedDelegate {
     func cellButtonTaped(index: Int, isHiddenView : Bool) {
         menuTableView.beginUpdates()
         selectedNotionView = isHiddenView
-        print(selectedNotionView)
         menuTableView.endUpdates()
     }
 }

@@ -176,7 +176,7 @@ class UserInfoPolicyViewController: UIViewController {
     
     func showToast(message : String, font: UIFont) {
         guard let view = self.view else { return } // Ensure the view is available
-            let toastBar = TooltipBuilder()
+            let toastBar = ToastBarBuilder()
                 .setMessage("서비스 이용약관에 동의해주세요.")
                 .setSuperview(view) // Set the superview
                 .setWidth(343)

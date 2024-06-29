@@ -10,7 +10,6 @@ import UIKit
 extension NSMutableAttributedString {
     func blueHighlight(_ value:String , font : UIFont)
     -> NSMutableAttributedString {
-        //UIFont.pardFont.body4,
         let attributes:[NSAttributedString.Key : Any] = [
             .font: font,
             .foregroundColor: UIColor.pard.gra,
@@ -41,6 +40,19 @@ extension NSMutableAttributedString {
     func regular(string: String, fontSize: CGFloat , fontColor : UIColor)
     -> NSMutableAttributedString {
         let font = UIFont.pardFont.body4
+        let color = fontColor
+        let attributes: [NSAttributedString.Key: Any] =
+        [
+            .font: font,
+            .foregroundColor : color
+        ]
+       self.append(NSAttributedString(string: string, attributes: attributes))
+       return self
+    }
+    
+    func small(string: String, fontSize: CGFloat , fontColor : UIColor)
+    -> NSMutableAttributedString {
+        let font = UIFont.pardFont.caption2
         let color = fontColor
         let attributes: [NSAttributedString.Key: Any] =
         [

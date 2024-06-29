@@ -3,8 +3,6 @@
 //  PARD
 //
 //  Created by 김하람 on 3/7/24.
-//
-
 import UIKit
 
 public final class PardTextField: UITextField {
