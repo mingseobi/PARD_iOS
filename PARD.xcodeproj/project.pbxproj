@@ -12,10 +12,12 @@
 		0D0ADFDB2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0ADFDA2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift */; };
 		0D70EC452C2D3FFA00FDE559 /* HomePardnerShipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70EC442C2D3FFA00FDE559 /* HomePardnerShipView.swift */; };
 		0D70EC472C2DB1C500FDE559 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70EC462C2DB1C500FDE559 /* UIViewExtension.swift */; };
+		0D70EC492C2E4E5B00FDE559 /* HomeUpcommingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70EC482C2E4E5B00FDE559 /* HomeUpcommingView.swift */; };
+		0D70EC4B2C2E7F8800FDE559 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70EC4A2C2E7F8700FDE559 /* TooltipView.swift */; };
 		0DAFA0E02BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0DF2BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift */; };
 		0DAFA0E22BA74EF30092FEB0 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */; };
 		0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDEE2B96D998007A21E4 /* UserViews.swift */; };
-		0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF02B96DA05007A21E4 /* HomeView.swift */; };
+		0DC5CDF12B96DA05007A21E4 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF02B96DA05007A21E4 /* HomeTopView.swift */; };
 		0DC5CDF32B96DA67007A21E4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */; };
 		0DC5CDF52B96DA9B007A21E4 /* MyScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF42B96DA9B007A21E4 /* MyScoreView.swift */; };
 		0DC5CDF72B96DAD9007A21E4 /* HamburgerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */; };
@@ -26,7 +28,7 @@
 		0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */; };
 		0DC5CE082BA0B97F007A21E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */; };
 		0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */; };
-		0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */; };
+		0DD2B1112BB063DC0050A0E1 /* ToastBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2B1102BB063DC0050A0E1 /* ToastBarView.swift */; };
 		2106ADAD2B92D6A000CDA462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */; };
 		2106ADAF2B92D6A000CDA462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */; };
 		2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106ADB02B92D6A000CDA462 /* ViewController.swift */; };
@@ -59,10 +61,12 @@
 		0D0ADFDA2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PardNotionLinkCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D70EC442C2D3FFA00FDE559 /* HomePardnerShipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePardnerShipView.swift; sourceTree = "<group>"; };
 		0D70EC462C2DB1C500FDE559 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0D70EC482C2E4E5B00FDE559 /* HomeUpcommingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUpcommingView.swift; sourceTree = "<group>"; };
+		0D70EC4A2C2E7F8700FDE559 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		0DAFA0DF2BA70F3C0092FEB0 /* HamBurgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamBurgerTableViewCell.swift; sourceTree = "<group>"; };
 		0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		0DC5CDEE2B96D998007A21E4 /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
-		0DC5CDF02B96DA05007A21E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../User/HomeView.swift; sourceTree = "<group>"; };
+		0DC5CDF02B96DA05007A21E4 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTopView.swift; path = ../User/HomeTopView.swift; sourceTree = "<group>"; };
 		0DC5CDF22B96DA67007A21E4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		0DC5CDF42B96DA9B007A21E4 /* MyScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreView.swift; sourceTree = "<group>"; };
 		0DC5CDF62B96DAD9007A21E4 /* HamburgerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerBarView.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		0DC5CE032B96DBC8007A21E4 /* PopUpModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModalView.swift; sourceTree = "<group>"; };
 		0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
-		0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
+		0DD2B1102BB063DC0050A0E1 /* ToastBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBarView.swift; sourceTree = "<group>"; };
 		2106ADA92B92D6A000CDA462 /* PARD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PARD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2106ADAC2B92D6A000CDA462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2106ADAE2B92D6A000CDA462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -322,8 +326,9 @@
 		90C007B92B95D1C30056D724 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0DC5CDF02B96DA05007A21E4 /* HomeView.swift */,
+				0DC5CDF02B96DA05007A21E4 /* HomeTopView.swift */,
 				0D70EC442C2D3FFA00FDE559 /* HomePardnerShipView.swift */,
+				0D70EC482C2E4E5B00FDE559 /* HomeUpcommingView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,7 +394,8 @@
 				0DC5CE072BA0B97F007A21E4 /* UIButtonExtension.swift */,
 				0DC5CE092BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift */,
 				0DAFA0E12BA74EF30092FEB0 /* CALayerExtension.swift */,
-				0DD2B1102BB063DC0050A0E1 /* TooltipView.swift */,
+				0DD2B1102BB063DC0050A0E1 /* ToastBarView.swift */,
+				0D70EC4A2C2E7F8700FDE559 /* TooltipView.swift */,
 				0D70EC462C2DB1C500FDE559 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
@@ -546,10 +552,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A6857E2B9CBFC6006F6D9E /* UILabelExtension.swift in Sources */,
+				0D70EC4B2C2E7F8800FDE559 /* TooltipView.swift in Sources */,
 				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
 				90C007CC2B95D2A40056D724 /* HomeTabBarViewController.swift in Sources */,
 				2123A97F2BA73640009C60BF /* ReaderViewController.swift in Sources */,
-				0DC5CDF12B96DA05007A21E4 /* HomeView.swift in Sources */,
+				0DC5CDF12B96DA05007A21E4 /* HomeTopView.swift in Sources */,
 				0D0ADFD92BAAD8EC00094D08 /* PardNotionLinkView.swift in Sources */,
 				0DC5CE042B96DBC8007A21E4 /* PopUpModalView.swift in Sources */,
 				0DC5CDF92B96DAF0007A21E4 /* HamburgerBarViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				90C007C52B95D24C0056D724 /* MainLoginViewController.swift in Sources */,
 				90C007D62B95D2EA0056D724 /* RankingViewController.swift in Sources */,
 				21A6857C2B9C8967006F6D9E /* AppleLoginManager.swift in Sources */,
+				0D70EC492C2E4E5B00FDE559 /* HomeUpcommingView.swift in Sources */,
 				0D0ADFDB2BAADD1A00094D08 /* PardNotionLinkCollectionViewCell.swift in Sources */,
 				2176515B2B947ABE00121AB2 /* +Font.swift in Sources */,
 				0DC5CE012B96DBA4007A21E4 /* PopUpModalViewController.swift in Sources */,
@@ -569,7 +577,7 @@
 				90C007D22B95D2CF0056D724 /* CalendarViewController.swift in Sources */,
 				0D70EC452C2D3FFA00FDE559 /* HomePardnerShipView.swift in Sources */,
 				0DC5CDEF2B96D998007A21E4 /* UserViews.swift in Sources */,
-				0DD2B1112BB063DC0050A0E1 /* TooltipView.swift in Sources */,
+				0DD2B1112BB063DC0050A0E1 /* ToastBarView.swift in Sources */,
 				90C007CA2B95D2890056D724 /* UserAuthenticationViewController.swift in Sources */,
 				2106ADB12B92D6A000CDA462 /* ViewController.swift in Sources */,
 				0DC5CE0A2BA0B9D1007A21E4 /* NSMutableAttributedStringExtension.swift in Sources */,

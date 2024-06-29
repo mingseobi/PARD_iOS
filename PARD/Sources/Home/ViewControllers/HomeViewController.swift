@@ -8,7 +8,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
     private let topView = HomeTopView().then { view in
         view.backgroundColor = .pard.blackCard
         view.layer.cornerRadius = 40.0
@@ -17,15 +16,24 @@ class HomeViewController: UIViewController {
         
     }
     
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
-    
     private let pardnerShipView = HomePardnerShipView().then {
         view in
         view.backgroundColor = .pard.blackCard
         view.layer.cornerRadius = 8.0
         view.layer.masksToBounds = true
     }
+    
+    private let upcommingView = HomeUpcommingView().then {
+        view in
+        view.backgroundColor = .pard.blackCard
+        view.layer.cornerRadius = 8.0
+        view.layer.masksToBounds = true
+    }
+    
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
+   
     
     private func setNavigation() {
         let appearance = UINavigationBarAppearance()
@@ -63,7 +71,6 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .pard.blackBackground
@@ -81,20 +88,20 @@ extension HomeViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(topView)
         contentView.addSubview(pardnerShipView)
+        contentView.addSubview(upcommingView)
         
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalToSuperview()
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
         }
         
         topView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(280)
         }
         
@@ -103,6 +110,14 @@ extension HomeViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(140)
+        }
+        
+        upcommingView.snp.makeConstraints { make in
+            make.top.equalTo(pardnerShipView.snp.bottom).offset(24)
+            make.height.equalTo(164)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-24)
         }
     }
 }

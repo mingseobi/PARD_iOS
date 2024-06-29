@@ -10,6 +10,8 @@ import SnapKit
 import Then
 // - MARK: 원하는 View Class 사용하면 됩니다. (이름도 알맞게 변경, 추가해서 사용해주세요)
 class HomeTopView : UIView {
+    private var toolTipView: ToolTipView?
+    
     private let reuseIdentifier = "StatusCell"
     private var isSelected : Bool = false {
         didSet {
@@ -34,7 +36,7 @@ class HomeTopView : UIView {
         $0.backgroundColor = .pard.blackCard
     }
     
-    private let questionimageView = UIButton().then {
+    private let questionimageButton = UIButton().then {
         $0.setImage(UIImage(named: "question-line")?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
     
@@ -66,10 +68,10 @@ class HomeTopView : UIView {
     func setUpUI() {
         self.addSubview(nameLabel)
         self.addSubview(collectionView)
-        self.addSubview(questionimageView)
+        self.addSubview(questionimageButton)
         self.addSubview(pangulStackView)
         
-        questionimageView.addTarget(self, action: #selector(tappedQuestionButton), for: .touchUpInside)
+        questionimageButton.addTarget(self, action: #selector(tappedQuestionButton), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -83,7 +85,7 @@ class HomeTopView : UIView {
             make.width.equalTo(250)
             make.height.equalTo(24)
         }
-        questionimageView.snp.makeConstraints { make in
+        questionimageButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-28)
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
         }
@@ -97,16 +99,13 @@ class HomeTopView : UIView {
     }
     
     @objc private func tappedQuestionButton() {
-        isSelected.toggle()
-        let toastBar = TooltipBuilder()
+        toolTipView = TooltipBuilder()
             .setMessage("저는 파드 포인트와 출석 점수를 먹고 자라는 ")
-            .setMessage3("팡울이 ")
-            .setMessage2("에요. 오늘도 PARD에서 저와 함께 성장해요! ☺️")
-            .setFont(.pardFont.body4)
-            .setWidth(310)
-            .setHeight(64)
+            .setMessage2("'팡울이'")
+            .setMessage3("예요.\n오늘도 PARD에서 저와 함께 성장해가요! ☺️")
             .setSuperview(self)
-            .setisToolTip(isSelected)
+            .setTargetView(questionimageButton)
+            .setOffset(8)
             .build()
     }
 }
