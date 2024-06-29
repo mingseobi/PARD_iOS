@@ -74,7 +74,7 @@ class HomeTopView : UIView {
         collectionView.dataSource = self
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(150)
+            make.top.equalToSuperview().offset(21)
             make.leading.equalToSuperview().offset(24)
         }
         collectionView.snp.makeConstraints { make in
@@ -88,7 +88,7 @@ class HomeTopView : UIView {
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
         }
         pangulStackView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-14)
+            make.top.equalTo(collectionView.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
         pangulStackView.addArrangedSubview(currentPangulImage)

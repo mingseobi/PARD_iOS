@@ -175,9 +175,16 @@ class UserInfoPolicyViewController: UIViewController {
     }
     
     func showToast(message : String, font: UIFont) {
-        let toastBar = TooltipBuilder()
-            .setMessage("서비스 이용약관에 동의해주세요.")
-            .build()
+        guard let view = self.view else { return } // Ensure the view is available
+            let toastBar = TooltipBuilder()
+                .setMessage("서비스 이용약관에 동의해주세요.")
+                .setSuperview(view) // Set the superview
+                .setWidth(343)
+                .setHeight(52)
+                .build()
+            
+            // Add the tooltip to the view
+            toastBar.setUpToastBarUIInSuperView()
     }
 }
 

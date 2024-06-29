@@ -74,6 +74,7 @@ class ReaderViewController: UIViewController {
     @objc func cancelButtonTapped() {
         print("button Tapped")
         
+        self.navigationController?.popViewController(animated: true)
 //        if let tabBarController = self.tabBarController {
 //            tabBarController.selectedIndex = 0
 //        }

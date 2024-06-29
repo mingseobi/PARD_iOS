@@ -8,6 +8,13 @@
 import UIKit
 
 class HomeTabBarViewController: UITabBarController {
+    private let floatingButton = UIButton().then { button in
+        button.layer.cornerRadius = 40
+        button.backgroundColor = .pard.gra
+        button.setImage(UIImage(named: "scan")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .pard.blackBackground
@@ -16,6 +23,7 @@ class HomeTabBarViewController: UITabBarController {
         setUpTabBarColor()
         setUpTabBarLayout()
         setUpTabBarItems()
+        delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,6 +47,26 @@ class HomeTabBarViewController: UITabBarController {
         let navigationHome = UINavigationController(rootViewController: homeViewController)
         let navigationMypage = UINavigationController(rootViewController: myPageViewController)
         setViewControllers([navigationHome, navigationMypage], animated: false)
+        
+        setUpfloatingQRButton()
+    }
+    
+    private func setUpfloatingQRButton() {
+        self.view.addSubview(floatingButton)
+                
+        floatingButton.snp.makeConstraints { make in
+            make.width.height.equalTo(80)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.snp.bottom).offset(-24)
+        }
+                
+        floatingButton.addTarget(self, action: #selector(floatingQRButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func floatingQRButtonTapped() {
+        print("tapped qr code page")
+        let QRVC = ReaderViewController()
+        navigationController?.pushViewController(QRVC, animated: true)
     }
     
     private func setUpTabBarColor() {
@@ -74,7 +102,19 @@ class HomeTabBarViewController: UITabBarController {
 extension UITabBar {
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = 64
+        sizeThatFits.height = 10
         return sizeThatFits
+    }
+}
+
+extension HomeTabBarViewController : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let tabBarItemIndex = tabBarController.viewControllers?.firstIndex(of: viewController) {
+            if tabBarItemIndex == 0 {
+                floatingButton.isEnabled = true
+            } else {
+                floatingButton.isEnabled = false
+            }
+        }
     }
 }
