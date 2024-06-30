@@ -15,6 +15,8 @@ class MyPageViewController: UIViewController {
         
         setupUI()
         setupConstraints()
+        setupGestureRecognizers()
+
     }
     
     private func setupUI() {
@@ -73,11 +75,11 @@ class MyPageViewController: UIViewController {
         }
         
         feedbackActionLabel.snp.makeConstraints { make in
-            make.width.equalTo(83)
+            make.width.equalTo(100)
             make.height.equalTo(14)
             make.top.equalTo(view.snp.top).offset(135)
             make.left.equalTo(view.snp.left).offset(276)
-            make.right.equalTo(view.snp.right).offset(16)
+            make.bottom.equalTo(view.snp.bottom).offset(-663)
         }
 
         infoView.snp.makeConstraints { make in
@@ -111,9 +113,9 @@ class MyPageViewController: UIViewController {
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(statusLabel1.snp.bottom).offset(8)
-            make.leading.equalTo(infoView.snp.leading).offset(16)
-            make.bottom.equalTo(infoView.snp.bottom).offset(-8)
+            make.top.equalTo(infoView.snp.top).offset(52)
+            make.leading.equalTo(infoView.snp.leading).offset(24)
+            make.bottom.equalTo(infoView.snp.bottom).offset(-20)
         }
         
         settingsLabel.snp.makeConstraints { make in
@@ -211,7 +213,18 @@ class MyPageViewController: UIViewController {
         }
     }
 
-    
+    private func setupGestureRecognizers() {
+        let feedbackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(feedbackViewTapped))
+        feedbackView.addGestureRecognizer(feedbackTapGestureRecognizer)
+        feedbackView.isUserInteractionEnabled = true
+    }
+
+    @objc private func feedbackViewTapped() {
+        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfFMK14a9BwcRPR2z6uuhQ_Cleg0povmGpcJwpAMLm-nWYp7A/viewform") {
+            UIApplication.shared.open(url)
+        }
+    }
+
     private let myPageLabel: UILabel = {
         let myPageLabel = UILabel()
         myPageLabel.text = "마이 페이지"
@@ -248,7 +261,8 @@ class MyPageViewController: UIViewController {
         let label = UILabel()
         label.text = "피드백 남기기 >>"
         label.textColor = .pard.gray10
-        label.textAlignment = .right
+
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         return label
     }()
@@ -260,6 +274,7 @@ class MyPageViewController: UIViewController {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.pard.primaryBlue.cgColor
         view.layer.cornerRadius = 8
+
         return view
     }()
     
@@ -334,7 +349,7 @@ class MyPageViewController: UIViewController {
     private let notificationSettingView: UIView = {
         let view = UIView()
         view.backgroundColor = .pard.blackCard
-        view.layer.cornerRadius = 8
+
         return view
     }()
         
@@ -368,7 +383,7 @@ class MyPageViewController: UIViewController {
     private let usageGuideView: UIView = {
         let view = UIView()
         view.backgroundColor = .pard.blackCard
-        view.layer.cornerRadius = 8
+        
         return view
     }()
 
@@ -420,7 +435,6 @@ class MyPageViewController: UIViewController {
     private let accountView: UIView = {
         let view = UIView()
         view.backgroundColor = .pard.blackCard
-        view.layer.cornerRadius = 8
         return view
     }()
 
