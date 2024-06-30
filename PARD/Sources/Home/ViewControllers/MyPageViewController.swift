@@ -83,10 +83,9 @@ class MyPageViewController: UIViewController {
         }
 
         infoView.snp.makeConstraints { make in
-            make.width.equalTo(327)
-            make.height.equalTo(96)
-            make.top.equalTo(feedbackView.snp.bottom).offset(56)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(view.snp.top).offset(236)
+            make.left.equalTo(view.snp.left).offset(24)
+            make.right.equalTo(view.snp.right).offset(-24)
         }
 
         infoLabel.snp.makeConstraints { make in
@@ -124,10 +123,9 @@ class MyPageViewController: UIViewController {
         }
         
         notificationSettingView.snp.makeConstraints { make in
-            make.width.equalTo(327)
-            make.height.equalTo(50)
             make.top.equalTo(view.snp.top).offset(388)
-            make.centerX.equalToSuperview()
+            make.left.equalTo(view.snp.left).offset(24)
+            make.right.equalTo(view.snp.right).offset(-24)
         }
         
         notificationSettingLabel.snp.makeConstraints { make in
@@ -149,10 +147,9 @@ class MyPageViewController: UIViewController {
         }
         
         usageGuideView.snp.makeConstraints { make in
-            make.width.equalTo(327)
-            make.height.equalTo(96)
             make.top.equalTo(view.snp.top).offset(494)
-            make.centerX.equalToSuperview()
+            make.left.equalTo(view.snp.left).offset(24)
+            make.right.equalTo(view.snp.right).offset(-24)
         }
         
         privacyPolicyLabel.snp.makeConstraints { make in
@@ -184,10 +181,9 @@ class MyPageViewController: UIViewController {
         }
         
         accountView.snp.makeConstraints { make in
-            make.width.equalTo(327)
-            make.height.equalTo(100)
             make.top.equalTo(view.snp.top).offset(646)
-            make.centerX.equalToSuperview()
+            make.left.equalTo(view.snp.left).offset(24)
+            make.right.equalTo(view.snp.right).offset(-24)
         }
         
         logoutLabel.snp.makeConstraints { make in
