@@ -16,8 +16,10 @@ class MyPageViewController: UIViewController {
         setupUI()
         setupConstraints()
         setupGestureRecognizers()
-
     }
+    
+    
+
     
     private func setupUI() {
         view.addSubview(myPageLabel)
@@ -44,6 +46,8 @@ class MyPageViewController: UIViewController {
         usageGuideView.addSubview(termsOfServiceLabel)
         usageGuideView.addSubview(arrowImageView1)
         usageGuideView.addSubview(arrowImageView2)
+        usageGuideView.addSubview(arrowButton1)
+        usageGuideView.addSubview(arrowButton2)
         
         view.addSubview(accountLabel)
         view.addSubview(accountView)
@@ -81,13 +85,13 @@ class MyPageViewController: UIViewController {
             make.left.equalTo(view.snp.left).offset(276)
             make.bottom.equalTo(view.snp.bottom).offset(-663)
         }
-
+        
         infoView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(236)
             make.left.equalTo(view.snp.left).offset(24)
             make.right.equalTo(view.snp.right).offset(-24)
         }
-
+        
         infoLabel.snp.makeConstraints { make in
             make.bottom.equalTo(infoView.snp.top).offset(-8)
             make.leading.equalTo(infoView.snp.leading)
@@ -133,14 +137,14 @@ class MyPageViewController: UIViewController {
             make.leading.equalTo(notificationSettingView.snp.leading).offset(24)
             make.top.equalTo(notificationSettingView.snp.top).offset(16)
             make.bottom.equalTo(notificationSettingView.snp.bottom).offset(-16)
-
+            
         }
         
         notificationSwitch.snp.makeConstraints { make in
             make.centerY.equalTo(notificationSettingLabel.snp.centerY)
             make.trailing.equalTo(notificationSettingView.snp.trailing).offset(-24)
         }
-
+        
         usageGuideLabel.snp.makeConstraints { make in
             make.top.equalTo(notificationSettingView.snp.bottom).offset(24)
             make.leading.equalTo(infoView.snp.leading)
@@ -162,7 +166,7 @@ class MyPageViewController: UIViewController {
             make.top.equalTo(usageGuideView.snp.top).offset(61)
             make.leading.equalTo(usageGuideView.snp.leading).offset(24)
             make.bottom.equalTo(usageGuideView.snp.bottom).offset(-17)
-
+            
         }
         
         arrowImageView1.snp.makeConstraints { make in
@@ -175,6 +179,14 @@ class MyPageViewController: UIViewController {
             make.trailing.equalTo(usageGuideView.snp.trailing).offset(-24)
         }
         
+        arrowButton1.snp.makeConstraints { make in
+            make.edges.equalTo(arrowImageView1).inset(-10)
+        }
+        
+        arrowButton2.snp.makeConstraints { make in
+            make.edges.equalTo(arrowImageView2).inset(-10)
+        }
+    
         accountLabel.snp.makeConstraints { make in
             make.top.equalTo(usageGuideView.snp.bottom).offset(24)
             make.leading.equalTo(infoView.snp.leading)
@@ -213,6 +225,10 @@ class MyPageViewController: UIViewController {
         let feedbackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(feedbackViewTapped))
         feedbackView.addGestureRecognizer(feedbackTapGestureRecognizer)
         feedbackView.isUserInteractionEnabled = true
+        
+        
+        arrowButton1.addTarget(self, action: #selector(arrowButton1Tapped), for: .touchUpInside)
+        arrowButton2.addTarget(self, action: #selector(arrowButton2Tapped), for: .touchUpInside)
     }
 
     @objc private func feedbackViewTapped() {
@@ -220,6 +236,19 @@ class MyPageViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
+    
+    @objc private func arrowButton1Tapped() {
+        if let url = URL(string: "https://www.notion.so/we-pard/Pard-APP-fc37c472e47941d3958765587b57e21f") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @objc private func arrowButton2Tapped() {
+        if let url = URL(string: "https://www.notion.so/we-pard/Pard-APP-74f6a4d8383d4e4993f28e9463b0d9b0") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
 
     private let myPageLabel: UILabel = {
         let myPageLabel = UILabel()
@@ -417,6 +446,18 @@ class MyPageViewController: UIViewController {
         return imageView
     }()
     
+    private let arrowButton1: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        return button
+    }()
+
+    private let arrowButton2: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        return button
+    }()
+
     private let accountLabel: UILabel = {
         let label = UILabel()
         label.text = "계정"
