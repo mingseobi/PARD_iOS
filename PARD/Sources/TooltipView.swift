@@ -2,21 +2,21 @@
 //  TooltipView.swift
 //  PARD
 //
-//  Created by 진세진 on 3/24/24.
+//  Created by 진세진 on 6/28/24.
 //
+
 import UIKit
 import SnapKit
+import Then
 
 class TooltipBuilder {
     private var message: String = ""
     private var message2: String = ""
     private var message3 : String = ""
-    private var font: UIFont = .systemFont(ofSize: 12)
     private var superview: UIView?
-    private var isSelectedToolTip: Bool = false
-    private var width: CGFloat = 343
-    private var height: CGFloat = 40
-    
+    private var targetView: UIView?
+    private var offset: CGFloat = 8
+
     func setMessage(_ message: String) -> TooltipBuilder {
         self.message = message
         return self
@@ -31,151 +31,126 @@ class TooltipBuilder {
         self.message3 = message
         return self
     }
-    
-    func setFont(_ font: UIFont) -> TooltipBuilder {
-        self.font = font
-        return self
-    }
-    
+
     func setSuperview(_ superview: UIView) -> TooltipBuilder {
         self.superview = superview
         return self
     }
-    
-    func setisToolTip(_ isSpeechBubbleForm: Bool) -> TooltipBuilder {
-        self.isSelectedToolTip = isSpeechBubbleForm
+
+    func setTargetView(_ targetView: UIView) -> TooltipBuilder {
+        self.targetView = targetView
         return self
     }
-    
-    func setWidth(_ width: CGFloat) -> TooltipBuilder {
-        self.width = width
+
+    func setOffset(_ offset: CGFloat) -> TooltipBuilder {
+        self.offset = offset
         return self
     }
-    
-    func setHeight(_ height: CGFloat) -> TooltipBuilder {
-        self.height = height
-        return self
-    }
-    
-    func build() -> ToolTipBar {
-        guard let superview = superview else {
-            fatalError("Superview must be set.")
+
+    func build() -> ToolTipView {
+        guard let superview = superview, let targetView = targetView else {
+            fatalError("Superview and TargetView must be set.")
         }
-        let toastBar = ToolTipBar(
-            message: message,
-            message2: message2,
-            message3: message3,
-            font: font,
-            superview: superview,
-            isSelected: isSelectedToolTip,
-            width: width,
-            height: height
-        )
-        return toastBar
+
+        let toolTipView = ToolTipView()
+        toolTipView.show(in: superview, targetView: targetView, message: message, message2: message2, message3: message3 ,offset: offset)
+        return toolTipView
     }
 }
 
-class ToolTipBar : UIView {
-    private var isSelectedToolTip : Bool = false
-    private var width : CGFloat?
-    private var height : CGFloat?
-    let toastLabel = UILabel().then {
-        $0.backgroundColor = .pard.blackBackground
-        $0.textColor = .pard.primaryPurple
-        $0.textAlignment = .center
-        $0.numberOfLines = 0
-        $0.alpha = 1.0
-        $0.layer.borderColor = UIColor.pard.primaryPurple.cgColor
-        $0.layer.borderWidth = 1.0
+
+class ToolTipView : UIView {
+    private var touchDismissView = UIView()
+    
+    private let closeButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+        $0.tintColor = .pard.gray30
+    }
+    
+    private let contentView = UIView().then {
+        $0.backgroundColor = .pard.blackCard
         $0.layer.cornerRadius = 8
-        $0.clipsToBounds  =  true
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.pard.gra.cgColor
+    }
+    private let messageLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.textColor = .white
+        $0.textAlignment = .center
+        $0.backgroundColor = .pard.blackCard
+        $0.clipsToBounds = true
+        $0.font = .pardFont.caption1
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpToastBarUIInSelfView()
+        setUpView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setUpView()
     }
     
-    convenience init(
-        message : String,
-        message2 : String,
-        message3 : String,
-        font : UIFont,
-        superview: UIView,
-        isSelected : Bool,
-        width: CGFloat,
-        height: CGFloat
-    ){
-        self.init()
-        self.toastLabel.attributedText = NSMutableAttributedString()
-            .regular(string: message, fontSize: 6, fontColor: .pard.white100)
-            .blueHighlight(message3, font: font)
-            .regular(string: message2, fontSize: 6, fontColor: .pard.white100)
+    private func setUpView() {
+        addSubview(contentView)
+        contentView.addSubview(messageLabel)
+        contentView.addSubview(closeButton)
         
-        self.toastLabel.font = font
-        self.isSelectedToolTip = isSelected
-        self.height = height
-        self.width = width
-        superview.addSubview(self)
-    }
-    
-    private func setUpToastBarUIInSelfView() {
-        self.addSubview(toastLabel)
-        toastLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-    }
-    
-    func setUpToastBarUIInSuperView() {
-        guard let superview = superview else {
-            return
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
-        superview.addSubview(toastLabel)
-        toastLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).offset(-150)
-            make.width.equalTo(343)
-            make.height.equalTo(40)
+        messageLabel.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(12)
+            make.leading.equalTo(contentView.snp.leading).offset(12)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-14)
         }
-        animateView()
         
+        closeButton.snp.makeConstraints { make in
+            make.top.equalTo(messageLabel.snp.top).offset(2)
+            make.leading.equalTo(messageLabel.snp.trailing).offset(2)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-8)
+        }
+    }
+
+    func setMessage(_ message: String ,_ message2 : String, _ message3 : String) {
+        messageLabel.attributedText = NSMutableAttributedString()
+            .small(string: message, fontSize: 0, fontColor: .pard.white100)
+            .blueHighlight(message2, font: .pardFont.caption2)
+            .small(string: message3, fontSize: 0, fontColor: .pard.white100)
+    }
+
+    func show(in view: UIView, targetView: UIView, message: String, message2 : String, message3 : String, offset: CGFloat = 8) {
+        setMessage(message, message2, message3)
+        touchDismissView.backgroundColor = UIColor.clear
+        touchDismissView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss)))
+        
+        view.addSubview(touchDismissView)
+        touchDismissView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        touchDismissView.addSubview(self)
+        
+        self.snp.makeConstraints { make in
+            make.top.equalTo(targetView.snp.bottom).offset(offset)
+            make.trailing.equalTo(view).offset(-24
+            )
+            make.leading.equalTo(view).offset(41)
+            make.height.equalTo(64)
+        }
+        
+        animateIn()
     }
     
-    func animateView() {
-        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
-            self.toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            self.removeFromSuperview()
-        })
+    @objc func dismiss() {
+        touchDismissView.removeFromSuperview()
     }
-    
-    func setupSpeechBubbleView() {
-        // - TODO: 말풍선 모양 만들기
-    }
-    
-    func setUIToastLabel(questionimageView : UIButton) {
-        print(isSelectedToolTip)
-        if !isSelectedToolTip {
-            removeFromSuperview()
-        } else {
-            guard let superview = superview else {
-                return
-            }
-            addSubview(toastLabel)
-            toastLabel.snp.makeConstraints { make in
-                make.centerX.equalToSuperview()
-                make.top.equalTo(questionimageView.snp.bottom).offset(5)
-                make.width.equalTo(310)
-                make.height.equalTo(64)
-            }
+
+    private func animateIn() {
+        UIView.animate(withDuration: 0.3) {
+            self.alpha = 1
         }
     }
 }
