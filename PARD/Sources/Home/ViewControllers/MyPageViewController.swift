@@ -252,7 +252,6 @@ class MyPageViewController: UIViewController {
         }
     }
     
-
     private let myPageLabel: UILabel = {
         let myPageLabel = UILabel()
         myPageLabel.text = "마이 페이지"
