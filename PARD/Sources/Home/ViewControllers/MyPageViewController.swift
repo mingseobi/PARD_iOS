@@ -31,7 +31,11 @@ class MyPageViewController: UIViewController {
         feedbackView.addSubview(feedbackLabel)
         feedbackView.layer.insertSublayer(gradientLayer(), at: 0)
         feedbackView.addSubview(feedbackActionLabel)
-        
+        feedbackView.addSubview(feedbackActionView)
+        feedbackActionView.addSubview(feedbackActionLabel)
+        feedbackActionView.addSubview(feedbackArrowImageView)
+        feedbackActionView.addSubview(feedbackArrowImageView2)
+
         view.addSubview(infoView)
         infoView.addSubview(statusStackView)
         view.addSubview(infoLabel)
@@ -91,6 +95,29 @@ class MyPageViewController: UIViewController {
             make.top.equalTo(view.snp.top).offset(135)
             make.left.equalTo(view.snp.left).offset(276)
             make.bottom.equalTo(view.snp.bottom).offset(-663)
+        }
+        
+        feedbackActionView.snp.makeConstraints { make in
+            make.trailing.equalTo(feedbackView.snp.trailing).offset(-24)
+            make.centerY.equalTo(feedbackView.snp.centerY)
+        }
+
+        feedbackActionLabel.snp.makeConstraints { make in
+            make.leading.equalTo(feedbackActionView.snp.leading)
+            make.centerY.equalTo(feedbackActionView.snp.centerY)
+        }
+
+        feedbackArrowImageView.snp.makeConstraints { make in
+            make.leading.equalTo(feedbackView.snp.leading).offset(363)
+            make.top.equalTo(feedbackActionView.snp.top).offset(33)
+            make.bottom.equalTo(feedbackActionView.snp.bottom).offset(-33)
+           
+        }
+
+        feedbackArrowImageView2.snp.makeConstraints { make in
+            make.leading.equalTo(feedbackView.snp.leading).offset(370)
+            make.top.equalTo(feedbackActionView.snp.top).offset(33)
+            make.bottom.equalTo(feedbackActionView.snp.bottom).offset(-33)
         }
         
         infoView.snp.makeConstraints { make in
@@ -294,15 +321,36 @@ class MyPageViewController: UIViewController {
 
     private let feedbackActionLabel: UILabel = {
         let label = UILabel()
-        label.text = "피드백 남기기 >>"
+        label.text = "피드백 남기기"
         label.textColor = .pard.gray10
 
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         return label
     }()
-
     
+    private let feedbackArrowImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    private let feedbackArrowImageView2: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .white
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    private let feedbackActionView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     private let infoView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
