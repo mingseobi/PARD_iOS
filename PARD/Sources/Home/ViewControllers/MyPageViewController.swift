@@ -23,6 +23,7 @@ class MyPageViewController: UIViewController {
         feedbackView.layer.sublayers?.first?.frame = feedbackView.bounds
     }
 
+
     private func setupUI() {
         view.addSubview(myPageLabel)
         
@@ -34,6 +35,8 @@ class MyPageViewController: UIViewController {
         view.addSubview(infoView)
         infoView.addSubview(statusStackView)
         view.addSubview(infoLabel)
+        
+        statusLabel2.backgroundColor = UIColor(patternImage: gradientImage())
         statusStackView.addArrangedSubview(statusLabel1)
         statusStackView.addArrangedSubview(statusLabel2)
         statusStackView.addArrangedSubview(statusLabel3)
@@ -105,29 +108,23 @@ class MyPageViewController: UIViewController {
             make.top.equalTo(infoView.snp.top).offset(20)
             make.leading.equalTo(infoView.snp.leading).offset(24)
             make.bottom.equalTo(infoView.snp.bottom).offset(-52)
-
         }
         
         statusLabel1.snp.makeConstraints { make in
-            make.top.equalTo(infoView.snp.top).offset(20)
-            make.leading.equalTo(infoView.snp.leading).offset(24)
-            make.bottom.equalTo(infoView.snp.bottom).offset(-52)
             make.height.equalTo(24)
             make.width.equalTo(42)
-
         }
         
         statusLabel2.snp.makeConstraints { make in
-//            make.leading.equalTo(statusLabel1.snp.trailing).offset(8)
             make.height.equalTo(24)
             make.width.equalTo(79)
         }
         
         statusLabel3.snp.makeConstraints { make in
-//            make.leading.equalTo(statusLabel2.snp.trailing).offset(8)
             make.height.equalTo(24)
             make.width.equalTo(66)
         }
+    
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(infoView.snp.top).offset(52)
@@ -345,13 +342,12 @@ class MyPageViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.pardFont.body2
-        label.backgroundColor = .pard.gra
         label.layer.cornerRadius = 12
         label.layer.masksToBounds = true
         label.sizeToFit()
         return label
     }()
-
+    
     private let statusLabel3: UILabel = {
         let label = UILabel()
         label.text = "거친파도"
@@ -543,4 +539,17 @@ class MyPageViewController: UIViewController {
         return gradientLayer
     }
 
+    private func gradientImage() -> UIImage {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        gradientLayer.colors = [UIColor(red: 82/255, green: 98/255, blue: 245/255, alpha: 1).cgColor, UIColor(red: 123/255, green: 63/255, blue: 239/255, alpha: 1).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
 }
